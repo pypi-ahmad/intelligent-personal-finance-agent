@@ -1,5 +1,7 @@
 # Personal finance agent
 
+https://github.com/pypi-ahmad/intelligent-personal-finance-agent
+
 Phase 3: local-first finance copilot — ingest, analyze, remember, and stay private.
 
 Data stays on disk in `data/finance.db`. API keys stay in `.env`.
