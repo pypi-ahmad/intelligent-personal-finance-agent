@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local code index
+.codegraph/
+
+# Local secrets and data
+.env
+data/
+.streamlit/secrets.toml

@@ -1,0 +1,64 @@
+[project]
+name = "finance-agent"
+version = "0.1.0"
+description = "Phase 1 personal finance agent: ingest statements, categorize, chat"
+readme = "README.md"
+authors = [
+    { name = "Ahmad Mujtaba", email = "72138709+pypi-ahmad@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fpdf2>=2.8.8",
+    "google-genai>=2.18.1",
+    "httpx>=0.28.1",
+    "langgraph>=1.2.11",
+    "openai>=3.1.0",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.5",
+    "pillow>=12.3.0",
+    "pypdf>=6.16.1",
+    "python-dotenv>=1.2.2",
+    "streamlit>=1.61.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.29,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.3",
+    "ty>=0.0.72",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D",
+    "COM812",
+    "ISC001",
+    "T201",
+    "CPY",
+    "ANN",
+    "TC003",
+    "PLC0415",
+    "DTZ007",
+    "ARG001",
+    "TRY003",
+    "EM101",
+    "BLE001",
+    "INP001",
+    "PLR0911",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "PLR2004"]
+
+[tool.ty.environment]
+python-version = "3.11"
