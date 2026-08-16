@@ -154,3 +154,5 @@ Please be kind. Newcomers and first-time contributors are welcome. Keep issues f
 ## License
 
 [MIT](LICENSE) © 2026 Ahmad Mujtaba. Use, copy, modify, and share freely. The software is provided **as is**, without warranty.
+
+<p align="center">Made with ❤️ by Ahmad Mujtaba</p>
