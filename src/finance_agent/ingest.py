@@ -14,6 +14,7 @@ from pypdf import PdfReader
 
 from finance_agent.categorize import apply_rules
 from finance_agent.config import CATEGORIES
+from finance_agent.merchants import normalize_merchant
 
 DATE_COLS = ("date", "txn date", "transaction date", "value date", "posted", "trans date")
 DESC_COLS = ("description", "particulars", "narration", "details", "merchant", "remarks", "narrative")
@@ -51,6 +52,7 @@ def parse_file(name: str, data: bytes, llm_extract: Any | None = None) -> list[d
     for row in rows:
         row["source_file"] = name
         row["category"] = apply_rules(row["description"])
+        row["merchant"] = normalize_merchant(row["description"])
     return rows
 
 

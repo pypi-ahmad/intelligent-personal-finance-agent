@@ -32,7 +32,7 @@ def test_json_fence() -> None:
 
 
 def test_provider_models() -> None:
-    assert models_for("OpenAI") == ["gpt-5.6-luna"]
+    assert models_for("OpenAI") == ["gpt-5.6-luna", "gpt-5.6-terra"]
     assert models_for("Agnes AI") == ["agnes-2.5-flash"]
     assert models_for("Google") == ["gemini-3.5-flash-lite", "gemini-3.7-flash"]
 

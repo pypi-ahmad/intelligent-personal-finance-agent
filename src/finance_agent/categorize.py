@@ -1,4 +1,4 @@
-"""Rule-first categories; leftover fill is local LLM then occasional API."""
+"""Rule-first categories; user rules and corrections beat builtins; LLM last."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ from contextlib import suppress
 from typing import Any
 
 from finance_agent.config import CATEGORIES
+from finance_agent.merchants import merchant_key, normalize_merchant
 
 RULES: tuple[tuple[tuple[str, ...], str], ...] = (
     (("swiggy", "zomato", "ubereats", "uber eats", "restaurant", "cafe", "starbucks", "dominos"), "FOOD"),
@@ -23,6 +24,8 @@ RULES: tuple[tuple[tuple[str, ...], str], ...] = (
 
 LLM_PROMPT = """Categorize each transaction. Allowed categories:
 {cats}
+User-corrected examples (follow these when the merchant matches):
+{examples}
 Return ONLY a JSON array of {{"id": <int>, "category": "<CAT>"}}.
 Transactions:
 {rows}
@@ -37,14 +40,68 @@ def apply_rules(description: str) -> str:
     return "OTHER"
 
 
-def categorize_with_llm(rows: list[dict[str, Any]], complete: Any) -> list[dict[str, Any]]:
+def assign_category(
+    description: str,
+    *,
+    user_rules: list[dict[str, str]] | None = None,
+    correction_map: dict[str, str] | None = None,
+) -> tuple[str, str | None]:
+    merchant = normalize_merchant(description)
+    key = merchant_key(description)
+    text = description.lower()
+    for rule in user_rules or []:
+        needle = str(rule.get("needle") or "").strip().lower()
+        cat = str(rule.get("category") or "").upper()
+        if needle and needle in text and cat in CATEGORIES:
+            return cat, merchant
+    if correction_map:
+        if merchant and merchant in correction_map:
+            return correction_map[merchant], merchant
+        if key in correction_map:
+            return correction_map[key], merchant
+    return apply_rules(description), merchant
+
+
+def apply_learned(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    from finance_agent.db import latest_correction_map, list_user_rules
+
+    rules = list_user_rules()
+    corrections = latest_correction_map()
+    for row in rows:
+        category, merchant = assign_category(
+            str(row["description"]),
+            user_rules=rules,
+            correction_map=corrections,
+        )
+        row["category"] = category
+        row["merchant"] = merchant
+    return rows
+
+
+def categorize_with_llm(
+    rows: list[dict[str, Any]],
+    complete: Any,
+    *,
+    examples: list[dict[str, str]] | None = None,
+) -> list[dict[str, Any]]:
     pending = [r for r in rows if r.get("category") == "OTHER"]
     if not pending:
         return rows
     payload = [
-        {"id": i, "description": r["description"], "amount": r["amount"]} for i, r in enumerate(pending)
+        {
+            "id": i,
+            "description": r["description"],
+            "merchant": r.get("merchant"),
+            "amount": r["amount"],
+        }
+        for i, r in enumerate(pending)
     ]
-    raw = complete(LLM_PROMPT.format(cats=", ".join(CATEGORIES), rows=payload))
+    shot = "(none)"
+    if examples:
+        shot = "\n".join(
+            f"- {item.get('merchant') or item.get('description')}: {item['category']}" for item in examples
+        )
+    raw = complete(LLM_PROMPT.format(cats=", ".join(CATEGORIES), examples=shot, rows=payload))
     from finance_agent.ingest import parse_json_payload
 
     mapped = parse_json_payload(raw)
@@ -72,11 +129,14 @@ def categorize_hybrid(
     local_complete: Any | None = None,
     api_complete: Any | None = None,
 ) -> list[dict[str, Any]]:
-    """Rules already on rows. Local model first, API only for leftovers."""
+    """Learned tags already on rows. Local model first, API only for leftovers."""
+    from finance_agent.db import list_fewshot
+
+    examples = list_fewshot(16)
     if local_complete:
         with suppress(ValueError, TypeError, OSError, RuntimeError):
-            categorize_with_llm(rows, local_complete)
+            categorize_with_llm(rows, local_complete, examples=examples)
     if api_complete:
         with suppress(ValueError, TypeError, OSError, RuntimeError):
-            categorize_with_llm(rows, api_complete)
+            categorize_with_llm(rows, api_complete, examples=examples)
     return rows

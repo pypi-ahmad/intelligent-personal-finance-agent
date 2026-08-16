@@ -16,7 +16,7 @@ DB_PATH = DATA_DIR / "finance.db"
 
 PROVIDERS = ("Ollama", "OpenAI", "Agnes AI", "Google")
 
-OPENAI_MODELS = ("gpt-5.6-luna",)
+OPENAI_MODELS = ("gpt-5.6-luna", "gpt-5.6-terra")
 OPENAI_EFFORT = "medium"
 
 AGNES_MODEL = "agnes-2.5-flash"
