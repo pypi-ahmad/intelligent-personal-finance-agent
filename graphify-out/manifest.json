@@ -1,0 +1,194 @@
+{
+  "pyproject.toml": {
+    "mtime": 1786893865.0036218,
+    "seen": 1786895073.1564937,
+    "ast_hash": "db7991229e721bcd9cfd1301a4d655a8",
+    "semantic_hash": "db7991229e721bcd9cfd1301a4d655a8"
+  },
+  "src/finance_agent/__init__.py": {
+    "mtime": 1786893427.321164,
+    "seen": 1786895073.1564975,
+    "ast_hash": "331bd8d1dcca937e834a68d28f5deb3a",
+    "semantic_hash": "331bd8d1dcca937e834a68d28f5deb3a"
+  },
+  "src/finance_agent/agent.py": {
+    "mtime": 1786892933.4612005,
+    "seen": 1786895073.1564991,
+    "ast_hash": "04f949d6823836ac3d0e609884ddcb6d",
+    "semantic_hash": "04f949d6823836ac3d0e609884ddcb6d"
+  },
+  "src/finance_agent/categorize.py": {
+    "mtime": 1786892862.6962526,
+    "seen": 1786895073.1565003,
+    "ast_hash": "45013f8b05859d5e5e31e0391769cee3",
+    "semantic_hash": "45013f8b05859d5e5e31e0391769cee3"
+  },
+  "src/finance_agent/config.py": {
+    "mtime": 1786892841.04645,
+    "seen": 1786895073.1565015,
+    "ast_hash": "9f3e279393f1a6470e0ba88088547fbb",
+    "semantic_hash": "9f3e279393f1a6470e0ba88088547fbb"
+  },
+  "src/finance_agent/copilot.py": {
+    "mtime": 1786892338.6087787,
+    "seen": 1786895073.1565025,
+    "ast_hash": "e9edccd05c3cd03afb56a35e74b4595d",
+    "semantic_hash": "e9edccd05c3cd03afb56a35e74b4595d"
+  },
+  "src/finance_agent/dashboard.py": {
+    "mtime": 1786893150.4649887,
+    "seen": 1786895073.1565032,
+    "ast_hash": "ae74446880f90bc71ce85989d3e2c269",
+    "semantic_hash": "ae74446880f90bc71ce85989d3e2c269"
+  },
+  "src/finance_agent/db.py": {
+    "mtime": 1786893427.4205742,
+    "seen": 1786895073.1565044,
+    "ast_hash": "9ccccc3b6b3068b75da3992db22e7cb0",
+    "semantic_hash": "9ccccc3b6b3068b75da3992db22e7cb0"
+  },
+  "src/finance_agent/ingest.py": {
+    "mtime": 1786892933.4612005,
+    "seen": 1786895073.156505,
+    "ast_hash": "2627e9209ebe5722e11767e1d1da24e8",
+    "semantic_hash": "2627e9209ebe5722e11767e1d1da24e8"
+  },
+  "src/finance_agent/insights.py": {
+    "mtime": 1786892011.6509826,
+    "seen": 1786895073.1565058,
+    "ast_hash": "b511f0b518b5025110ec1ee2d7dad2e0",
+    "semantic_hash": "b511f0b518b5025110ec1ee2d7dad2e0"
+  },
+  "src/finance_agent/llm.py": {
+    "mtime": 1786892473.921476,
+    "seen": 1786895073.1565065,
+    "ast_hash": "fdc266766afcc0a6580e7167fc56632c",
+    "semantic_hash": "fdc266766afcc0a6580e7167fc56632c"
+  },
+  "src/finance_agent/merchants.py": {
+    "mtime": 1786892847.6453638,
+    "seen": 1786895073.1565075,
+    "ast_hash": "746c0c4ef7acd5801086000546852cb8",
+    "semantic_hash": "746c0c4ef7acd5801086000546852cb8"
+  },
+  "src/finance_agent/notify.py": {
+    "mtime": 1786893301.9233246,
+    "seen": 1786895073.1565082,
+    "ast_hash": "b5b2f8a172ddebb697c3b950dbd9f9e2",
+    "semantic_hash": "b5b2f8a172ddebb697c3b950dbd9f9e2"
+  },
+  "src/finance_agent/reports.py": {
+    "mtime": 1786893427.321164,
+    "seen": 1786895073.156509,
+    "ast_hash": "a393e55dd9197ec56c026b2cf7e297c6",
+    "semantic_hash": "a393e55dd9197ec56c026b2cf7e297c6"
+  },
+  "src/finance_agent/vault.py": {
+    "mtime": 1786893406.9908676,
+    "seen": 1786895073.1565096,
+    "ast_hash": "fe2353c9c6fb2812892adfb11696702c",
+    "semantic_hash": "fe2353c9c6fb2812892adfb11696702c"
+  },
+  "streamlit_app.py": {
+    "mtime": 1786893469.769788,
+    "seen": 1786895073.1565108,
+    "ast_hash": "3b4007c775cd0863bdcbe53ba9494e8d",
+    "semantic_hash": "3b4007c775cd0863bdcbe53ba9494e8d"
+  },
+  "tests/test_phase1.py": {
+    "mtime": 1786892987.4452195,
+    "seen": 1786895073.1565115,
+    "ast_hash": "112e91da9448d837ab5e3cce16adf808",
+    "semantic_hash": "112e91da9448d837ab5e3cce16adf808"
+  },
+  "tests/test_phase2.py": {
+    "mtime": 1786891891.9468145,
+    "seen": 1786895073.1565125,
+    "ast_hash": "ddd88812e04664a0d9f92731c750310c",
+    "semantic_hash": "ddd88812e04664a0d9f92731c750310c"
+  },
+  "tests/test_phase3.py": {
+    "mtime": 1786892338.2109067,
+    "seen": 1786895073.1565132,
+    "ast_hash": "db79d0a825f0036b0dbc68cb1a22f06d",
+    "semantic_hash": "db79d0a825f0036b0dbc68cb1a22f06d"
+  },
+  "tests/test_phase4.py": {
+    "mtime": 1786893012.6729517,
+    "seen": 1786895073.1565144,
+    "ast_hash": "f0c6b6eda1f5a1de4a6fbd5d2ce9a0d0",
+    "semantic_hash": "f0c6b6eda1f5a1de4a6fbd5d2ce9a0d0"
+  },
+  "tests/test_phase5.py": {
+    "mtime": 1786893104.650427,
+    "seen": 1786895073.1565154,
+    "ast_hash": "7b7e4ae870ab7624df50f85605faf551",
+    "semantic_hash": "7b7e4ae870ab7624df50f85605faf551"
+  },
+  "tests/test_phase6.py": {
+    "mtime": 1786893280.2554326,
+    "seen": 1786895073.1565163,
+    "ast_hash": "3a2ed8202ba5b46a269a0d8918d074bc",
+    "semantic_hash": "3a2ed8202ba5b46a269a0d8918d074bc"
+  },
+  "tests/test_phase8.py": {
+    "mtime": 1786893514.3122504,
+    "seen": 1786895073.156517,
+    "ast_hash": "28e08b72ddc9ac94b544a81bf41e7b9c",
+    "semantic_hash": "28e08b72ddc9ac94b544a81bf41e7b9c"
+  },
+  ".clinerules/caveman.md": {
+    "mtime": 1786891473.0102432,
+    "seen": 1786895073.156518,
+    "ast_hash": "cceced69f98870064e4bded7dcffdb62",
+    "semantic_hash": "cceced69f98870064e4bded7dcffdb62"
+  },
+  ".github/copilot-instructions.md": {
+    "mtime": 1786891473.0102432,
+    "seen": 1786895073.1565187,
+    "ast_hash": "cceced69f98870064e4bded7dcffdb62",
+    "semantic_hash": "cceced69f98870064e4bded7dcffdb62"
+  },
+  ".opencode/AGENTS.md": {
+    "mtime": 1786891473.0112436,
+    "seen": 1786895073.1565197,
+    "ast_hash": "cceced69f98870064e4bded7dcffdb62",
+    "semantic_hash": "cceced69f98870064e4bded7dcffdb62"
+  },
+  ".windsurf/rules/caveman.md": {
+    "mtime": 1786891473.0092435,
+    "seen": 1786895073.1565206,
+    "ast_hash": "daf0c224d4db88cc6901a8403146499f",
+    "semantic_hash": "daf0c224d4db88cc6901a8403146499f"
+  },
+  "AGENTS.md": {
+    "mtime": 1786891473.0122435,
+    "seen": 1786895073.1565216,
+    "ast_hash": "cceced69f98870064e4bded7dcffdb62",
+    "semantic_hash": "cceced69f98870064e4bded7dcffdb62"
+  },
+  "ARCHITECTURE.md": {
+    "mtime": 1786893666.155342,
+    "seen": 1786895073.1565223,
+    "ast_hash": "9026dca8b7f602edfa21923561f6fde3",
+    "semantic_hash": "9026dca8b7f602edfa21923561f6fde3"
+  },
+  "README.md": {
+    "mtime": 1786893865.0036218,
+    "seen": 1786895073.1565235,
+    "ast_hash": "29b7603a18654286ba4199de2c829b6d",
+    "semantic_hash": "29b7603a18654286ba4199de2c829b6d"
+  },
+  "docs/how-to-use.md": {
+    "mtime": 1786893604.6254065,
+    "seen": 1786895073.156524,
+    "ast_hash": "898ac47b1de86dc891ae58182e49472b",
+    "semantic_hash": "898ac47b1de86dc891ae58182e49472b"
+  },
+  "docs/technical.md": {
+    "mtime": 1786893639.31918,
+    "seen": 1786895073.156525,
+    "ast_hash": "39138b43a2bba43c53833c33c4af42e1",
+    "semantic_hash": "39138b43a2bba43c53833c33c4af42e1"
+  }
+}
