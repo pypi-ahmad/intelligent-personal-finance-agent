@@ -16,8 +16,6 @@ if errorlevel 1 (
   exit /b 1
 )
 
-if not exist ".env" if exist ".env.example" copy /y ".env.example" ".env" >nul
-
 uv sync --all-groups
 if errorlevel 1 (
   echo uv sync failed.

@@ -40,7 +40,7 @@ CSV and Excel ingest work with no model. PDF, images, leftover-category fill, an
    copy .env.example .env
    ```
 
-2. Fill only the keys you use. Ollama needs no key; optional `OLLAMA_HOST` defaults to `http://localhost:11434`.
+2. Keys come from this machine's environment first (`OPENAI_API_KEY`, `OPENAI_BASE_URL`, `AGNES_API_KEY`, `GOOGLE_API_KEY`). `.env.example` is only a template for other machines. Ollama needs no key; optional `OLLAMA_HOST` defaults to `http://localhost:11434`.
 
 3. Start the app:
 
@@ -76,7 +76,7 @@ Rules live in `src/finance_agent/categorize.py`.
 | Provider | Models | Key |
 | --- | --- | --- |
 | Ollama | whatever is installed locally | none |
-| OpenAI | `gpt-5.6-luna`, `gpt-5.6-terra` (medium effort) | `OPENAI_API_KEY` |
+| OpenAI | `gpt-5.6-luna` (medium effort) | `OPENAI_API_KEY` + optional `OPENAI_BASE_URL` |
 | Agnes AI | `agnes-2.5-flash` | `AGNES_API_KEY` |
 | Google | `gemini-3.5-flash-lite`, `gemini-3.7-flash` | `GOOGLE_API_KEY` |
 
