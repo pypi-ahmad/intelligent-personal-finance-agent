@@ -1,0 +1,358 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "Template for user-owned API keys. Not committed secrets.",
+      "tags": [
+        "configuration",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Agent style rules for this checkout.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:ARCHITECTURE.md",
+      "type": "document",
+      "name": "ARCHITECTURE.md",
+      "filePath": "ARCHITECTURE.md",
+      "summary": "On-disk architecture snapshot of the modular monolith.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "How to set up, test, and send PRs. No donations.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:DISCLAIMER.md",
+      "type": "document",
+      "name": "DISCLAIMER.md",
+      "filePath": "DISCLAIMER.md",
+      "summary": "User owns all processed data; not financial advice.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:Project_Architecture_Blueprint.md",
+      "type": "document",
+      "name": "Project_Architecture_Blueprint.md",
+      "filePath": "Project_Architecture_Blueprint.md",
+      "summary": "Comprehensive architecture blueprint and ADRs.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview, clone/run, models, community links, data disclaimer.",
+      "tags": [
+        "entry-point",
+        "documentation",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:SECURITY.md",
+      "type": "document",
+      "name": "SECURITY.md",
+      "filePath": "SECURITY.md",
+      "summary": "How to report vulnerabilities privately.",
+      "tags": [
+        "security",
+        "documentation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:SUPPORT.md",
+      "type": "document",
+      "name": "SUPPORT.md",
+      "filePath": "SUPPORT.md",
+      "summary": "Self-help and community support. No paid support.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pyproject.toml",
+      "type": "config",
+      "name": "pyproject.toml",
+      "filePath": "pyproject.toml",
+      "summary": "uv project: deps, ruff, ty, MIT license.",
+      "tags": [
+        "configuration",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:run.cmd",
+      "type": "file",
+      "name": "run.cmd",
+      "filePath": "run.cmd",
+      "summary": "Windows launcher: uv, .venv, sync, Streamlit on localhost.",
+      "tags": [
+        "entry-point",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:run.sh",
+      "type": "file",
+      "name": "run.sh",
+      "filePath": "run.sh",
+      "summary": "Linux launcher: uv, .venv, sync, Streamlit on localhost.",
+      "tags": [
+        "entry-point",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:.env.example",
+      "target": "file:streamlit_app.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ARCHITECTURE.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ARCHITECTURE.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:ARCHITECTURE.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DISCLAIMER.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DISCLAIMER.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:DISCLAIMER.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:Project_Architecture_Blueprint.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:Project_Architecture_Blueprint.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:Project_Architecture_Blueprint.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SECURITY.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SECURITY.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SECURITY.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SUPPORT.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SUPPORT.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SUPPORT.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:pyproject.toml",
+      "target": "file:streamlit_app.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:run.cmd",
+      "target": "file:streamlit_app.py",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:run.sh",
+      "target": "file:streamlit_app.py",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

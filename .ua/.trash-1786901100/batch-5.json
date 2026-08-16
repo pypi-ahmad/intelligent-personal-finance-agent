@@ -1,0 +1,1217 @@
+{
+  "nodes": [
+    {
+      "id": "document:.clinerules/caveman.md",
+      "type": "document",
+      "name": "caveman.md",
+      "filePath": ".clinerules/caveman.md",
+      "summary": "Agent style rules for this checkout.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.cursor/rules/caveman.mdc",
+      "type": "file",
+      "name": "caveman.mdc",
+      "filePath": ".cursor/rules/caveman.mdc",
+      "summary": "Agent style rules for this checkout.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/ISSUE_TEMPLATE/bug_report.md",
+      "type": "document",
+      "name": "bug_report.md",
+      "filePath": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "summary": "GitHub community template.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/ISSUE_TEMPLATE/feature_request.md",
+      "type": "document",
+      "name": "feature_request.md",
+      "filePath": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "summary": "GitHub community template.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/PULL_REQUEST_TEMPLATE.md",
+      "type": "document",
+      "name": "PULL_REQUEST_TEMPLATE.md",
+      "filePath": ".github/PULL_REQUEST_TEMPLATE.md",
+      "summary": "GitHub community template.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/copilot-instructions.md",
+      "type": "document",
+      "name": "copilot-instructions.md",
+      "filePath": ".github/copilot-instructions.md",
+      "summary": "Agent style rules for this checkout.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.opencode/AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": ".opencode/AGENTS.md",
+      "summary": "Agent style rules for this checkout.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.python-version",
+      "type": "file",
+      "name": ".python-version",
+      "filePath": ".python-version",
+      "summary": "code file with 1 lines.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.streamlit/config.toml",
+      "type": "config",
+      "name": "config.toml",
+      "filePath": ".streamlit/config.toml",
+      "summary": "Light and dark theme. Usage stats off.",
+      "tags": [
+        "configuration",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.windsurf/rules/caveman.md",
+      "type": "document",
+      "name": "caveman.md",
+      "filePath": ".windsurf/rules/caveman.md",
+      "summary": "Agent style rules for this checkout.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:docs/archify/finance-agent.architecture.json",
+      "type": "config",
+      "name": "finance-agent.architecture.json",
+      "filePath": "docs/archify/finance-agent.architecture.json",
+      "summary": "Archify architecture diagram artifact.",
+      "tags": [
+        "configuration",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/archify/finance-agent.html",
+      "type": "file",
+      "name": "finance-agent.html",
+      "filePath": "docs/archify/finance-agent.html",
+      "summary": "Archify architecture diagram artifact.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/how-to-use.md",
+      "type": "document",
+      "name": "how-to-use.md",
+      "filePath": "docs/how-to-use.md",
+      "summary": "How to start, set keys, use tabs, lock, and export.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/technical.md",
+      "type": "document",
+      "name": "technical.md",
+      "filePath": "docs/technical.md",
+      "summary": "Technical reference for modules, env, and storage.",
+      "tags": [
+        "documentation",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/finance_agent/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "src/finance_agent/__init__.py",
+      "summary": "Package marker. Phase 8 personal finance agent.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:streamlit_app.py",
+      "type": "file",
+      "name": "streamlit_app.py",
+      "filePath": "streamlit_app.py",
+      "summary": "Streamlit UI: unlock gate, Local-only sidebar, eight tabs, ingest and chat wiring.",
+      "tags": [
+        "entry-point",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:streamlit_app.py:_today",
+      "type": "function",
+      "name": "_today",
+      "filePath": "streamlit_app.py",
+      "summary": "_today() in streamlit_app.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:streamlit_app.py:_call",
+      "type": "function",
+      "name": "_call",
+      "filePath": "streamlit_app.py",
+      "summary": "_call() in streamlit_app.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:streamlit_app.py:_hybrid_completes",
+      "type": "function",
+      "name": "_hybrid_completes",
+      "filePath": "streamlit_app.py",
+      "summary": "_hybrid_completes() in streamlit_app.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:streamlit_app.py:_remember",
+      "type": "function",
+      "name": "_remember",
+      "filePath": "streamlit_app.py",
+      "summary": "_remember() in streamlit_app.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_phase1.py",
+      "type": "file",
+      "name": "test_phase1.py",
+      "filePath": "tests/test_phase1.py",
+      "summary": "Pytest coverage for test_phase1.",
+      "tags": [
+        "test",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase1.py:test_rule_categories",
+      "type": "function",
+      "name": "test_rule_categories",
+      "filePath": "tests/test_phase1.py",
+      "summary": "test_rule_categories() in tests/test_phase1.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase1.py:test_csv_debit_credit",
+      "type": "function",
+      "name": "test_csv_debit_credit",
+      "filePath": "tests/test_phase1.py",
+      "summary": "test_csv_debit_credit() in tests/test_phase1.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase1.py:test_json_fence",
+      "type": "function",
+      "name": "test_json_fence",
+      "filePath": "tests/test_phase1.py",
+      "summary": "test_json_fence() in tests/test_phase1.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase1.py:test_provider_models",
+      "type": "function",
+      "name": "test_provider_models",
+      "filePath": "tests/test_phase1.py",
+      "summary": "test_provider_models() in tests/test_phase1.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase1.py:test_image_mime",
+      "type": "function",
+      "name": "test_image_mime",
+      "filePath": "tests/test_phase1.py",
+      "summary": "test_image_mime() in tests/test_phase1.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase1.py:test_insert_dedup_and_update",
+      "type": "function",
+      "name": "test_insert_dedup_and_update",
+      "filePath": "tests/test_phase1.py",
+      "summary": "test_insert_dedup_and_update() in tests/test_phase1.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/test_phase2.py",
+      "type": "file",
+      "name": "test_phase2.py",
+      "filePath": "tests/test_phase2.py",
+      "summary": "Pytest coverage for test_phase2.",
+      "tags": [
+        "test",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase2.py:test_hybrid_local_then_api",
+      "type": "function",
+      "name": "test_hybrid_local_then_api",
+      "filePath": "tests/test_phase2.py",
+      "summary": "test_hybrid_local_then_api() in tests/test_phase2.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase2.py:test_hybrid_api_after_local_fail",
+      "type": "function",
+      "name": "test_hybrid_api_after_local_fail",
+      "filePath": "tests/test_phase2.py",
+      "summary": "test_hybrid_api_after_local_fail() in tests/test_phase2.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase2.py:test_top_and_month_compare",
+      "type": "function",
+      "name": "test_top_and_month_compare",
+      "filePath": "tests/test_phase2.py",
+      "summary": "test_top_and_month_compare() in tests/test_phase2.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase2.py:test_anomalies_flag_outlier",
+      "type": "function",
+      "name": "test_anomalies_flag_outlier",
+      "filePath": "tests/test_phase2.py",
+      "summary": "test_anomalies_flag_outlier() in tests/test_phase2.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase2.py:test_budget_and_report",
+      "type": "function",
+      "name": "test_budget_and_report",
+      "filePath": "tests/test_phase2.py",
+      "summary": "test_budget_and_report() in tests/test_phase2.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase2.py:test_week_bounds_monday",
+      "type": "function",
+      "name": "test_week_bounds_monday",
+      "filePath": "tests/test_phase2.py",
+      "summary": "test_week_bounds_monday() in tests/test_phase2.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_phase3.py",
+      "type": "file",
+      "name": "test_phase3.py",
+      "filePath": "tests/test_phase3.py",
+      "summary": "Pytest coverage for test_phase3.",
+      "tags": [
+        "test",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_last_quarter_and_infer",
+      "type": "function",
+      "name": "test_last_quarter_and_infer",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_last_quarter_and_infer() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_travel_food_filter",
+      "type": "function",
+      "name": "test_travel_food_filter",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_travel_food_filter() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_recurring_monthly",
+      "type": "function",
+      "name": "test_recurring_monthly",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_recurring_monthly() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_net_worth",
+      "type": "function",
+      "name": "test_net_worth",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_net_worth() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_history_text_keeps_tail",
+      "type": "function",
+      "name": "test_history_text_keeps_tail",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_history_text_keeps_tail() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_local_only_blocks_cloud",
+      "type": "function",
+      "name": "test_local_only_blocks_cloud",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_local_only_blocks_cloud() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_memory_and_wipe",
+      "type": "function",
+      "name": "test_memory_and_wipe",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_memory_and_wipe() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase3.py:test_budget_alert",
+      "type": "function",
+      "name": "test_budget_alert",
+      "filePath": "tests/test_phase3.py",
+      "summary": "test_budget_alert() in tests/test_phase3.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_phase4.py",
+      "type": "file",
+      "name": "test_phase4.py",
+      "filePath": "tests/test_phase4.py",
+      "summary": "Pytest coverage for test_phase4.",
+      "tags": [
+        "test",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase4.py:test_merchant_aliases",
+      "type": "function",
+      "name": "test_merchant_aliases",
+      "filePath": "tests/test_phase4.py",
+      "summary": "test_merchant_aliases() in tests/test_phase4.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase4.py:test_user_rule_beats_builtin",
+      "type": "function",
+      "name": "test_user_rule_beats_builtin",
+      "filePath": "tests/test_phase4.py",
+      "summary": "test_user_rule_beats_builtin() in tests/test_phase4.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase4.py:test_correction_beats_builtin",
+      "type": "function",
+      "name": "test_correction_beats_builtin",
+      "filePath": "tests/test_phase4.py",
+      "summary": "test_correction_beats_builtin() in tests/test_phase4.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase4.py:test_learn_and_split",
+      "type": "function",
+      "name": "test_learn_and_split",
+      "filePath": "tests/test_phase4.py",
+      "summary": "test_learn_and_split() in tests/test_phase4.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase4.py:test_merchant_key_fallback",
+      "type": "function",
+      "name": "test_merchant_key_fallback",
+      "filePath": "tests/test_phase4.py",
+      "summary": "test_merchant_key_fallback() in tests/test_phase4.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_phase5.py",
+      "type": "file",
+      "name": "test_phase5.py",
+      "filePath": "tests/test_phase5.py",
+      "summary": "Pytest coverage for test_phase5.",
+      "tags": [
+        "test",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase5.py:_rows",
+      "type": "function",
+      "name": "_rows",
+      "filePath": "tests/test_phase5.py",
+      "summary": "_rows() in tests/test_phase5.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase5.py:test_chart_series",
+      "type": "function",
+      "name": "test_chart_series",
+      "filePath": "tests/test_phase5.py",
+      "summary": "test_chart_series() in tests/test_phase5.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase5.py:test_forecast_and_cancel",
+      "type": "function",
+      "name": "test_forecast_and_cancel",
+      "filePath": "tests/test_phase5.py",
+      "summary": "test_forecast_and_cancel() in tests/test_phase5.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase5.py:test_lifestyle_inflation_flags_rise",
+      "type": "function",
+      "name": "test_lifestyle_inflation_flags_rise",
+      "filePath": "tests/test_phase5.py",
+      "summary": "test_lifestyle_inflation_flags_rise() in tests/test_phase5.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_phase6.py",
+      "type": "file",
+      "name": "test_phase6.py",
+      "filePath": "tests/test_phase6.py",
+      "summary": "Pytest coverage for test_phase6.",
+      "tags": [
+        "test",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase6.py:test_week_monday_and_bills",
+      "type": "function",
+      "name": "test_week_monday_and_bills",
+      "filePath": "tests/test_phase6.py",
+      "summary": "test_week_monday_and_bills() in tests/test_phase6.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase6.py:test_week_delta",
+      "type": "function",
+      "name": "test_week_delta",
+      "filePath": "tests/test_phase6.py",
+      "summary": "test_week_delta() in tests/test_phase6.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase6.py:test_refresh_inbox_dedupes",
+      "type": "function",
+      "name": "test_refresh_inbox_dedupes",
+      "filePath": "tests/test_phase6.py",
+      "summary": "test_refresh_inbox_dedupes() in tests/test_phase6.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/test_phase8.py",
+      "type": "file",
+      "name": "test_phase8.py",
+      "filePath": "tests/test_phase8.py",
+      "summary": "Pytest coverage for test_phase8.",
+      "tags": [
+        "test",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase8.py:test_encrypt_roundtrip",
+      "type": "function",
+      "name": "test_encrypt_roundtrip",
+      "filePath": "tests/test_phase8.py",
+      "summary": "test_encrypt_roundtrip() in tests/test_phase8.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase8.py:test_lock_unlock",
+      "type": "function",
+      "name": "test_lock_unlock",
+      "filePath": "tests/test_phase8.py",
+      "summary": "test_lock_unlock() in tests/test_phase8.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_phase8.py:test_tax_report_lists_year",
+      "type": "function",
+      "name": "test_tax_report_lists_year",
+      "filePath": "tests/test_phase8.py",
+      "summary": "test_tax_report_lists_year() in tests/test_phase8.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_phase8.py:test_export_zip",
+      "type": "function",
+      "name": "test_export_zip",
+      "filePath": "tests/test_phase8.py",
+      "summary": "test_export_zip() in tests/test_phase8.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:.clinerules/caveman.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.clinerules/caveman.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.clinerules/caveman.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/ISSUE_TEMPLATE/bug_report.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/ISSUE_TEMPLATE/bug_report.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/ISSUE_TEMPLATE/bug_report.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/ISSUE_TEMPLATE/feature_request.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/ISSUE_TEMPLATE/feature_request.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/ISSUE_TEMPLATE/feature_request.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/PULL_REQUEST_TEMPLATE.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/PULL_REQUEST_TEMPLATE.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/PULL_REQUEST_TEMPLATE.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/copilot-instructions.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/copilot-instructions.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.github/copilot-instructions.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.opencode/AGENTS.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.opencode/AGENTS.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.opencode/AGENTS.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:.streamlit/config.toml",
+      "target": "file:streamlit_app.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:.windsurf/rules/caveman.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.windsurf/rules/caveman.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:.windsurf/rules/caveman.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/how-to-use.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/how-to-use.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/how-to-use.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/technical.md",
+      "target": "file:streamlit_app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/technical.md",
+      "target": "file:src/finance_agent/db.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/technical.md",
+      "target": "file:src/finance_agent/agent.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:streamlit_app.py",
+      "target": "function:streamlit_app.py:_today",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:streamlit_app.py",
+      "target": "function:streamlit_app.py:_call",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:streamlit_app.py",
+      "target": "function:streamlit_app.py:_hybrid_completes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:streamlit_app.py",
+      "target": "function:streamlit_app.py:_remember",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase1.py",
+      "target": "function:tests/test_phase1.py:test_rule_categories",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase1.py",
+      "target": "function:tests/test_phase1.py:test_csv_debit_credit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase1.py",
+      "target": "function:tests/test_phase1.py:test_json_fence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase1.py",
+      "target": "function:tests/test_phase1.py:test_provider_models",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase1.py",
+      "target": "function:tests/test_phase1.py:test_image_mime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase1.py",
+      "target": "function:tests/test_phase1.py:test_insert_dedup_and_update",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase2.py",
+      "target": "function:tests/test_phase2.py:test_hybrid_local_then_api",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase2.py",
+      "target": "function:tests/test_phase2.py:test_hybrid_api_after_local_fail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase2.py",
+      "target": "function:tests/test_phase2.py:test_top_and_month_compare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase2.py",
+      "target": "function:tests/test_phase2.py:test_anomalies_flag_outlier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase2.py",
+      "target": "function:tests/test_phase2.py:test_budget_and_report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase2.py",
+      "target": "function:tests/test_phase2.py:test_week_bounds_monday",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_last_quarter_and_infer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_travel_food_filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_recurring_monthly",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_net_worth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_history_text_keeps_tail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_local_only_blocks_cloud",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_memory_and_wipe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase3.py",
+      "target": "function:tests/test_phase3.py:test_budget_alert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase4.py",
+      "target": "function:tests/test_phase4.py:test_merchant_aliases",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase4.py",
+      "target": "function:tests/test_phase4.py:test_user_rule_beats_builtin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase4.py",
+      "target": "function:tests/test_phase4.py:test_correction_beats_builtin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase4.py",
+      "target": "function:tests/test_phase4.py:test_learn_and_split",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase4.py",
+      "target": "function:tests/test_phase4.py:test_merchant_key_fallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase5.py",
+      "target": "function:tests/test_phase5.py:_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase5.py",
+      "target": "function:tests/test_phase5.py:test_chart_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase5.py",
+      "target": "function:tests/test_phase5.py:test_forecast_and_cancel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase5.py",
+      "target": "function:tests/test_phase5.py:test_lifestyle_inflation_flags_rise",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase6.py",
+      "target": "function:tests/test_phase6.py:test_week_monday_and_bills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase6.py",
+      "target": "function:tests/test_phase6.py:test_week_delta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase6.py",
+      "target": "function:tests/test_phase6.py:test_refresh_inbox_dedupes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase8.py",
+      "target": "function:tests/test_phase8.py:test_encrypt_roundtrip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase8.py",
+      "target": "function:tests/test_phase8.py:test_lock_unlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase8.py",
+      "target": "function:tests/test_phase8.py:test_tax_report_lists_year",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_phase8.py",
+      "target": "function:tests/test_phase8.py:test_export_zip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

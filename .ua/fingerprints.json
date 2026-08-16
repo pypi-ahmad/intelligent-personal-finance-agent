@@ -1,0 +1,3029 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "5347883ab3f5bf2775f24d8e41dff974496a353c",
+  "generatedAt": "2026-08-16T17:24:53.094Z",
+  "files": {
+    ".clinerules/caveman.md": {
+      "filePath": ".clinerules/caveman.md",
+      "contentHash": "b2c5f95c5f0d751f382f75500e22a1452290654368898d17980e0195d3b54a10",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    ".cursor/rules/caveman.mdc": {
+      "filePath": ".cursor/rules/caveman.mdc",
+      "contentHash": "b1b7a9d1f765050ad1db0d7a28a764d96afea3e8b797ec59c6ee2d073d373fdf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": false
+    },
+    ".env.example": {
+      "filePath": ".env.example",
+      "contentHash": "93daf8799bf23ce928ddc291a507f29187bcd8a449018f7b5dc7d7937ae2c529",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    ".github/ISSUE_TEMPLATE/bug_report.md": {
+      "filePath": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "contentHash": "8b2230c7fe485a5a0fe2c47136b52575871279938cc0ae93f84aa04a7b164eb1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    ".github/ISSUE_TEMPLATE/feature_request.md": {
+      "filePath": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "contentHash": "38cf1b752c6d13bfcde271edb3d6775b0b8180feb4b1adf697dd55bb48ace91e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    ".github/PULL_REQUEST_TEMPLATE.md": {
+      "filePath": ".github/PULL_REQUEST_TEMPLATE.md",
+      "contentHash": "c20f08b62584fda72898abae6fda360c8aa35979ac12e1b3da56d35612552c35",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    ".github/copilot-instructions.md": {
+      "filePath": ".github/copilot-instructions.md",
+      "contentHash": "b2c5f95c5f0d751f382f75500e22a1452290654368898d17980e0195d3b54a10",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    ".opencode/AGENTS.md": {
+      "filePath": ".opencode/AGENTS.md",
+      "contentHash": "b2c5f95c5f0d751f382f75500e22a1452290654368898d17980e0195d3b54a10",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    ".python-version": {
+      "filePath": ".python-version",
+      "contentHash": "a876e0b10411037a012498b9fe18d9bc1df32ed8b722a13564dc944ddcfd9135",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    ".streamlit/config.toml": {
+      "filePath": ".streamlit/config.toml",
+      "contentHash": "deabea9a0d21edba62cd9f459baaacfadd23f6d057fc612ea41abadfffcbde9e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    ".windsurf/rules/caveman.md": {
+      "filePath": ".windsurf/rules/caveman.md",
+      "contentHash": "7dd45e8adf6240e0ad9783f8b2722c582baa0fbf07c33e41e63b228511d75df3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "AGENTS.md": {
+      "filePath": "AGENTS.md",
+      "contentHash": "b2c5f95c5f0d751f382f75500e22a1452290654368898d17980e0195d3b54a10",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "ARCHITECTURE.md": {
+      "filePath": "ARCHITECTURE.md",
+      "contentHash": "5a34ea536fdfcecfb59cf8bdffcd1f96816e11220f236d7ebd45651a4b0f4a0a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 154,
+      "hasStructuralAnalysis": true
+    },
+    "CONTRIBUTING.md": {
+      "filePath": "CONTRIBUTING.md",
+      "contentHash": "cbbcd70e161fa942cda0622dad655022f6c1d617801e47766f968b93f55a4e4a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 86,
+      "hasStructuralAnalysis": true
+    },
+    "DISCLAIMER.md": {
+      "filePath": "DISCLAIMER.md",
+      "contentHash": "23bbb53e86aaac72573a813f589db18c318dd3657a0f632e1ec25f6bd700bf59",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "Project_Architecture_Blueprint.md": {
+      "filePath": "Project_Architecture_Blueprint.md",
+      "contentHash": "296f93b8c74ec106a72be70a3f9fdd5baf7573e1ed8093fce8cc2aab3741f7a6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 843,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "5493245a363c59d1306b47213f17e751c64f0d4e69c96c4b830561460c71f45c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 157,
+      "hasStructuralAnalysis": true
+    },
+    "SECURITY.md": {
+      "filePath": "SECURITY.md",
+      "contentHash": "f0cac29ef8f98d7dd2e087a503a4342c2168638e8402e7b65a48988784b1789e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "SUPPORT.md": {
+      "filePath": "SUPPORT.md",
+      "contentHash": "7b8dccdd9f0af9aa552d3ce5118a9d8f4625794ca236141fc1cd8110109798f8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "docs/archify/finance-agent.architecture.json": {
+      "filePath": "docs/archify/finance-agent.architecture.json",
+      "contentHash": "f2c9af3b05fb10e34cdc385dabc523639b6fe568cb2664f158c0287c8a161f37",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 145,
+      "hasStructuralAnalysis": true
+    },
+    "docs/archify/finance-agent.html": {
+      "filePath": "docs/archify/finance-agent.html",
+      "contentHash": "8fe129ca29c146ea97e276424759ff4c83c36d58d9c3ab5ca9f8d605b9b36392",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13156,
+      "hasStructuralAnalysis": false
+    },
+    "docs/how-to-use.md": {
+      "filePath": "docs/how-to-use.md",
+      "contentHash": "380254c341d6f4019752fd5c40297f55054ee7a643e693559cbc0c87f0c348d5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 104,
+      "hasStructuralAnalysis": true
+    },
+    "docs/technical.md": {
+      "filePath": "docs/technical.md",
+      "contentHash": "3eeacbab25a02e66dc9e21c0a033698f8e21a92b6a43b29690dedec1efbdd5ff",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 132,
+      "hasStructuralAnalysis": true
+    },
+    "pyproject.toml": {
+      "filePath": "pyproject.toml",
+      "contentHash": "fd992807780af230c7618b84c3db6312d2f5975ed1547aafc8a0d88d8ccb9f7f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "run.cmd": {
+      "filePath": "run.cmd",
+      "contentHash": "ff9a161c58a3749780cf1c0898ee1c66281d1a3afff43170b14b16f87ee7f3d7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 89,
+      "hasStructuralAnalysis": false
+    },
+    "run.sh": {
+      "filePath": "run.sh",
+      "contentHash": "85e3b2dc9a170cbb97fe68e66531c28efcb74e14b5676bf1bff76d67b968cc91",
+      "functions": [
+        {
+          "name": "fail",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 73,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/__init__.py": {
+      "filePath": "src/finance_agent/__init__.py",
+      "contentHash": "01a93ab8f86e0ae3458322161974319ecaab9551d4442aef3b408033ac5446f1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/agent.py": {
+      "filePath": "src/finance_agent/agent.py",
+      "contentHash": "1e5a97ec4de78c655d06432f8c2ace995345f8dd3df549d32ba3b12ca7693124",
+      "functions": [
+        {
+          "name": "_plan",
+          "params": [
+            "state"
+          ],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 47
+        },
+        {
+          "name": "_fetch",
+          "params": [
+            "state"
+          ],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "_brief",
+          "params": [
+            "_state"
+          ],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "_reply",
+          "params": [
+            "state"
+          ],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "build_graph",
+          "params": [],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "_history_text",
+          "params": [
+            "history"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "ask",
+          "params": [
+            "question",
+            "provider",
+            "model",
+            "history"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [
+        {
+          "name": "AgentState",
+          "methods": [],
+          "properties": [
+            "question",
+            "provider",
+            "model",
+            "history",
+            "filters",
+            "context",
+            "brief",
+            "answer"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "datetime"
+          ]
+        },
+        {
+          "source": "functools",
+          "specifiers": [
+            "lru_cache"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any",
+            "TypedDict"
+          ]
+        },
+        {
+          "source": "langgraph.graph",
+          "specifiers": [
+            "END",
+            "START",
+            "StateGraph"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "CATEGORIES"
+          ]
+        },
+        {
+          "source": "finance_agent.copilot",
+          "specifiers": [
+            "filter_travel",
+            "infer_range",
+            "wants_travel"
+          ]
+        },
+        {
+          "source": "finance_agent.db",
+          "specifiers": [
+            "search",
+            "summary"
+          ]
+        },
+        {
+          "source": "finance_agent.ingest",
+          "specifiers": [
+            "parse_json_payload"
+          ]
+        },
+        {
+          "source": "finance_agent.insights",
+          "specifiers": [
+            "snapshot"
+          ]
+        },
+        {
+          "source": "finance_agent.llm",
+          "specifiers": [
+            "complete"
+          ]
+        }
+      ],
+      "exports": [
+        "AgentState",
+        "_plan",
+        "_fetch",
+        "_brief",
+        "_reply",
+        "build_graph",
+        "_history_text",
+        "ask"
+      ],
+      "totalLines": 190,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/categorize.py": {
+      "filePath": "src/finance_agent/categorize.py",
+      "contentHash": "aeafc04300a4f1e28f7aa04a6416518e60253a2b061a67c1410dbb1767e90b26",
+      "functions": [
+        {
+          "name": "apply_rules",
+          "params": [
+            "description"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "assign_category",
+          "params": [
+            "description",
+            "user_rules",
+            "correction_map"
+          ],
+          "returnType": "tuple[str, str | None]",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "apply_learned",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "categorize_with_llm",
+          "params": [
+            "rows",
+            "complete",
+            "examples"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "categorize_hybrid",
+          "params": [
+            "rows",
+            "local_complete",
+            "api_complete"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "contextlib",
+          "specifiers": [
+            "suppress"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "CATEGORIES"
+          ]
+        },
+        {
+          "source": "finance_agent.merchants",
+          "specifiers": [
+            "merchant_key",
+            "normalize_merchant"
+          ]
+        }
+      ],
+      "exports": [
+        "apply_rules",
+        "assign_category",
+        "apply_learned",
+        "categorize_with_llm",
+        "categorize_hybrid"
+      ],
+      "totalLines": 143,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/config.py": {
+      "filePath": "src/finance_agent/config.py",
+      "contentHash": "aab695bc65331ad577034d27662bfe997dca47452a1cc4f121625cf85342c968",
+      "functions": [
+        {
+          "name": "env",
+          "params": [
+            "name"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "dotenv",
+          "specifiers": [
+            "load_dotenv"
+          ]
+        }
+      ],
+      "exports": [
+        "env"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/copilot.py": {
+      "filePath": "src/finance_agent/copilot.py",
+      "contentHash": "66f22df1aa1d1cd3b95e6d226b514f8b5b6979d6997920cfe7e976f6f2a6e5cf",
+      "functions": [
+        {
+          "name": "last_quarter",
+          "params": [
+            "today"
+          ],
+          "returnType": "tuple[str, str]",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "infer_range",
+          "params": [
+            "question",
+            "today"
+          ],
+          "returnType": "tuple[str | None, str | None]",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "wants_travel",
+          "params": [
+            "question"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "travel_dates",
+          "params": [
+            "rows"
+          ],
+          "returnType": "set[str]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "filter_travel",
+          "params": [
+            "rows",
+            "category"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "detect_recurring",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "net_worth",
+          "params": [
+            "accounts"
+          ],
+          "returnType": "dict[str, float]",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "goal_progress",
+          "params": [
+            "goal"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "alerts",
+          "params": [
+            "rows",
+            "budgets",
+            "period",
+            "goals",
+            "today"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 32
+        },
+        {
+          "name": "weekly_digest",
+          "params": [
+            "rows",
+            "budgets",
+            "period",
+            "goals",
+            "accounts",
+            "today"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "_norm_desc",
+          "params": [
+            "text"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "calendar",
+          "specifiers": [
+            "calendar"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "statistics",
+          "specifiers": [
+            "statistics"
+          ]
+        },
+        {
+          "source": "collections",
+          "specifiers": [
+            "defaultdict"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "itertools",
+          "specifiers": [
+            "pairwise"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "TRAVEL_NEEDLES"
+          ]
+        },
+        {
+          "source": "finance_agent.insights",
+          "specifiers": [
+            "MONTHS",
+            "anomalies",
+            "budget_status",
+            "month_bounds",
+            "spent_of"
+          ]
+        }
+      ],
+      "exports": [
+        "last_quarter",
+        "infer_range",
+        "wants_travel",
+        "travel_dates",
+        "filter_travel",
+        "detect_recurring",
+        "net_worth",
+        "goal_progress",
+        "alerts",
+        "weekly_digest",
+        "_norm_desc"
+      ],
+      "totalLines": 204,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/dashboard.py": {
+      "filePath": "src/finance_agent/dashboard.py",
+      "contentHash": "59d340e7f3445f255da04e7bc361a776cfd40c513569615fcc223d9e3a96f254",
+      "functions": [
+        {
+          "name": "spend_by_month_category",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "income_expense_series",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "savings_rate_series",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "top_merchants",
+          "params": [
+            "rows",
+            "limit"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "cashflow_forecast",
+          "params": [
+            "rows",
+            "recurring",
+            "today",
+            "days"
+          ],
+          "returnType": "dict[str, float]",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "cancel_suggestions",
+          "params": [
+            "recurring"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "lifestyle_inflation",
+          "params": [
+            "rows",
+            "today"
+          ],
+          "returnType": "dict[str, Any] | None",
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "collections",
+          "specifiers": [
+            "defaultdict"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "finance_agent.insights",
+          "specifiers": [
+            "monthly_series"
+          ]
+        }
+      ],
+      "exports": [
+        "spend_by_month_category",
+        "income_expense_series",
+        "savings_rate_series",
+        "top_merchants",
+        "cashflow_forecast",
+        "cancel_suggestions",
+        "lifestyle_inflation"
+      ],
+      "totalLines": 128,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/db.py": {
+      "filePath": "src/finance_agent/db.py",
+      "contentHash": "a76665e4f08e9d86aa817e8735a29fe801bee588f022ac3d5a08c40a77f48446",
+      "functions": [
+        {
+          "name": "connect",
+          "params": [],
+          "returnType": "sqlite3.Connection",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_migrate",
+          "params": [
+            "conn"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "insert_many",
+          "params": [
+            "rows"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 37
+        },
+        {
+          "name": "list_transactions",
+          "params": [
+            "limit"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "search",
+          "params": [
+            "start_date",
+            "end_date",
+            "category",
+            "text",
+            "account",
+            "limit"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "summary",
+          "params": [],
+          "returnType": "dict[str, float | int]",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "date_span",
+          "params": [],
+          "returnType": "tuple[str | None, str | None]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "upsert_budget",
+          "params": [
+            "category",
+            "period",
+            "amount"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "list_budgets",
+          "params": [
+            "period"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "get_transaction",
+          "params": [
+            "tx_id"
+          ],
+          "returnType": "dict[str, Any] | None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "update_category",
+          "params": [
+            "tx_id",
+            "category"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "record_correction",
+          "params": [
+            "merchant",
+            "category",
+            "description"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "latest_correction_map",
+          "params": [],
+          "returnType": "dict[str, str]",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "list_fewshot",
+          "params": [
+            "limit"
+          ],
+          "returnType": "list[dict[str, str]]",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "upsert_user_rule",
+          "params": [
+            "needle",
+            "category"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "list_user_rules",
+          "params": [],
+          "returnType": "list[dict[str, str]]",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "split_transaction",
+          "params": [
+            "tx_id",
+            "parts"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 47
+        },
+        {
+          "name": "update_account",
+          "params": [
+            "tx_id",
+            "account"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "upsert_account",
+          "params": [
+            "name",
+            "kind",
+            "balance"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "list_accounts",
+          "params": [],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "upsert_goal",
+          "params": [
+            "name",
+            "kind",
+            "target",
+            "current",
+            "deadline"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "list_goals",
+          "params": [],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "append_message",
+          "params": [
+            "role",
+            "content"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "list_messages",
+          "params": [
+            "limit"
+          ],
+          "returnType": "list[dict[str, str]]",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "get_setting",
+          "params": [
+            "key",
+            "default"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "set_setting",
+          "params": [
+            "key",
+            "value"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "is_local_only",
+          "params": [],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "set_local_only",
+          "params": [
+            "on"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "privacy_stats",
+          "params": [],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "clear_messages",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "add_notification",
+          "params": [
+            "kind",
+            "dedupe",
+            "title",
+            "body"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "list_notifications",
+          "params": [
+            "limit"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "unread_count",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "mark_notification_read",
+          "params": [
+            "note_id"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "mark_all_notifications_read",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "export_snapshot",
+          "params": [],
+          "returnType": "dict[str, list[dict[str, Any]]]",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "export_zip",
+          "params": [],
+          "returnType": "bytes",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "wipe_ledger",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "wipe_all",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "csv",
+          "specifiers": [
+            "csv"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "sqlite3",
+          "specifiers": [
+            "sqlite3"
+          ]
+        },
+        {
+          "source": "zipfile",
+          "specifiers": [
+            "zipfile"
+          ]
+        },
+        {
+          "source": "collections.abc",
+          "specifiers": [
+            "Iterable"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "datetime"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "ACCOUNT_KINDS",
+            "CATEGORIES",
+            "DATA_DIR",
+            "DB_PATH",
+            "GOAL_KINDS"
+          ]
+        }
+      ],
+      "exports": [
+        "connect",
+        "_migrate",
+        "insert_many",
+        "list_transactions",
+        "search",
+        "summary",
+        "date_span",
+        "upsert_budget",
+        "list_budgets",
+        "get_transaction",
+        "update_category",
+        "record_correction",
+        "latest_correction_map",
+        "list_fewshot",
+        "upsert_user_rule",
+        "list_user_rules",
+        "split_transaction",
+        "update_account",
+        "upsert_account",
+        "list_accounts",
+        "upsert_goal",
+        "list_goals",
+        "append_message",
+        "list_messages",
+        "get_setting",
+        "set_setting",
+        "is_local_only",
+        "set_local_only",
+        "privacy_stats",
+        "clear_messages",
+        "add_notification",
+        "list_notifications",
+        "unread_count",
+        "mark_notification_read",
+        "mark_all_notifications_read",
+        "export_snapshot",
+        "export_zip",
+        "wipe_ledger",
+        "wipe_all"
+      ],
+      "totalLines": 584,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/ingest.py": {
+      "filePath": "src/finance_agent/ingest.py",
+      "contentHash": "ad281306770e8f3d4e9012a515348b7363da193248e0c27e969a8408b613e969",
+      "functions": [
+        {
+          "name": "parse_file",
+          "params": [
+            "name",
+            "data",
+            "llm_extract"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "_norm",
+          "params": [
+            "col"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_pick",
+          "params": [
+            "columns",
+            "candidates"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "_parse_date",
+          "params": [
+            "value"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "_parse_amount",
+          "params": [
+            "value"
+          ],
+          "returnType": "float | None",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "_from_table",
+          "params": [
+            "frame"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "_pdf_text",
+          "params": [
+            "data"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_from_loose_text",
+          "params": [
+            "text"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "parse_json_payload",
+          "params": [
+            "text"
+          ],
+          "returnType": "Any",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "_from_llm",
+          "params": [
+            "text",
+            "name",
+            "llm_extract",
+            "image"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "pandas",
+          "specifiers": [
+            "pd"
+          ]
+        },
+        {
+          "source": "pypdf",
+          "specifiers": [
+            "PdfReader"
+          ]
+        },
+        {
+          "source": "finance_agent.categorize",
+          "specifiers": [
+            "apply_rules"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "CATEGORIES"
+          ]
+        },
+        {
+          "source": "finance_agent.merchants",
+          "specifiers": [
+            "normalize_merchant"
+          ]
+        }
+      ],
+      "exports": [
+        "parse_file",
+        "_norm",
+        "_pick",
+        "_parse_date",
+        "_parse_amount",
+        "_from_table",
+        "_pdf_text",
+        "_from_loose_text",
+        "parse_json_payload",
+        "_from_llm"
+      ],
+      "totalLines": 222,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/insights.py": {
+      "filePath": "src/finance_agent/insights.py",
+      "contentHash": "528239e8e9983f0ebc88658b90b5a4e509383e1ac21de1edca3956aea4728c55",
+      "functions": [
+        {
+          "name": "month_bounds",
+          "params": [
+            "period"
+          ],
+          "returnType": "tuple[str, str]",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "shift_month",
+          "params": [
+            "period",
+            "delta"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "week_bounds",
+          "params": [
+            "day"
+          ],
+          "returnType": "tuple[str, str, str]",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "spent_of",
+          "params": [
+            "rows"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "income_of",
+          "params": [
+            "rows"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "in_range",
+          "params": [
+            "rows",
+            "start",
+            "end"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "top_categories",
+          "params": [
+            "rows",
+            "limit"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "monthly_series",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "weekly_series",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "range_compare",
+          "params": [
+            "rows",
+            "start",
+            "end",
+            "prev_start",
+            "prev_end"
+          ],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "month_compare",
+          "params": [
+            "rows",
+            "period"
+          ],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "anomalies",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "budget_status",
+          "params": [
+            "rows",
+            "budgets",
+            "period"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "snapshot",
+          "params": [],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "_fence",
+          "params": [
+            "values"
+          ],
+          "returnType": "tuple[float, float]",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "calendar",
+          "specifiers": [
+            "calendar"
+          ]
+        },
+        {
+          "source": "statistics",
+          "specifiers": [
+            "statistics"
+          ]
+        },
+        {
+          "source": "collections",
+          "specifiers": [
+            "defaultdict"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "date",
+            "datetime",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        }
+      ],
+      "exports": [
+        "month_bounds",
+        "shift_month",
+        "week_bounds",
+        "spent_of",
+        "income_of",
+        "in_range",
+        "top_categories",
+        "monthly_series",
+        "weekly_series",
+        "range_compare",
+        "month_compare",
+        "anomalies",
+        "budget_status",
+        "snapshot",
+        "_fence"
+      ],
+      "totalLines": 207,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/llm.py": {
+      "filePath": "src/finance_agent/llm.py",
+      "contentHash": "e971f0d450d4cf63642fa9f0ff0cee4c479f0682e4e308a79d72b2fc7a1c5149",
+      "functions": [
+        {
+          "name": "list_ollama_models",
+          "params": [],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "models_for",
+          "params": [
+            "provider"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "missing_key",
+          "params": [
+            "provider"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "_image_mime",
+          "params": [
+            "data"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "complete",
+          "params": [
+            "provider",
+            "model",
+            "prompt",
+            "system",
+            "image"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "_openai_compat",
+          "params": [
+            "provider",
+            "model",
+            "messages"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "_google",
+          "params": [
+            "model",
+            "messages"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "httpx",
+          "specifiers": [
+            "httpx"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "OpenAI"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "AGNES_BASE_URL",
+            "AGNES_MODEL",
+            "GOOGLE_MODELS",
+            "OLLAMA_HOST",
+            "OPENAI_EFFORT",
+            "OPENAI_MODELS",
+            "env"
+          ]
+        }
+      ],
+      "exports": [
+        "list_ollama_models",
+        "models_for",
+        "missing_key",
+        "_image_mime",
+        "complete",
+        "_openai_compat",
+        "_google"
+      ],
+      "totalLines": 155,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/merchants.py": {
+      "filePath": "src/finance_agent/merchants.py",
+      "contentHash": "093993f78199b09d049bd6330ac63e30be58ab9ca2352c695af344361a33dfb8",
+      "functions": [
+        {
+          "name": "normalize_merchant",
+          "params": [
+            "description"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "merchant_key",
+          "params": [
+            "description"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "normalize_merchant",
+        "merchant_key"
+      ],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/notify.py": {
+      "filePath": "src/finance_agent/notify.py",
+      "contentHash": "61980ab9f40339dd38d62f50d9868cf600478be5716e48ed4346f5ecc4408368",
+      "functions": [
+        {
+          "name": "week_monday",
+          "params": [
+            "day"
+          ],
+          "returnType": "date",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "next_bill_date",
+          "params": [
+            "last",
+            "cadence"
+          ],
+          "returnType": "date",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "bill_reminders",
+          "params": [
+            "recurring",
+            "today"
+          ],
+          "returnType": "list[dict[str, Any]]",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "week_delta",
+          "params": [
+            "rows",
+            "today"
+          ],
+          "returnType": "dict[str, Any]",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "refresh_inbox",
+          "params": [
+            "today"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 53
+        },
+        {
+          "name": "_goal_notes",
+          "params": [
+            "goals"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "finance_agent.copilot",
+          "specifiers": [
+            "GOAL_BEHIND",
+            "detect_recurring",
+            "goal_progress",
+            "weekly_digest"
+          ]
+        },
+        {
+          "source": "finance_agent.insights",
+          "specifiers": [
+            "anomalies",
+            "spent_of",
+            "week_bounds"
+          ]
+        }
+      ],
+      "exports": [
+        "week_monday",
+        "next_bill_date",
+        "bill_reminders",
+        "week_delta",
+        "refresh_inbox",
+        "_goal_notes"
+      ],
+      "totalLines": 125,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/reports.py": {
+      "filePath": "src/finance_agent/reports.py",
+      "contentHash": "c44b1367c362118c38be0d4fdfb95b3ebc1e85bd5927022e899719c14cfcaed9",
+      "functions": [
+        {
+          "name": "month_markdown",
+          "params": [
+            "period",
+            "rows",
+            "budgets"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "week_markdown",
+          "params": [
+            "day",
+            "rows"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "tax_year_markdown",
+          "params": [
+            "year",
+            "rows"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 35
+        },
+        {
+          "name": "report_pdf",
+          "params": [
+            "markdown"
+          ],
+          "returnType": "bytes",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "_markdown",
+          "params": [
+            "title",
+            "start",
+            "end",
+            "compare",
+            "prev_label",
+            "rows",
+            "budgets"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 47
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "fpdf",
+          "specifiers": [
+            "FPDF"
+          ]
+        },
+        {
+          "source": "finance_agent.insights",
+          "specifiers": [
+            "anomalies",
+            "budget_status",
+            "in_range",
+            "month_bounds",
+            "month_compare",
+            "range_compare",
+            "top_categories",
+            "week_bounds"
+          ]
+        }
+      ],
+      "exports": [
+        "month_markdown",
+        "week_markdown",
+        "tax_year_markdown",
+        "report_pdf",
+        "_markdown"
+      ],
+      "totalLines": 176,
+      "hasStructuralAnalysis": true
+    },
+    "src/finance_agent/vault.py": {
+      "filePath": "src/finance_agent/vault.py",
+      "contentHash": "163dd2feb8f574b3f0aea697551bd2778d56531bc8b0591aecfa972202ae3a38",
+      "functions": [
+        {
+          "name": "is_locked",
+          "params": [],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "encrypt_bytes",
+          "params": [
+            "raw",
+            "passphrase"
+          ],
+          "returnType": "bytes",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "decrypt_bytes",
+          "params": [
+            "blob",
+            "passphrase"
+          ],
+          "returnType": "bytes",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "lock_db",
+          "params": [
+            "passphrase"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "unlock_db",
+          "params": [
+            "passphrase"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_fernet_key",
+          "params": [
+            "passphrase",
+            "salt"
+          ],
+          "returnType": "bytes",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "cryptography.fernet",
+          "specifiers": [
+            "Fernet",
+            "InvalidToken"
+          ]
+        },
+        {
+          "source": "cryptography.hazmat.primitives",
+          "specifiers": [
+            "hashes"
+          ]
+        },
+        {
+          "source": "cryptography.hazmat.primitives.kdf.pbkdf2",
+          "specifiers": [
+            "PBKDF2HMAC"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "DATA_DIR",
+            "DB_PATH"
+          ]
+        }
+      ],
+      "exports": [
+        "is_locked",
+        "encrypt_bytes",
+        "decrypt_bytes",
+        "lock_db",
+        "unlock_db",
+        "_fernet_key"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "streamlit_app.py": {
+      "filePath": "streamlit_app.py",
+      "contentHash": "e306932c5baa976ce96c540430f22a46890b72904a7ab2f508353c54039d422c",
+      "functions": [
+        {
+          "name": "_today",
+          "params": [],
+          "returnType": "date",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_call",
+          "params": [
+            "provider_name",
+            "model_name",
+            "prompt"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_hybrid_completes",
+          "params": [
+            "provider",
+            "model",
+            "key_missing"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "_remember",
+          "params": [
+            "role",
+            "content"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "contextlib",
+          "specifiers": [
+            "suppress"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "date",
+            "datetime"
+          ]
+        },
+        {
+          "source": "altair",
+          "specifiers": [
+            "alt"
+          ]
+        },
+        {
+          "source": "streamlit",
+          "specifiers": [
+            "st"
+          ]
+        },
+        {
+          "source": "finance_agent.agent",
+          "specifiers": [
+            "ask"
+          ]
+        },
+        {
+          "source": "finance_agent.categorize",
+          "specifiers": [
+            "apply_learned",
+            "categorize_hybrid"
+          ]
+        },
+        {
+          "source": "finance_agent.config",
+          "specifiers": [
+            "ACCOUNT_KINDS",
+            "CATEGORIES",
+            "GOAL_KINDS",
+            "PROVIDERS"
+          ]
+        },
+        {
+          "source": "finance_agent.copilot",
+          "specifiers": [
+            "alerts",
+            "detect_recurring",
+            "goal_progress",
+            "net_worth",
+            "weekly_digest"
+          ]
+        },
+        {
+          "source": "finance_agent.dashboard",
+          "specifiers": [
+            "cancel_suggestions",
+            "cashflow_forecast",
+            "income_expense_series",
+            "lifestyle_inflation",
+            "savings_rate_series",
+            "spend_by_month_category",
+            "top_merchants"
+          ]
+        },
+        {
+          "source": "finance_agent.db",
+          "specifiers": [
+            "append_message",
+            "clear_messages",
+            "date_span",
+            "export_zip",
+            "insert_many",
+            "is_local_only",
+            "list_accounts",
+            "list_budgets",
+            "list_goals",
+            "list_messages",
+            "list_notifications",
+            "list_transactions",
+            "list_user_rules",
+            "mark_all_notifications_read",
+            "mark_notification_read",
+            "privacy_stats",
+            "search",
+            "set_local_only",
+            "split_transaction",
+            "summary",
+            "unread_count",
+            "update_account",
+            "update_category",
+            "upsert_account",
+            "upsert_budget",
+            "upsert_goal",
+            "upsert_user_rule",
+            "wipe_all",
+            "wipe_ledger"
+          ]
+        },
+        {
+          "source": "finance_agent.ingest",
+          "specifiers": [
+            "parse_file"
+          ]
+        },
+        {
+          "source": "finance_agent.insights",
+          "specifiers": [
+            "anomalies",
+            "budget_status",
+            "month_bounds",
+            "month_compare",
+            "monthly_series",
+            "top_categories",
+            "week_bounds",
+            "weekly_series"
+          ]
+        },
+        {
+          "source": "finance_agent.llm",
+          "specifiers": [
+            "complete",
+            "list_ollama_models",
+            "missing_key",
+            "models_for"
+          ]
+        },
+        {
+          "source": "finance_agent.notify",
+          "specifiers": [
+            "refresh_inbox"
+          ]
+        },
+        {
+          "source": "finance_agent.reports",
+          "specifiers": [
+            "month_markdown",
+            "report_pdf",
+            "tax_year_markdown",
+            "week_markdown"
+          ]
+        },
+        {
+          "source": "finance_agent.vault",
+          "specifiers": [
+            "is_locked",
+            "lock_db",
+            "unlock_db"
+          ]
+        }
+      ],
+      "exports": [
+        "_today",
+        "_call",
+        "_hybrid_completes",
+        "_remember"
+      ],
+      "totalLines": 762,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_phase1.py": {
+      "filePath": "tests/test_phase1.py",
+      "contentHash": "49abf3a0035481425d93c4eee1e783adec0737b43596d1a5fa8ed27c455010f1",
+      "functions": [
+        {
+          "name": "test_rule_categories",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_csv_debit_credit",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_json_fence",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_provider_models",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_image_mime",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_insert_dedup_and_update",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "finance_agent.categorize",
+          "specifiers": [
+            "apply_rules"
+          ]
+        },
+        {
+          "source": "finance_agent.ingest",
+          "specifiers": [
+            "parse_file",
+            "parse_json_payload"
+          ]
+        },
+        {
+          "source": "finance_agent.llm",
+          "specifiers": [
+            "_image_mime",
+            "models_for"
+          ]
+        }
+      ],
+      "exports": [
+        "test_rule_categories",
+        "test_csv_debit_credit",
+        "test_json_fence",
+        "test_provider_models",
+        "test_image_mime",
+        "test_insert_dedup_and_update"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_phase2.py": {
+      "filePath": "tests/test_phase2.py",
+      "contentHash": "a4f49ec4aa5626ca2bc14496db35ef55a6abb9a55cdfb44a374ece20426e810b",
+      "functions": [
+        {
+          "name": "test_hybrid_local_then_api",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "test_hybrid_api_after_local_fail",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_top_and_month_compare",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "test_anomalies_flag_outlier",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_budget_and_report",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "test_week_bounds_monday",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "finance_agent.categorize",
+          "specifiers": [
+            "categorize_hybrid"
+          ]
+        },
+        {
+          "source": "finance_agent.insights",
+          "specifiers": [
+            "anomalies",
+            "month_compare",
+            "top_categories"
+          ]
+        },
+        {
+          "source": "finance_agent.reports",
+          "specifiers": [
+            "month_markdown",
+            "report_pdf"
+          ]
+        }
+      ],
+      "exports": [
+        "test_hybrid_local_then_api",
+        "test_hybrid_api_after_local_fail",
+        "test_top_and_month_compare",
+        "test_anomalies_flag_outlier",
+        "test_budget_and_report",
+        "test_week_bounds_monday"
+      ],
+      "totalLines": 116,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_phase3.py": {
+      "filePath": "tests/test_phase3.py",
+      "contentHash": "7754cfa3c79638d52a688ab515951cc94f7bedaf7444e86fab91e12b5ad07c71",
+      "functions": [
+        {
+          "name": "test_last_quarter_and_infer",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_travel_food_filter",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_recurring_monthly",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_net_worth",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_history_text_keeps_tail",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_local_only_blocks_cloud",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_memory_and_wipe",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_budget_alert",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "finance_agent.agent",
+          "specifiers": [
+            "_history_text"
+          ]
+        },
+        {
+          "source": "finance_agent.copilot",
+          "specifiers": [
+            "alerts",
+            "detect_recurring",
+            "filter_travel",
+            "infer_range",
+            "last_quarter",
+            "net_worth",
+            "wants_travel"
+          ]
+        }
+      ],
+      "exports": [
+        "test_last_quarter_and_infer",
+        "test_travel_food_filter",
+        "test_recurring_monthly",
+        "test_net_worth",
+        "test_history_text_keeps_tail",
+        "test_local_only_blocks_cloud",
+        "test_memory_and_wipe",
+        "test_budget_alert"
+      ],
+      "totalLines": 103,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_phase4.py": {
+      "filePath": "tests/test_phase4.py",
+      "contentHash": "3a8f6e4360195ef28a4a776a9479547abf35df6c2e2d6fa627f46608938eab47",
+      "functions": [
+        {
+          "name": "test_merchant_aliases",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_user_rule_beats_builtin",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_correction_beats_builtin",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_learn_and_split",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 39
+        },
+        {
+          "name": "test_merchant_key_fallback",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "finance_agent.categorize",
+          "specifiers": [
+            "apply_rules",
+            "assign_category"
+          ]
+        },
+        {
+          "source": "finance_agent.merchants",
+          "specifiers": [
+            "merchant_key",
+            "normalize_merchant"
+          ]
+        }
+      ],
+      "exports": [
+        "test_merchant_aliases",
+        "test_user_rule_beats_builtin",
+        "test_correction_beats_builtin",
+        "test_learn_and_split",
+        "test_merchant_key_fallback"
+      ],
+      "totalLines": 79,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_phase5.py": {
+      "filePath": "tests/test_phase5.py",
+      "contentHash": "55c4a50724dd4e9d997a93c6004fcd1705625ad12c73600b78ddcad727aa587f",
+      "functions": [
+        {
+          "name": "_rows",
+          "params": [],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "test_chart_series",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_forecast_and_cancel",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_lifestyle_inflation_flags_rise",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date"
+          ]
+        },
+        {
+          "source": "finance_agent.dashboard",
+          "specifiers": [
+            "cancel_suggestions",
+            "cashflow_forecast",
+            "income_expense_series",
+            "lifestyle_inflation",
+            "savings_rate_series",
+            "spend_by_month_category",
+            "top_merchants"
+          ]
+        }
+      ],
+      "exports": [
+        "_rows",
+        "test_chart_series",
+        "test_forecast_and_cancel",
+        "test_lifestyle_inflation_flags_rise"
+      ],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_phase6.py": {
+      "filePath": "tests/test_phase6.py",
+      "contentHash": "b0cf37e08560c78ef654f001d5d651b28cf0561413701c876287bf4a34c88c1d",
+      "functions": [
+        {
+          "name": "test_week_monday_and_bills",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_week_delta",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_refresh_inbox_dedupes",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "date"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "finance_agent.notify",
+          "specifiers": [
+            "bill_reminders",
+            "refresh_inbox",
+            "week_delta",
+            "week_monday"
+          ]
+        }
+      ],
+      "exports": [
+        "test_week_monday_and_bills",
+        "test_week_delta",
+        "test_refresh_inbox_dedupes"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_phase8.py": {
+      "filePath": "tests/test_phase8.py",
+      "contentHash": "f53aaa45001ea0b6489f5e6772bd2f6b14ba46966ef17b4ab774264eac3b84e0",
+      "functions": [
+        {
+          "name": "test_encrypt_roundtrip",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_lock_unlock",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_tax_report_lists_year",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "test_export_zip",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "finance_agent.reports",
+          "specifiers": [
+            "tax_year_markdown"
+          ]
+        },
+        {
+          "source": "finance_agent.vault",
+          "specifiers": [
+            "decrypt_bytes",
+            "encrypt_bytes",
+            "lock_db",
+            "unlock_db"
+          ]
+        }
+      ],
+      "exports": [
+        "test_encrypt_roundtrip",
+        "test_lock_unlock",
+        "test_tax_report_lists_year",
+        "test_export_zip"
+      ],
+      "totalLines": 85,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

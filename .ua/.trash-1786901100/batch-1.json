@@ -1,0 +1,1402 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/finance_agent/agent.py",
+      "type": "file",
+      "name": "agent.py",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "LangGraph Q&A: plan filters, fetch rows, brief snapshot, reply.",
+      "tags": [
+        "service",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/agent.py:_plan",
+      "type": "function",
+      "name": "_plan",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "_plan() in src/finance_agent/agent.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/finance_agent/agent.py:_fetch",
+      "type": "function",
+      "name": "_fetch",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "_fetch() in src/finance_agent/agent.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/agent.py:_brief",
+      "type": "function",
+      "name": "_brief",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "_brief() in src/finance_agent/agent.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/agent.py:_reply",
+      "type": "function",
+      "name": "_reply",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "_reply() in src/finance_agent/agent.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/agent.py:build_graph",
+      "type": "function",
+      "name": "build_graph",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "build_graph() in src/finance_agent/agent.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/agent.py:_history_text",
+      "type": "function",
+      "name": "_history_text",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "_history_text() in src/finance_agent/agent.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/agent.py:ask",
+      "type": "function",
+      "name": "ask",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "ask() in src/finance_agent/agent.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/finance_agent/agent.py:AgentState",
+      "type": "class",
+      "name": "AgentState",
+      "filePath": "src/finance_agent/agent.py",
+      "summary": "AgentState in src/finance_agent/agent.py",
+      "tags": [
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/finance_agent/config.py",
+      "type": "file",
+      "name": "config.py",
+      "filePath": "src/finance_agent/config.py",
+      "summary": "Paths, provider model IDs, CATEGORIES, env() from process then HKCU.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/config.py:env",
+      "type": "function",
+      "name": "env",
+      "filePath": "src/finance_agent/config.py",
+      "summary": "env() in src/finance_agent/config.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/finance_agent/db.py",
+      "type": "file",
+      "name": "db.py",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite connect, schema, migrate, CRUD, export zip, wipe, notifications.",
+      "tags": [
+        "data-model",
+        "service",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:connect",
+      "type": "function",
+      "name": "connect",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "connect() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:_migrate",
+      "type": "function",
+      "name": "_migrate",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "_migrate() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:insert_many",
+      "type": "function",
+      "name": "insert_many",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "insert_many() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_transactions",
+      "type": "function",
+      "name": "list_transactions",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_transactions() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:search",
+      "type": "function",
+      "name": "search",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "search() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:summary",
+      "type": "function",
+      "name": "summary",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "summary() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:date_span",
+      "type": "function",
+      "name": "date_span",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "date_span() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:upsert_budget",
+      "type": "function",
+      "name": "upsert_budget",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "upsert_budget() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_budgets",
+      "type": "function",
+      "name": "list_budgets",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_budgets() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:get_transaction",
+      "type": "function",
+      "name": "get_transaction",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "get_transaction() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:update_category",
+      "type": "function",
+      "name": "update_category",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "update_category() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:record_correction",
+      "type": "function",
+      "name": "record_correction",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "record_correction() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:latest_correction_map",
+      "type": "function",
+      "name": "latest_correction_map",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "latest_correction_map() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_fewshot",
+      "type": "function",
+      "name": "list_fewshot",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_fewshot() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:upsert_user_rule",
+      "type": "function",
+      "name": "upsert_user_rule",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "upsert_user_rule() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_user_rules",
+      "type": "function",
+      "name": "list_user_rules",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_user_rules() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:split_transaction",
+      "type": "function",
+      "name": "split_transaction",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "split_transaction() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:update_account",
+      "type": "function",
+      "name": "update_account",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "update_account() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:upsert_account",
+      "type": "function",
+      "name": "upsert_account",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "upsert_account() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_accounts",
+      "type": "function",
+      "name": "list_accounts",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_accounts() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:upsert_goal",
+      "type": "function",
+      "name": "upsert_goal",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "upsert_goal() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_goals",
+      "type": "function",
+      "name": "list_goals",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_goals() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:append_message",
+      "type": "function",
+      "name": "append_message",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "append_message() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_messages",
+      "type": "function",
+      "name": "list_messages",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_messages() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:get_setting",
+      "type": "function",
+      "name": "get_setting",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "get_setting() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:set_setting",
+      "type": "function",
+      "name": "set_setting",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "set_setting() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:is_local_only",
+      "type": "function",
+      "name": "is_local_only",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "is_local_only() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:set_local_only",
+      "type": "function",
+      "name": "set_local_only",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "set_local_only() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:privacy_stats",
+      "type": "function",
+      "name": "privacy_stats",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "privacy_stats() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:clear_messages",
+      "type": "function",
+      "name": "clear_messages",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "clear_messages() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:add_notification",
+      "type": "function",
+      "name": "add_notification",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "add_notification() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:list_notifications",
+      "type": "function",
+      "name": "list_notifications",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "list_notifications() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:unread_count",
+      "type": "function",
+      "name": "unread_count",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "unread_count() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:mark_notification_read",
+      "type": "function",
+      "name": "mark_notification_read",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "mark_notification_read() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:mark_all_notifications_read",
+      "type": "function",
+      "name": "mark_all_notifications_read",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "mark_all_notifications_read() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:export_snapshot",
+      "type": "function",
+      "name": "export_snapshot",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "export_snapshot() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:export_zip",
+      "type": "function",
+      "name": "export_zip",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "export_zip() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:wipe_ledger",
+      "type": "function",
+      "name": "wipe_ledger",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "wipe_ledger() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/db.py:wipe_all",
+      "type": "function",
+      "name": "wipe_all",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "wipe_all() in src/finance_agent/db.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:transactions",
+      "type": "table",
+      "name": "transactions",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table transactions in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:budgets",
+      "type": "table",
+      "name": "budgets",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table budgets in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:accounts",
+      "type": "table",
+      "name": "accounts",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table accounts in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:goals",
+      "type": "table",
+      "name": "goals",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table goals in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:messages",
+      "type": "table",
+      "name": "messages",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table messages in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:settings",
+      "type": "table",
+      "name": "settings",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table settings in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:user_rules",
+      "type": "table",
+      "name": "user_rules",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table user_rules in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:corrections",
+      "type": "table",
+      "name": "corrections",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table corrections in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:src/finance_agent/db.py:notifications",
+      "type": "table",
+      "name": "notifications",
+      "filePath": "src/finance_agent/db.py",
+      "summary": "SQLite table notifications in finance.db",
+      "tags": [
+        "database",
+        "data-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/finance_agent/llm.py",
+      "type": "file",
+      "name": "llm.py",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "complete() facade for Ollama, OpenAI, Agnes, Google; Local-only gate.",
+      "tags": [
+        "service",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/llm.py:list_ollama_models",
+      "type": "function",
+      "name": "list_ollama_models",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "list_ollama_models() in src/finance_agent/llm.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/llm.py:models_for",
+      "type": "function",
+      "name": "models_for",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "models_for() in src/finance_agent/llm.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/llm.py:missing_key",
+      "type": "function",
+      "name": "missing_key",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "missing_key() in src/finance_agent/llm.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/llm.py:_image_mime",
+      "type": "function",
+      "name": "_image_mime",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "_image_mime() in src/finance_agent/llm.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/llm.py:complete",
+      "type": "function",
+      "name": "complete",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "complete() in src/finance_agent/llm.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/llm.py:_openai_compat",
+      "type": "function",
+      "name": "_openai_compat",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "_openai_compat() in src/finance_agent/llm.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/llm.py:_google",
+      "type": "function",
+      "name": "_google",
+      "filePath": "src/finance_agent/llm.py",
+      "summary": "_google() in src/finance_agent/llm.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/finance_agent/vault.py",
+      "type": "file",
+      "name": "vault.py",
+      "filePath": "src/finance_agent/vault.py",
+      "summary": "PFENC1 + Fernet lock/unlock of finance.db. Passphrase not stored.",
+      "tags": [
+        "security",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/vault.py:is_locked",
+      "type": "function",
+      "name": "is_locked",
+      "filePath": "src/finance_agent/vault.py",
+      "summary": "is_locked() in src/finance_agent/vault.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/vault.py:encrypt_bytes",
+      "type": "function",
+      "name": "encrypt_bytes",
+      "filePath": "src/finance_agent/vault.py",
+      "summary": "encrypt_bytes() in src/finance_agent/vault.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/vault.py:decrypt_bytes",
+      "type": "function",
+      "name": "decrypt_bytes",
+      "filePath": "src/finance_agent/vault.py",
+      "summary": "decrypt_bytes() in src/finance_agent/vault.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/vault.py:lock_db",
+      "type": "function",
+      "name": "lock_db",
+      "filePath": "src/finance_agent/vault.py",
+      "summary": "lock_db() in src/finance_agent/vault.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/vault.py:unlock_db",
+      "type": "function",
+      "name": "unlock_db",
+      "filePath": "src/finance_agent/vault.py",
+      "summary": "unlock_db() in src/finance_agent/vault.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/vault.py:_fernet_key",
+      "type": "function",
+      "name": "_fernet_key",
+      "filePath": "src/finance_agent/vault.py",
+      "summary": "_fernet_key() in src/finance_agent/vault.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "function:src/finance_agent/agent.py:_plan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "function:src/finance_agent/agent.py:_fetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "function:src/finance_agent/agent.py:_brief",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "function:src/finance_agent/agent.py:_reply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "function:src/finance_agent/agent.py:build_graph",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "function:src/finance_agent/agent.py:_history_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "function:src/finance_agent/agent.py:ask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "class:src/finance_agent/agent.py:AgentState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "file:src/finance_agent/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "file:src/finance_agent/copilot.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "file:src/finance_agent/db.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "file:src/finance_agent/ingest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "file:src/finance_agent/insights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/agent.py",
+      "target": "file:src/finance_agent/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/config.py",
+      "target": "function:src/finance_agent/config.py:env",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:connect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:_migrate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:insert_many",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_transactions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:search",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:date_span",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:upsert_budget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_budgets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:get_transaction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:update_category",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:record_correction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:latest_correction_map",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_fewshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:upsert_user_rule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_user_rules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:split_transaction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:update_account",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:upsert_account",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_accounts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:upsert_goal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_goals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:append_message",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_messages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:get_setting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:set_setting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:is_local_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:set_local_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:privacy_stats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:clear_messages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:add_notification",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:list_notifications",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:unread_count",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:mark_notification_read",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:mark_all_notifications_read",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:export_snapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:export_zip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:wipe_ledger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "function:src/finance_agent/db.py:wipe_all",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "file:src/finance_agent/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:transactions",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:budgets",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:accounts",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:goals",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:messages",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:settings",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:user_rules",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:corrections",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/db.py",
+      "target": "table:src/finance_agent/db.py:notifications",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "function:src/finance_agent/llm.py:list_ollama_models",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "function:src/finance_agent/llm.py:models_for",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "function:src/finance_agent/llm.py:missing_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "function:src/finance_agent/llm.py:_image_mime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "function:src/finance_agent/llm.py:complete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "function:src/finance_agent/llm.py:_openai_compat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "function:src/finance_agent/llm.py:_google",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/llm.py",
+      "target": "file:src/finance_agent/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/vault.py",
+      "target": "function:src/finance_agent/vault.py:is_locked",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/vault.py",
+      "target": "function:src/finance_agent/vault.py:encrypt_bytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/vault.py",
+      "target": "function:src/finance_agent/vault.py:decrypt_bytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/vault.py",
+      "target": "function:src/finance_agent/vault.py:lock_db",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/vault.py",
+      "target": "function:src/finance_agent/vault.py:unlock_db",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/vault.py",
+      "target": "function:src/finance_agent/vault.py:_fernet_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/vault.py",
+      "target": "file:src/finance_agent/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

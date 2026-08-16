@@ -1,0 +1,2986 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/finance_agent/agent.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 189,
+      "nonEmptyLines": 166,
+      "functions": [
+        {
+          "name": "_plan",
+          "startLine": 52,
+          "endLine": 98,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "_fetch",
+          "startLine": 101,
+          "endLine": 121,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "_brief",
+          "startLine": 124,
+          "endLine": 131,
+          "params": [
+            "_state"
+          ]
+        },
+        {
+          "name": "_reply",
+          "startLine": 134,
+          "endLine": 146,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "build_graph",
+          "startLine": 150,
+          "endLine": 161,
+          "params": []
+        },
+        {
+          "name": "_history_text",
+          "startLine": 164,
+          "endLine": 168,
+          "params": [
+            "history"
+          ]
+        },
+        {
+          "name": "ask",
+          "startLine": 171,
+          "endLine": 189,
+          "params": [
+            "question",
+            "provider",
+            "model",
+            "history"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AgentState",
+          "startLine": 41,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "question",
+            "provider",
+            "model",
+            "history",
+            "filters",
+            "context",
+            "brief",
+            "answer"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AgentState",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "_plan",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "_fetch",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "_brief",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "_reply",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "build_graph",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "_history_text",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "ask",
+          "line": 171,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_plan",
+          "callee": "datetime.now(UTC).date",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_plan",
+          "callee": "datetime.now",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_plan",
+          "callee": "complete",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_plan",
+          "callee": "PLAN_PROMPT.format",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_plan",
+          "callee": "\", \".join",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_plan",
+          "callee": "today.isoformat",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_plan",
+          "callee": "state.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_plan",
+          "callee": "parse_json_payload",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_plan",
+          "callee": "isinstance",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_plan",
+          "callee": "data.get",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_plan",
+          "callee": "data.get",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_plan",
+          "callee": "data.get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_plan",
+          "callee": "infer_range",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_plan",
+          "callee": "data.get",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_plan",
+          "callee": "isinstance",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_plan",
+          "callee": "wants_travel",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_plan",
+          "callee": "int",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_plan",
+          "callee": "data.get",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_plan",
+          "callee": "data.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_plan",
+          "callee": "str",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_plan",
+          "callee": "data.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_fetch",
+          "callee": "bool",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_fetch",
+          "callee": "search",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filter_travel",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_fetch",
+          "callee": "filters.get",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_fetch",
+          "callee": "r.get",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_fetch",
+          "callee": "r.get",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_fetch",
+          "callee": "\"\\n\".join",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_brief",
+          "callee": "list_fewshot",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_brief",
+          "callee": "\"; \".join",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_brief",
+          "callee": "snapshot",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_reply",
+          "callee": "complete",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_reply",
+          "callee": "ANSWER_PROMPT.format",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_reply",
+          "callee": "summary",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_reply",
+          "callee": "state.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_reply",
+          "callee": "state.get",
+          "lineNumber": 143
+        },
+        {
+          "caller": "build_graph",
+          "callee": "StateGraph",
+          "lineNumber": 151
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_node",
+          "lineNumber": 152
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_node",
+          "lineNumber": 153
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_node",
+          "lineNumber": 154
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_node",
+          "lineNumber": 155
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 156
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 157
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 158
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 159
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 160
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.compile",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_history_text",
+          "callee": "item.get",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_history_text",
+          "callee": "item.get",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_history_text",
+          "callee": "\"\\n\".join",
+          "lineNumber": 168
+        },
+        {
+          "caller": "ask",
+          "callee": "build_graph().invoke",
+          "lineNumber": 177
+        },
+        {
+          "caller": "ask",
+          "callee": "build_graph",
+          "lineNumber": 177
+        },
+        {
+          "caller": "ask",
+          "callee": "_history_text",
+          "lineNumber": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/finance_agent/config.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "env",
+          "startLine": 65,
+          "endLine": 77,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "env",
+          "line": 65,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "env",
+          "callee": "os.getenv(name, \"\").strip",
+          "lineNumber": 66
+        },
+        {
+          "caller": "env",
+          "callee": "os.getenv",
+          "lineNumber": 66
+        },
+        {
+          "caller": "env",
+          "callee": "winreg.OpenKey",
+          "lineNumber": 74
+        },
+        {
+          "caller": "env",
+          "callee": "str(winreg.QueryValueEx(key, name)[0]).strip",
+          "lineNumber": 75
+        },
+        {
+          "caller": "env",
+          "callee": "str",
+          "lineNumber": 75
+        },
+        {
+          "caller": "env",
+          "callee": "winreg.QueryValueEx",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/finance_agent/db.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 583,
+      "nonEmptyLines": 499,
+      "functions": [
+        {
+          "name": "connect",
+          "startLine": 94,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "_migrate",
+          "startLine": 103,
+          "endLine": 108,
+          "params": [
+            "conn"
+          ]
+        },
+        {
+          "name": "insert_many",
+          "startLine": 111,
+          "endLine": 147,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "list_transactions",
+          "startLine": 150,
+          "endLine": 162,
+          "params": [
+            "limit"
+          ]
+        },
+        {
+          "name": "search",
+          "startLine": 165,
+          "endLine": 198,
+          "params": [
+            "start_date",
+            "end_date",
+            "category",
+            "text",
+            "account",
+            "limit"
+          ]
+        },
+        {
+          "name": "summary",
+          "startLine": 201,
+          "endLine": 212,
+          "params": []
+        },
+        {
+          "name": "date_span",
+          "startLine": 215,
+          "endLine": 220,
+          "params": []
+        },
+        {
+          "name": "upsert_budget",
+          "startLine": 223,
+          "endLine": 237,
+          "params": [
+            "category",
+            "period",
+            "amount"
+          ]
+        },
+        {
+          "name": "list_budgets",
+          "startLine": 240,
+          "endLine": 246,
+          "params": [
+            "period"
+          ]
+        },
+        {
+          "name": "get_transaction",
+          "startLine": 249,
+          "endLine": 252,
+          "params": [
+            "tx_id"
+          ]
+        },
+        {
+          "name": "update_category",
+          "startLine": 255,
+          "endLine": 265,
+          "params": [
+            "tx_id",
+            "category"
+          ]
+        },
+        {
+          "name": "record_correction",
+          "startLine": 268,
+          "endLine": 283,
+          "params": [
+            "merchant",
+            "category",
+            "description"
+          ]
+        },
+        {
+          "name": "latest_correction_map",
+          "startLine": 286,
+          "endLine": 292,
+          "params": []
+        },
+        {
+          "name": "list_fewshot",
+          "startLine": 295,
+          "endLine": 298,
+          "params": [
+            "limit"
+          ]
+        },
+        {
+          "name": "upsert_user_rule",
+          "startLine": 301,
+          "endLine": 316,
+          "params": [
+            "needle",
+            "category"
+          ]
+        },
+        {
+          "name": "list_user_rules",
+          "startLine": 319,
+          "endLine": 322,
+          "params": []
+        },
+        {
+          "name": "split_transaction",
+          "startLine": 325,
+          "endLine": 371,
+          "params": [
+            "tx_id",
+            "parts"
+          ]
+        },
+        {
+          "name": "update_account",
+          "startLine": 374,
+          "endLine": 376,
+          "params": [
+            "tx_id",
+            "account"
+          ]
+        },
+        {
+          "name": "upsert_account",
+          "startLine": 379,
+          "endLine": 394,
+          "params": [
+            "name",
+            "kind",
+            "balance"
+          ]
+        },
+        {
+          "name": "list_accounts",
+          "startLine": 397,
+          "endLine": 400,
+          "params": []
+        },
+        {
+          "name": "upsert_goal",
+          "startLine": 403,
+          "endLine": 417,
+          "params": [
+            "name",
+            "kind",
+            "target",
+            "current",
+            "deadline"
+          ]
+        },
+        {
+          "name": "list_goals",
+          "startLine": 420,
+          "endLine": 425,
+          "params": []
+        },
+        {
+          "name": "append_message",
+          "startLine": 428,
+          "endLine": 434,
+          "params": [
+            "role",
+            "content"
+          ]
+        },
+        {
+          "name": "list_messages",
+          "startLine": 437,
+          "endLine": 443,
+          "params": [
+            "limit"
+          ]
+        },
+        {
+          "name": "get_setting",
+          "startLine": 446,
+          "endLine": 449,
+          "params": [
+            "key",
+            "default"
+          ]
+        },
+        {
+          "name": "set_setting",
+          "startLine": 452,
+          "endLine": 460,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "is_local_only",
+          "startLine": 463,
+          "endLine": 464,
+          "params": []
+        },
+        {
+          "name": "set_local_only",
+          "startLine": 467,
+          "endLine": 468,
+          "params": [
+            "on"
+          ]
+        },
+        {
+          "name": "privacy_stats",
+          "startLine": 471,
+          "endLine": 483,
+          "params": []
+        },
+        {
+          "name": "clear_messages",
+          "startLine": 486,
+          "endLine": 488,
+          "params": []
+        },
+        {
+          "name": "add_notification",
+          "startLine": 491,
+          "endLine": 501,
+          "params": [
+            "kind",
+            "dedupe",
+            "title",
+            "body"
+          ]
+        },
+        {
+          "name": "list_notifications",
+          "startLine": 504,
+          "endLine": 513,
+          "params": [
+            "limit"
+          ]
+        },
+        {
+          "name": "unread_count",
+          "startLine": 516,
+          "endLine": 519,
+          "params": []
+        },
+        {
+          "name": "mark_notification_read",
+          "startLine": 522,
+          "endLine": 524,
+          "params": [
+            "note_id"
+          ]
+        },
+        {
+          "name": "mark_all_notifications_read",
+          "startLine": 527,
+          "endLine": 529,
+          "params": []
+        },
+        {
+          "name": "export_snapshot",
+          "startLine": 532,
+          "endLine": 542,
+          "params": []
+        },
+        {
+          "name": "export_zip",
+          "startLine": 545,
+          "endLine": 566,
+          "params": []
+        },
+        {
+          "name": "wipe_ledger",
+          "startLine": 569,
+          "endLine": 571,
+          "params": []
+        },
+        {
+          "name": "wipe_all",
+          "startLine": 574,
+          "endLine": 583,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "connect",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "_migrate",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "insert_many",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "list_transactions",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "search",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "summary",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "date_span",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "upsert_budget",
+          "line": 223,
+          "isDefault": false
+        },
+        {
+          "name": "list_budgets",
+          "line": 240,
+          "isDefault": false
+        },
+        {
+          "name": "get_transaction",
+          "line": 249,
+          "isDefault": false
+        },
+        {
+          "name": "update_category",
+          "line": 255,
+          "isDefault": false
+        },
+        {
+          "name": "record_correction",
+          "line": 268,
+          "isDefault": false
+        },
+        {
+          "name": "latest_correction_map",
+          "line": 286,
+          "isDefault": false
+        },
+        {
+          "name": "list_fewshot",
+          "line": 295,
+          "isDefault": false
+        },
+        {
+          "name": "upsert_user_rule",
+          "line": 301,
+          "isDefault": false
+        },
+        {
+          "name": "list_user_rules",
+          "line": 319,
+          "isDefault": false
+        },
+        {
+          "name": "split_transaction",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "update_account",
+          "line": 374,
+          "isDefault": false
+        },
+        {
+          "name": "upsert_account",
+          "line": 379,
+          "isDefault": false
+        },
+        {
+          "name": "list_accounts",
+          "line": 397,
+          "isDefault": false
+        },
+        {
+          "name": "upsert_goal",
+          "line": 403,
+          "isDefault": false
+        },
+        {
+          "name": "list_goals",
+          "line": 420,
+          "isDefault": false
+        },
+        {
+          "name": "append_message",
+          "line": 428,
+          "isDefault": false
+        },
+        {
+          "name": "list_messages",
+          "line": 437,
+          "isDefault": false
+        },
+        {
+          "name": "get_setting",
+          "line": 446,
+          "isDefault": false
+        },
+        {
+          "name": "set_setting",
+          "line": 452,
+          "isDefault": false
+        },
+        {
+          "name": "is_local_only",
+          "line": 463,
+          "isDefault": false
+        },
+        {
+          "name": "set_local_only",
+          "line": 467,
+          "isDefault": false
+        },
+        {
+          "name": "privacy_stats",
+          "line": 471,
+          "isDefault": false
+        },
+        {
+          "name": "clear_messages",
+          "line": 486,
+          "isDefault": false
+        },
+        {
+          "name": "add_notification",
+          "line": 491,
+          "isDefault": false
+        },
+        {
+          "name": "list_notifications",
+          "line": 504,
+          "isDefault": false
+        },
+        {
+          "name": "unread_count",
+          "line": 516,
+          "isDefault": false
+        },
+        {
+          "name": "mark_notification_read",
+          "line": 522,
+          "isDefault": false
+        },
+        {
+          "name": "mark_all_notifications_read",
+          "line": 527,
+          "isDefault": false
+        },
+        {
+          "name": "export_snapshot",
+          "line": 532,
+          "isDefault": false
+        },
+        {
+          "name": "export_zip",
+          "line": 545,
+          "isDefault": false
+        },
+        {
+          "name": "wipe_ledger",
+          "line": 569,
+          "isDefault": false
+        },
+        {
+          "name": "wipe_all",
+          "line": 574,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "connect",
+          "callee": "DATA_DIR.mkdir",
+          "lineNumber": 95
+        },
+        {
+          "caller": "connect",
+          "callee": "sqlite3.connect",
+          "lineNumber": 96
+        },
+        {
+          "caller": "connect",
+          "callee": "conn.executescript",
+          "lineNumber": 98
+        },
+        {
+          "caller": "connect",
+          "callee": "_migrate",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_migrate",
+          "callee": "conn.execute",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_migrate",
+          "callee": "conn.execute",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_migrate",
+          "callee": "conn.execute",
+          "lineNumber": 108
+        },
+        {
+          "caller": "insert_many",
+          "callee": "datetime.now(UTC).replace(microsecond=0).isoformat",
+          "lineNumber": 112
+        },
+        {
+          "caller": "insert_many",
+          "callee": "datetime.now(UTC).replace",
+          "lineNumber": 112
+        },
+        {
+          "caller": "insert_many",
+          "callee": "datetime.now",
+          "lineNumber": 112
+        },
+        {
+          "caller": "insert_many",
+          "callee": "connect",
+          "lineNumber": 114
+        },
+        {
+          "caller": "insert_many",
+          "callee": "conn.execute(\n                \"\"\"\n                SELECT 1 FROM transactions\n                WHERE date = ? AND description = ? AND amount = ?\n                LIMIT 1\n                \"\"\",\n                (row[\"date\"], row[\"description\"], row[\"amount\"]),\n            ).fetchone",
+          "lineNumber": 116
+        },
+        {
+          "caller": "insert_many",
+          "callee": "conn.execute",
+          "lineNumber": 116
+        },
+        {
+          "caller": "insert_many",
+          "callee": "conn.execute",
+          "lineNumber": 126
+        },
+        {
+          "caller": "insert_many",
+          "callee": "float",
+          "lineNumber": 136
+        },
+        {
+          "caller": "insert_many",
+          "callee": "row.get",
+          "lineNumber": 137
+        },
+        {
+          "caller": "insert_many",
+          "callee": "row.get",
+          "lineNumber": 138
+        },
+        {
+          "caller": "insert_many",
+          "callee": "row.get",
+          "lineNumber": 139
+        },
+        {
+          "caller": "insert_many",
+          "callee": "row.get",
+          "lineNumber": 140
+        },
+        {
+          "caller": "insert_many",
+          "callee": "row.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "insert_many",
+          "callee": "row.get",
+          "lineNumber": 142
+        },
+        {
+          "caller": "list_transactions",
+          "callee": "connect",
+          "lineNumber": 151
+        },
+        {
+          "caller": "list_transactions",
+          "callee": "conn.execute(\n            \"\"\"\n            SELECT id, date, description, amount, currency, category, source_file, account, merchant\n            FROM transactions\n            WHERE parent_id IS NULL\n            ORDER BY date DESC, id DESC\n            LIMIT ?\n            \"\"\",\n            (limit,),\n        ).fetchall",
+          "lineNumber": 152
+        },
+        {
+          "caller": "list_transactions",
+          "callee": "conn.execute",
+          "lineNumber": 152
+        },
+        {
+          "caller": "list_transactions",
+          "callee": "dict",
+          "lineNumber": 162
+        },
+        {
+          "caller": "search",
+          "callee": "sql.append",
+          "lineNumber": 180
+        },
+        {
+          "caller": "search",
+          "callee": "params.append",
+          "lineNumber": 181
+        },
+        {
+          "caller": "search",
+          "callee": "sql.append",
+          "lineNumber": 183
+        },
+        {
+          "caller": "search",
+          "callee": "params.append",
+          "lineNumber": 184
+        },
+        {
+          "caller": "search",
+          "callee": "sql.append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "search",
+          "callee": "params.append",
+          "lineNumber": 187
+        },
+        {
+          "caller": "search",
+          "callee": "sql.append",
+          "lineNumber": 189
+        },
+        {
+          "caller": "search",
+          "callee": "params.append",
+          "lineNumber": 190
+        },
+        {
+          "caller": "search",
+          "callee": "sql.append",
+          "lineNumber": 192
+        },
+        {
+          "caller": "search",
+          "callee": "params.append",
+          "lineNumber": 193
+        },
+        {
+          "caller": "search",
+          "callee": "sql.append",
+          "lineNumber": 194
+        },
+        {
+          "caller": "search",
+          "callee": "params.append",
+          "lineNumber": 195
+        },
+        {
+          "caller": "search",
+          "callee": "min",
+          "lineNumber": 195
+        },
+        {
+          "caller": "search",
+          "callee": "max",
+          "lineNumber": 195
+        },
+        {
+          "caller": "search",
+          "callee": "int",
+          "lineNumber": 195
+        },
+        {
+          "caller": "search",
+          "callee": "connect",
+          "lineNumber": 196
+        },
+        {
+          "caller": "search",
+          "callee": "conn.execute(\" \".join(sql), params).fetchall",
+          "lineNumber": 197
+        },
+        {
+          "caller": "search",
+          "callee": "conn.execute",
+          "lineNumber": 197
+        },
+        {
+          "caller": "search",
+          "callee": "\" \".join",
+          "lineNumber": 197
+        },
+        {
+          "caller": "search",
+          "callee": "dict",
+          "lineNumber": 198
+        },
+        {
+          "caller": "summary",
+          "callee": "connect",
+          "lineNumber": 202
+        },
+        {
+          "caller": "summary",
+          "callee": "conn.execute(\n            \"\"\"\n            SELECT\n                COUNT(*) AS n,\n                COALESCE(SUM(CASE WHEN amount < 0 THEN amount ELSE 0 END), 0) AS spent,\n                COALESCE(SUM(CASE WHEN amount > 0 THEN amount ELSE 0 END), 0) AS income\n            FROM transactions\n            \"\"\"\n        ).fetchone",
+          "lineNumber": 203
+        },
+        {
+          "caller": "summary",
+          "callee": "conn.execute",
+          "lineNumber": 203
+        },
+        {
+          "caller": "summary",
+          "callee": "int",
+          "lineNumber": 212
+        },
+        {
+          "caller": "summary",
+          "callee": "float",
+          "lineNumber": 212
+        },
+        {
+          "caller": "summary",
+          "callee": "float",
+          "lineNumber": 212
+        },
+        {
+          "caller": "date_span",
+          "callee": "connect",
+          "lineNumber": 216
+        },
+        {
+          "caller": "date_span",
+          "callee": "conn.execute(\"SELECT MIN(date) AS a, MAX(date) AS b FROM transactions\").fetchone",
+          "lineNumber": 217
+        },
+        {
+          "caller": "date_span",
+          "callee": "conn.execute",
+          "lineNumber": 217
+        },
+        {
+          "caller": "date_span",
+          "callee": "str",
+          "lineNumber": 220
+        },
+        {
+          "caller": "date_span",
+          "callee": "str",
+          "lineNumber": 220
+        },
+        {
+          "caller": "upsert_budget",
+          "callee": "ValueError",
+          "lineNumber": 226
+        },
+        {
+          "caller": "upsert_budget",
+          "callee": "ValueError",
+          "lineNumber": 229
+        },
+        {
+          "caller": "upsert_budget",
+          "callee": "connect",
+          "lineNumber": 230
+        },
+        {
+          "caller": "upsert_budget",
+          "callee": "conn.execute",
+          "lineNumber": 231
+        },
+        {
+          "caller": "upsert_budget",
+          "callee": "float",
+          "lineNumber": 236
+        },
+        {
+          "caller": "list_budgets",
+          "callee": "connect",
+          "lineNumber": 241
+        },
+        {
+          "caller": "list_budgets",
+          "callee": "conn.execute(\n            \"SELECT category, period, amount FROM budgets WHERE period = ? ORDER BY category\",\n            (period,),\n        ).fetchall",
+          "lineNumber": 242
+        },
+        {
+          "caller": "list_budgets",
+          "callee": "conn.execute",
+          "lineNumber": 242
+        },
+        {
+          "caller": "list_budgets",
+          "callee": "dict",
+          "lineNumber": 246
+        },
+        {
+          "caller": "get_transaction",
+          "callee": "connect",
+          "lineNumber": 250
+        },
+        {
+          "caller": "get_transaction",
+          "callee": "conn.execute(GET_TX_SQL, (tx_id,)).fetchone",
+          "lineNumber": 251
+        },
+        {
+          "caller": "get_transaction",
+          "callee": "conn.execute",
+          "lineNumber": 251
+        },
+        {
+          "caller": "get_transaction",
+          "callee": "dict",
+          "lineNumber": 252
+        },
+        {
+          "caller": "update_category",
+          "callee": "ValueError",
+          "lineNumber": 258
+        },
+        {
+          "caller": "update_category",
+          "callee": "connect",
+          "lineNumber": 259
+        },
+        {
+          "caller": "update_category",
+          "callee": "conn.execute(\"SELECT description FROM transactions WHERE id = ?\", (tx_id,)).fetchone",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_category",
+          "callee": "conn.execute",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_category",
+          "callee": "conn.execute",
+          "lineNumber": 261
+        },
+        {
+          "caller": "update_category",
+          "callee": "record_correction",
+          "lineNumber": 265
+        },
+        {
+          "caller": "update_category",
+          "callee": "merchant_key",
+          "lineNumber": 265
+        },
+        {
+          "caller": "update_category",
+          "callee": "str",
+          "lineNumber": 265
+        },
+        {
+          "caller": "update_category",
+          "callee": "str",
+          "lineNumber": 265
+        },
+        {
+          "caller": "record_correction",
+          "callee": "ValueError",
+          "lineNumber": 271
+        },
+        {
+          "caller": "record_correction",
+          "callee": "merchant.strip",
+          "lineNumber": 272
+        },
+        {
+          "caller": "record_correction",
+          "callee": "datetime.now(UTC).replace(microsecond=0).isoformat",
+          "lineNumber": 275
+        },
+        {
+          "caller": "record_correction",
+          "callee": "datetime.now(UTC).replace",
+          "lineNumber": 275
+        },
+        {
+          "caller": "record_correction",
+          "callee": "datetime.now",
+          "lineNumber": 275
+        },
+        {
+          "caller": "record_correction",
+          "callee": "connect",
+          "lineNumber": 276
+        },
+        {
+          "caller": "record_correction",
+          "callee": "conn.execute",
+          "lineNumber": 277
+        },
+        {
+          "caller": "latest_correction_map",
+          "callee": "connect",
+          "lineNumber": 287
+        },
+        {
+          "caller": "latest_correction_map",
+          "callee": "conn.execute(\"SELECT merchant, category FROM corrections ORDER BY id\").fetchall",
+          "lineNumber": 288
+        },
+        {
+          "caller": "latest_correction_map",
+          "callee": "conn.execute",
+          "lineNumber": 288
+        },
+        {
+          "caller": "latest_correction_map",
+          "callee": "str",
+          "lineNumber": 291
+        },
+        {
+          "caller": "latest_correction_map",
+          "callee": "str",
+          "lineNumber": 291
+        },
+        {
+          "caller": "list_fewshot",
+          "callee": "latest_correction_map",
+          "lineNumber": 296
+        },
+        {
+          "caller": "list_fewshot",
+          "callee": "mapping.items",
+          "lineNumber": 297
+        },
+        {
+          "caller": "list_fewshot",
+          "callee": "min",
+          "lineNumber": 298
+        },
+        {
+          "caller": "list_fewshot",
+          "callee": "max",
+          "lineNumber": 298
+        },
+        {
+          "caller": "list_fewshot",
+          "callee": "int",
+          "lineNumber": 298
+        },
+        {
+          "caller": "upsert_user_rule",
+          "callee": "needle.strip().lower",
+          "lineNumber": 302
+        },
+        {
+          "caller": "upsert_user_rule",
+          "callee": "needle.strip",
+          "lineNumber": 302
+        },
+        {
+          "caller": "upsert_user_rule",
+          "callee": "ValueError",
+          "lineNumber": 305
+        },
+        {
+          "caller": "upsert_user_rule",
+          "callee": "ValueError",
+          "lineNumber": 308
+        },
+        {
+          "caller": "upsert_user_rule",
+          "callee": "connect",
+          "lineNumber": 309
+        },
+        {
+          "caller": "upsert_user_rule",
+          "callee": "conn.execute",
+          "lineNumber": 310
+        },
+        {
+          "caller": "list_user_rules",
+          "callee": "connect",
+          "lineNumber": 320
+        },
+        {
+          "caller": "list_user_rules",
+          "callee": "conn.execute(\"SELECT needle, category FROM user_rules ORDER BY needle\").fetchall",
+          "lineNumber": 321
+        },
+        {
+          "caller": "list_user_rules",
+          "callee": "conn.execute",
+          "lineNumber": 321
+        },
+        {
+          "caller": "list_user_rules",
+          "callee": "dict",
+          "lineNumber": 322
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "get_transaction",
+          "lineNumber": 326
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "ValueError",
+          "lineNumber": 329
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "float",
+          "lineNumber": 332
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "str",
+          "lineNumber": 333
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "part.get",
+          "lineNumber": 333
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "ValueError",
+          "lineNumber": 336
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "cleaned.append",
+          "lineNumber": 339
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "len",
+          "lineNumber": 340
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "ValueError",
+          "lineNumber": 342
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "sum",
+          "lineNumber": 343
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "abs",
+          "lineNumber": 344
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "float",
+          "lineNumber": 344
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "ValueError",
+          "lineNumber": 346
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "datetime.now(UTC).replace(microsecond=0).isoformat",
+          "lineNumber": 347
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "datetime.now(UTC).replace",
+          "lineNumber": 347
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "datetime.now",
+          "lineNumber": 347
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "connect",
+          "lineNumber": 348
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "conn.execute",
+          "lineNumber": 349
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "conn.execute",
+          "lineNumber": 351
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "orig.get",
+          "lineNumber": 362
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "orig.get",
+          "lineNumber": 364
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "orig.get",
+          "lineNumber": 365
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "orig.get",
+          "lineNumber": 366
+        },
+        {
+          "caller": "split_transaction",
+          "callee": "len",
+          "lineNumber": 371
+        },
+        {
+          "caller": "update_account",
+          "callee": "connect",
+          "lineNumber": 375
+        },
+        {
+          "caller": "update_account",
+          "callee": "conn.execute",
+          "lineNumber": 376
+        },
+        {
+          "caller": "upsert_account",
+          "callee": "name.strip",
+          "lineNumber": 380
+        },
+        {
+          "caller": "upsert_account",
+          "callee": "ValueError",
+          "lineNumber": 383
+        },
+        {
+          "caller": "upsert_account",
+          "callee": "ValueError",
+          "lineNumber": 386
+        },
+        {
+          "caller": "upsert_account",
+          "callee": "connect",
+          "lineNumber": 387
+        },
+        {
+          "caller": "upsert_account",
+          "callee": "conn.execute",
+          "lineNumber": 388
+        },
+        {
+          "caller": "upsert_account",
+          "callee": "float",
+          "lineNumber": 393
+        },
+        {
+          "caller": "list_accounts",
+          "callee": "connect",
+          "lineNumber": 398
+        },
+        {
+          "caller": "list_accounts",
+          "callee": "conn.execute(\"SELECT name, kind, balance FROM accounts ORDER BY name\").fetchall",
+          "lineNumber": 399
+        },
+        {
+          "caller": "list_accounts",
+          "callee": "conn.execute",
+          "lineNumber": 399
+        },
+        {
+          "caller": "list_accounts",
+          "callee": "dict",
+          "lineNumber": 400
+        },
+        {
+          "caller": "upsert_goal",
+          "callee": "ValueError",
+          "lineNumber": 406
+        },
+        {
+          "caller": "upsert_goal",
+          "callee": "ValueError",
+          "lineNumber": 409
+        },
+        {
+          "caller": "upsert_goal",
+          "callee": "connect",
+          "lineNumber": 410
+        },
+        {
+          "caller": "upsert_goal",
+          "callee": "conn.execute",
+          "lineNumber": 411
+        },
+        {
+          "caller": "upsert_goal",
+          "callee": "name.strip",
+          "lineNumber": 416
+        },
+        {
+          "caller": "upsert_goal",
+          "callee": "float",
+          "lineNumber": 416
+        },
+        {
+          "caller": "upsert_goal",
+          "callee": "float",
+          "lineNumber": 416
+        },
+        {
+          "caller": "list_goals",
+          "callee": "connect",
+          "lineNumber": 421
+        },
+        {
+          "caller": "list_goals",
+          "callee": "conn.execute(\n            \"SELECT id, name, kind, target, current, deadline FROM goals ORDER BY id\"\n        ).fetchall",
+          "lineNumber": 422
+        },
+        {
+          "caller": "list_goals",
+          "callee": "conn.execute",
+          "lineNumber": 422
+        },
+        {
+          "caller": "list_goals",
+          "callee": "dict",
+          "lineNumber": 425
+        },
+        {
+          "caller": "append_message",
+          "callee": "datetime.now(UTC).replace(microsecond=0).isoformat",
+          "lineNumber": 429
+        },
+        {
+          "caller": "append_message",
+          "callee": "datetime.now(UTC).replace",
+          "lineNumber": 429
+        },
+        {
+          "caller": "append_message",
+          "callee": "datetime.now",
+          "lineNumber": 429
+        },
+        {
+          "caller": "append_message",
+          "callee": "connect",
+          "lineNumber": 430
+        },
+        {
+          "caller": "append_message",
+          "callee": "conn.execute",
+          "lineNumber": 431
+        },
+        {
+          "caller": "list_messages",
+          "callee": "connect",
+          "lineNumber": 438
+        },
+        {
+          "caller": "list_messages",
+          "callee": "conn.execute(\n            \"SELECT role, content FROM messages ORDER BY id DESC LIMIT ?\",\n            (min(max(int(limit), 1), 100),),\n        ).fetchall",
+          "lineNumber": 439
+        },
+        {
+          "caller": "list_messages",
+          "callee": "conn.execute",
+          "lineNumber": 439
+        },
+        {
+          "caller": "list_messages",
+          "callee": "min",
+          "lineNumber": 441
+        },
+        {
+          "caller": "list_messages",
+          "callee": "max",
+          "lineNumber": 441
+        },
+        {
+          "caller": "list_messages",
+          "callee": "int",
+          "lineNumber": 441
+        },
+        {
+          "caller": "list_messages",
+          "callee": "dict",
+          "lineNumber": 443
+        },
+        {
+          "caller": "list_messages",
+          "callee": "reversed",
+          "lineNumber": 443
+        },
+        {
+          "caller": "get_setting",
+          "callee": "connect",
+          "lineNumber": 447
+        },
+        {
+          "caller": "get_setting",
+          "callee": "conn.execute(\"SELECT value FROM settings WHERE key = ?\", (key,)).fetchone",
+          "lineNumber": 448
+        },
+        {
+          "caller": "get_setting",
+          "callee": "conn.execute",
+          "lineNumber": 448
+        },
+        {
+          "caller": "get_setting",
+          "callee": "str",
+          "lineNumber": 449
+        },
+        {
+          "caller": "set_setting",
+          "callee": "connect",
+          "lineNumber": 453
+        },
+        {
+          "caller": "set_setting",
+          "callee": "conn.execute",
+          "lineNumber": 454
+        },
+        {
+          "caller": "is_local_only",
+          "callee": "get_setting",
+          "lineNumber": 464
+        },
+        {
+          "caller": "set_local_only",
+          "callee": "set_setting",
+          "lineNumber": 468
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "connect",
+          "lineNumber": 472
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM transactions\").fetchone",
+          "lineNumber": 474
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 474
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM budgets\").fetchone",
+          "lineNumber": 475
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 475
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM accounts\").fetchone",
+          "lineNumber": 476
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 476
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM goals\").fetchone",
+          "lineNumber": 477
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 477
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM messages\").fetchone",
+          "lineNumber": 478
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 478
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM corrections\").fetchone",
+          "lineNumber": 479
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 479
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM user_rules\").fetchone",
+          "lineNumber": 480
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 480
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM notifications\").fetchone",
+          "lineNumber": 481
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "conn.execute",
+          "lineNumber": 481
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "str",
+          "lineNumber": 483
+        },
+        {
+          "caller": "privacy_stats",
+          "callee": "is_local_only",
+          "lineNumber": 483
+        },
+        {
+          "caller": "clear_messages",
+          "callee": "connect",
+          "lineNumber": 487
+        },
+        {
+          "caller": "clear_messages",
+          "callee": "conn.execute",
+          "lineNumber": 488
+        },
+        {
+          "caller": "add_notification",
+          "callee": "datetime.now(UTC).replace(microsecond=0).isoformat",
+          "lineNumber": 492
+        },
+        {
+          "caller": "add_notification",
+          "callee": "datetime.now(UTC).replace",
+          "lineNumber": 492
+        },
+        {
+          "caller": "add_notification",
+          "callee": "datetime.now",
+          "lineNumber": 492
+        },
+        {
+          "caller": "add_notification",
+          "callee": "connect",
+          "lineNumber": 493
+        },
+        {
+          "caller": "add_notification",
+          "callee": "conn.execute",
+          "lineNumber": 494
+        },
+        {
+          "caller": "list_notifications",
+          "callee": "connect",
+          "lineNumber": 505
+        },
+        {
+          "caller": "list_notifications",
+          "callee": "conn.execute(\n            \"\"\"\n            SELECT id, kind, title, body, created_at, read\n            FROM notifications ORDER BY id DESC LIMIT ?\n            \"\"\",\n            (min(max(int(limit), 1), 100),),\n        ).fetchall",
+          "lineNumber": 506
+        },
+        {
+          "caller": "list_notifications",
+          "callee": "conn.execute",
+          "lineNumber": 506
+        },
+        {
+          "caller": "list_notifications",
+          "callee": "min",
+          "lineNumber": 511
+        },
+        {
+          "caller": "list_notifications",
+          "callee": "max",
+          "lineNumber": 511
+        },
+        {
+          "caller": "list_notifications",
+          "callee": "int",
+          "lineNumber": 511
+        },
+        {
+          "caller": "list_notifications",
+          "callee": "dict",
+          "lineNumber": 513
+        },
+        {
+          "caller": "unread_count",
+          "callee": "connect",
+          "lineNumber": 517
+        },
+        {
+          "caller": "unread_count",
+          "callee": "conn.execute(\"SELECT COUNT(*) AS n FROM notifications WHERE read = 0\").fetchone",
+          "lineNumber": 518
+        },
+        {
+          "caller": "unread_count",
+          "callee": "conn.execute",
+          "lineNumber": 518
+        },
+        {
+          "caller": "unread_count",
+          "callee": "int",
+          "lineNumber": 519
+        },
+        {
+          "caller": "mark_notification_read",
+          "callee": "connect",
+          "lineNumber": 523
+        },
+        {
+          "caller": "mark_notification_read",
+          "callee": "conn.execute",
+          "lineNumber": 524
+        },
+        {
+          "caller": "mark_all_notifications_read",
+          "callee": "connect",
+          "lineNumber": 528
+        },
+        {
+          "caller": "mark_all_notifications_read",
+          "callee": "conn.execute",
+          "lineNumber": 529
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "connect",
+          "lineNumber": 533
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "dict",
+          "lineNumber": 535
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute(\"SELECT * FROM transactions\").fetchall",
+          "lineNumber": 535
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute",
+          "lineNumber": 535
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "dict",
+          "lineNumber": 536
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute(\"SELECT * FROM budgets\").fetchall",
+          "lineNumber": 536
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute",
+          "lineNumber": 536
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "dict",
+          "lineNumber": 537
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute(\"SELECT * FROM accounts\").fetchall",
+          "lineNumber": 537
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute",
+          "lineNumber": 537
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "dict",
+          "lineNumber": 538
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute(\"SELECT * FROM goals\").fetchall",
+          "lineNumber": 538
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute",
+          "lineNumber": 538
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "dict",
+          "lineNumber": 539
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute(\"SELECT * FROM messages\").fetchall",
+          "lineNumber": 539
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute",
+          "lineNumber": 539
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "dict",
+          "lineNumber": 540
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute(\"SELECT * FROM user_rules\").fetchall",
+          "lineNumber": 540
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute",
+          "lineNumber": 540
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "dict",
+          "lineNumber": 541
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute(\"SELECT * FROM corrections\").fetchall",
+          "lineNumber": 541
+        },
+        {
+          "caller": "export_snapshot",
+          "callee": "conn.execute",
+          "lineNumber": 541
+        },
+        {
+          "caller": "export_zip",
+          "callee": "export_snapshot",
+          "lineNumber": 546
+        },
+        {
+          "caller": "export_zip",
+          "callee": "io.BytesIO",
+          "lineNumber": 547
+        },
+        {
+          "caller": "export_zip",
+          "callee": "zipfile.ZipFile",
+          "lineNumber": 548
+        },
+        {
+          "caller": "export_zip",
+          "callee": "archive.writestr",
+          "lineNumber": 549
+        },
+        {
+          "caller": "export_zip",
+          "callee": "json.dumps",
+          "lineNumber": 549
+        },
+        {
+          "caller": "export_zip",
+          "callee": "io.StringIO",
+          "lineNumber": 550
+        },
+        {
+          "caller": "export_zip",
+          "callee": "csv.DictWriter",
+          "lineNumber": 562
+        },
+        {
+          "caller": "export_zip",
+          "callee": "writer.writeheader",
+          "lineNumber": 563
+        },
+        {
+          "caller": "export_zip",
+          "callee": "writer.writerows",
+          "lineNumber": 564
+        },
+        {
+          "caller": "export_zip",
+          "callee": "archive.writestr",
+          "lineNumber": 565
+        },
+        {
+          "caller": "export_zip",
+          "callee": "csv_buf.getvalue",
+          "lineNumber": 565
+        },
+        {
+          "caller": "export_zip",
+          "callee": "buf.getvalue",
+          "lineNumber": 566
+        },
+        {
+          "caller": "wipe_ledger",
+          "callee": "connect",
+          "lineNumber": 570
+        },
+        {
+          "caller": "wipe_ledger",
+          "callee": "conn.execute",
+          "lineNumber": 571
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "connect",
+          "lineNumber": 575
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 576
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 577
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 578
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 579
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 580
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 581
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 582
+        },
+        {
+          "caller": "wipe_all",
+          "callee": "conn.execute",
+          "lineNumber": 583
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 39,
+        "functionCount": 39,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/finance_agent/llm.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 154,
+      "nonEmptyLines": 132,
+      "functions": [
+        {
+          "name": "list_ollama_models",
+          "startLine": 21,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "models_for",
+          "startLine": 31,
+          "endLine": 40,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "missing_key",
+          "startLine": 43,
+          "endLine": 50,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "_image_mime",
+          "startLine": 53,
+          "endLine": 60,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "complete",
+          "startLine": 63,
+          "endLine": 96,
+          "params": [
+            "provider",
+            "model",
+            "prompt",
+            "system",
+            "image"
+          ]
+        },
+        {
+          "name": "_openai_compat",
+          "startLine": 99,
+          "endLine": 122,
+          "params": [
+            "provider",
+            "model",
+            "messages"
+          ]
+        },
+        {
+          "name": "_google",
+          "startLine": 125,
+          "endLine": 154,
+          "params": [
+            "model",
+            "messages"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "list_ollama_models",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "models_for",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "missing_key",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "_image_mime",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "complete",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "_openai_compat",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "_google",
+          "line": 125,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "list_ollama_models",
+          "callee": "httpx.get",
+          "lineNumber": 23
+        },
+        {
+          "caller": "list_ollama_models",
+          "callee": "OLLAMA_HOST.rstrip",
+          "lineNumber": 23
+        },
+        {
+          "caller": "list_ollama_models",
+          "callee": "resp.raise_for_status",
+          "lineNumber": 24
+        },
+        {
+          "caller": "list_ollama_models",
+          "callee": "m.get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "list_ollama_models",
+          "callee": "resp.json().get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "list_ollama_models",
+          "callee": "resp.json",
+          "lineNumber": 25
+        },
+        {
+          "caller": "list_ollama_models",
+          "callee": "sorted",
+          "lineNumber": 26
+        },
+        {
+          "caller": "models_for",
+          "callee": "list_ollama_models",
+          "lineNumber": 33
+        },
+        {
+          "caller": "models_for",
+          "callee": "list",
+          "lineNumber": 35
+        },
+        {
+          "caller": "models_for",
+          "callee": "list",
+          "lineNumber": 39
+        },
+        {
+          "caller": "missing_key",
+          "callee": "env",
+          "lineNumber": 44
+        },
+        {
+          "caller": "missing_key",
+          "callee": "env",
+          "lineNumber": 46
+        },
+        {
+          "caller": "missing_key",
+          "callee": "env",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_image_mime",
+          "callee": "data.startswith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_image_mime",
+          "callee": "data.startswith",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_image_mime",
+          "callee": "data.startswith",
+          "lineNumber": 58
+        },
+        {
+          "caller": "complete",
+          "callee": "is_local_only",
+          "lineNumber": 73
+        },
+        {
+          "caller": "complete",
+          "callee": "PermissionError",
+          "lineNumber": 75
+        },
+        {
+          "caller": "complete",
+          "callee": "messages.append",
+          "lineNumber": 78
+        },
+        {
+          "caller": "complete",
+          "callee": "_image_mime",
+          "lineNumber": 80
+        },
+        {
+          "caller": "complete",
+          "callee": "base64.standard_b64encode(image).decode",
+          "lineNumber": 81
+        },
+        {
+          "caller": "complete",
+          "callee": "base64.standard_b64encode",
+          "lineNumber": 81
+        },
+        {
+          "caller": "complete",
+          "callee": "messages.append",
+          "lineNumber": 82
+        },
+        {
+          "caller": "complete",
+          "callee": "messages.append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "complete",
+          "callee": "_google",
+          "lineNumber": 95
+        },
+        {
+          "caller": "complete",
+          "callee": "_openai_compat",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "OpenAI",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "env",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "env",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "OpenAI",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "env",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "OpenAI",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "OLLAMA_HOST.rstrip",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "ValueError",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "client.chat.completions.create",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "kwargs.pop",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "client.chat.completions.create",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_openai_compat",
+          "callee": "(resp.choices[0].message.content or \"\").strip",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_google",
+          "callee": "genai.Client",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_google",
+          "callee": "env",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_google",
+          "callee": "isinstance",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_google",
+          "callee": "parts.append",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_google",
+          "callee": "item.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_google",
+          "callee": "parts.append",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_google",
+          "callee": "item.get",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_google",
+          "callee": "url.split",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_google",
+          "callee": "header.startswith",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_google",
+          "callee": "header[5:].split",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_google",
+          "callee": "parts.append",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_google",
+          "callee": "types.Part.from_bytes",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_google",
+          "callee": "base64.standard_b64decode",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_google",
+          "callee": "types.GenerateContentConfig",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_google",
+          "callee": "client.models.generate_content",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_google",
+          "callee": "(resp.text or \"\").strip",
+          "lineNumber": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/finance_agent/vault.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "is_locked",
+          "startLine": 20,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "encrypt_bytes",
+          "startLine": 24,
+          "endLine": 30,
+          "params": [
+            "raw",
+            "passphrase"
+          ]
+        },
+        {
+          "name": "decrypt_bytes",
+          "startLine": 33,
+          "endLine": 43,
+          "params": [
+            "blob",
+            "passphrase"
+          ]
+        },
+        {
+          "name": "lock_db",
+          "startLine": 46,
+          "endLine": 52,
+          "params": [
+            "passphrase"
+          ]
+        },
+        {
+          "name": "unlock_db",
+          "startLine": 55,
+          "endLine": 61,
+          "params": [
+            "passphrase"
+          ]
+        },
+        {
+          "name": "_fernet_key",
+          "startLine": 64,
+          "endLine": 66,
+          "params": [
+            "passphrase",
+            "salt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "is_locked",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "encrypt_bytes",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "decrypt_bytes",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "lock_db",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "unlock_db",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "_fernet_key",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "is_locked",
+          "callee": "ENC_PATH.exists",
+          "lineNumber": 21
+        },
+        {
+          "caller": "is_locked",
+          "callee": "DB_PATH.exists",
+          "lineNumber": 21
+        },
+        {
+          "caller": "encrypt_bytes",
+          "callee": "ValueError",
+          "lineNumber": 27
+        },
+        {
+          "caller": "encrypt_bytes",
+          "callee": "os.urandom",
+          "lineNumber": 28
+        },
+        {
+          "caller": "encrypt_bytes",
+          "callee": "Fernet(_fernet_key(passphrase, salt)).encrypt",
+          "lineNumber": 29
+        },
+        {
+          "caller": "encrypt_bytes",
+          "callee": "Fernet",
+          "lineNumber": 29
+        },
+        {
+          "caller": "encrypt_bytes",
+          "callee": "_fernet_key",
+          "lineNumber": 29
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "blob.startswith",
+          "lineNumber": 34
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "ValueError",
+          "lineNumber": 36
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "len",
+          "lineNumber": 37
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "len",
+          "lineNumber": 37
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "len",
+          "lineNumber": 38
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "Fernet(_fernet_key(passphrase, salt)).decrypt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "Fernet",
+          "lineNumber": 40
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "_fernet_key",
+          "lineNumber": 40
+        },
+        {
+          "caller": "decrypt_bytes",
+          "callee": "ValueError",
+          "lineNumber": 43
+        },
+        {
+          "caller": "lock_db",
+          "callee": "DB_PATH.exists",
+          "lineNumber": 47
+        },
+        {
+          "caller": "lock_db",
+          "callee": "ValueError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "lock_db",
+          "callee": "DATA_DIR.mkdir",
+          "lineNumber": 50
+        },
+        {
+          "caller": "lock_db",
+          "callee": "ENC_PATH.write_bytes",
+          "lineNumber": 51
+        },
+        {
+          "caller": "lock_db",
+          "callee": "encrypt_bytes",
+          "lineNumber": 51
+        },
+        {
+          "caller": "lock_db",
+          "callee": "DB_PATH.read_bytes",
+          "lineNumber": 51
+        },
+        {
+          "caller": "lock_db",
+          "callee": "DB_PATH.unlink",
+          "lineNumber": 52
+        },
+        {
+          "caller": "unlock_db",
+          "callee": "ENC_PATH.exists",
+          "lineNumber": 56
+        },
+        {
+          "caller": "unlock_db",
+          "callee": "ValueError",
+          "lineNumber": 58
+        },
+        {
+          "caller": "unlock_db",
+          "callee": "DATA_DIR.mkdir",
+          "lineNumber": 59
+        },
+        {
+          "caller": "unlock_db",
+          "callee": "DB_PATH.write_bytes",
+          "lineNumber": 60
+        },
+        {
+          "caller": "unlock_db",
+          "callee": "decrypt_bytes",
+          "lineNumber": 60
+        },
+        {
+          "caller": "unlock_db",
+          "callee": "ENC_PATH.read_bytes",
+          "lineNumber": 60
+        },
+        {
+          "caller": "unlock_db",
+          "callee": "ENC_PATH.unlink",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_fernet_key",
+          "callee": "PBKDF2HMAC",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_fernet_key",
+          "callee": "hashes.SHA256",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_fernet_key",
+          "callee": "base64.urlsafe_b64encode",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_fernet_key",
+          "callee": "kdf.derive",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_fernet_key",
+          "callee": "passphrase.encode",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    }
+  ]
+}

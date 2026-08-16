@@ -1,0 +1,32 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'file:.cursor/rules/caveman.mdc' has no edges (orphan)",
+    "Node 'file:.python-version' has no edges (orphan)",
+    "Node 'config:docs/archify/finance-agent.architecture.json' has no edges (orphan)",
+    "Node 'file:docs/archify/finance-agent.html' has no edges (orphan)",
+    "Node 'file:src/finance_agent/__init__.py' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 219,
+    "totalEdges": 247,
+    "totalLayers": 9,
+    "tourSteps": 6,
+    "nodeTypes": {
+      "file": 27,
+      "function": 161,
+      "class": 1,
+      "table": 9,
+      "config": 4,
+      "document": 17
+    },
+    "edgeTypes": {
+      "contains": 162,
+      "imports": 20,
+      "defines_schema": 9,
+      "configures": 3,
+      "documents": 51,
+      "deploys": 2
+    }
+  }
+}

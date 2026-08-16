@@ -1,0 +1,2508 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/finance_agent/copilot.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 177,
+      "functions": [
+        {
+          "name": "last_quarter",
+          "startLine": 22,
+          "endLine": 33,
+          "params": [
+            "today"
+          ]
+        },
+        {
+          "name": "infer_range",
+          "startLine": 36,
+          "endLine": 51,
+          "params": [
+            "question",
+            "today"
+          ]
+        },
+        {
+          "name": "wants_travel",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "question"
+          ]
+        },
+        {
+          "name": "travel_dates",
+          "startLine": 59,
+          "endLine": 68,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "filter_travel",
+          "startLine": 71,
+          "endLine": 82,
+          "params": [
+            "rows",
+            "category"
+          ]
+        },
+        {
+          "name": "detect_recurring",
+          "startLine": 85,
+          "endLine": 118,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "net_worth",
+          "startLine": 121,
+          "endLine": 124,
+          "params": [
+            "accounts"
+          ]
+        },
+        {
+          "name": "goal_progress",
+          "startLine": 127,
+          "endLine": 134,
+          "params": [
+            "goal"
+          ]
+        },
+        {
+          "name": "alerts",
+          "startLine": 137,
+          "endLine": 168,
+          "params": [
+            "rows",
+            "budgets",
+            "period",
+            "goals",
+            "today"
+          ]
+        },
+        {
+          "name": "weekly_digest",
+          "startLine": 171,
+          "endLine": 198,
+          "params": [
+            "rows",
+            "budgets",
+            "period",
+            "goals",
+            "accounts",
+            "today"
+          ]
+        },
+        {
+          "name": "_norm_desc",
+          "startLine": 201,
+          "endLine": 203,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "last_quarter",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "infer_range",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "wants_travel",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "travel_dates",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "filter_travel",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "detect_recurring",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "net_worth",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "goal_progress",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "alerts",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "weekly_digest",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "_norm_desc",
+          "line": 201,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "last_quarter",
+          "callee": "calendar.monthrange",
+          "lineNumber": 29
+        },
+        {
+          "caller": "infer_range",
+          "callee": "question.lower",
+          "lineNumber": 37
+        },
+        {
+          "caller": "infer_range",
+          "callee": "last_quarter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "infer_range",
+          "callee": "month_bounds",
+          "lineNumber": 41
+        },
+        {
+          "caller": "infer_range",
+          "callee": "today.strftime",
+          "lineNumber": 41
+        },
+        {
+          "caller": "infer_range",
+          "callee": "month_bounds",
+          "lineNumber": 46
+        },
+        {
+          "caller": "infer_range",
+          "callee": "timedelta",
+          "lineNumber": 48
+        },
+        {
+          "caller": "infer_range",
+          "callee": "today.weekday",
+          "lineNumber": 48
+        },
+        {
+          "caller": "infer_range",
+          "callee": "timedelta",
+          "lineNumber": 49
+        },
+        {
+          "caller": "infer_range",
+          "callee": "start.isoformat",
+          "lineNumber": 50
+        },
+        {
+          "caller": "infer_range",
+          "callee": "end.isoformat",
+          "lineNumber": 50
+        },
+        {
+          "caller": "wants_travel",
+          "callee": "question.lower",
+          "lineNumber": 55
+        },
+        {
+          "caller": "wants_travel",
+          "callee": "any",
+          "lineNumber": 56
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "set",
+          "lineNumber": 60
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "str(row.get(\"description\") or \"\").lower",
+          "lineNumber": 62
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "str",
+          "lineNumber": 62
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "row.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "any",
+          "lineNumber": 63
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "found.add",
+          "lineNumber": 64
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "str",
+          "lineNumber": 64
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "date.fromisoformat",
+          "lineNumber": 65
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "str",
+          "lineNumber": 65
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "found.add",
+          "lineNumber": 66
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "(day - timedelta(days=1)).isoformat",
+          "lineNumber": 66
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "timedelta",
+          "lineNumber": 66
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "found.add",
+          "lineNumber": 67
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "(day + timedelta(days=1)).isoformat",
+          "lineNumber": 67
+        },
+        {
+          "caller": "travel_dates",
+          "callee": "timedelta",
+          "lineNumber": 67
+        },
+        {
+          "caller": "filter_travel",
+          "callee": "travel_dates",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter_travel",
+          "callee": "str",
+          "lineNumber": 79
+        },
+        {
+          "caller": "filter_travel",
+          "callee": "row.get",
+          "lineNumber": 81
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "defaultdict",
+          "lineNumber": 86
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "float",
+          "lineNumber": 88
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "_norm_desc",
+          "lineNumber": 91
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "str",
+          "lineNumber": 91
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "round",
+          "lineNumber": 91
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "abs",
+          "lineNumber": 91
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "groups[key].append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "groups.items",
+          "lineNumber": 94
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "len",
+          "lineNumber": 95
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "sorted",
+          "lineNumber": 97
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "date.fromisoformat",
+          "lineNumber": 97
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "str",
+          "lineNumber": 97
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "pairwise",
+          "lineNumber": 98
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "statistics.median",
+          "lineNumber": 101
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "found.append",
+          "lineNumber": 108
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "float",
+          "lineNumber": 111
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "len",
+          "lineNumber": 112
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "days[-1].isoformat",
+          "lineNumber": 114
+        },
+        {
+          "caller": "detect_recurring",
+          "callee": "found.sort",
+          "lineNumber": 117
+        },
+        {
+          "caller": "net_worth",
+          "callee": "sum",
+          "lineNumber": 122
+        },
+        {
+          "caller": "net_worth",
+          "callee": "float",
+          "lineNumber": 122
+        },
+        {
+          "caller": "net_worth",
+          "callee": "a.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "net_worth",
+          "callee": "sum",
+          "lineNumber": 123
+        },
+        {
+          "caller": "net_worth",
+          "callee": "float",
+          "lineNumber": 123
+        },
+        {
+          "caller": "net_worth",
+          "callee": "a.get",
+          "lineNumber": 123
+        },
+        {
+          "caller": "goal_progress",
+          "callee": "float",
+          "lineNumber": 128
+        },
+        {
+          "caller": "goal_progress",
+          "callee": "float",
+          "lineNumber": 131
+        },
+        {
+          "caller": "goal_progress",
+          "callee": "goal.get",
+          "lineNumber": 132
+        },
+        {
+          "caller": "goal_progress",
+          "callee": "max",
+          "lineNumber": 133
+        },
+        {
+          "caller": "goal_progress",
+          "callee": "min",
+          "lineNumber": 133
+        },
+        {
+          "caller": "goal_progress",
+          "callee": "max",
+          "lineNumber": 134
+        },
+        {
+          "caller": "goal_progress",
+          "callee": "min",
+          "lineNumber": 134
+        },
+        {
+          "caller": "alerts",
+          "callee": "month_bounds",
+          "lineNumber": 145
+        },
+        {
+          "caller": "alerts",
+          "callee": "budget_status",
+          "lineNumber": 149
+        },
+        {
+          "caller": "alerts",
+          "callee": "anomalies",
+          "lineNumber": 152
+        },
+        {
+          "caller": "alerts",
+          "callee": "notes.append",
+          "lineNumber": 154
+        },
+        {
+          "caller": "alerts",
+          "callee": "len",
+          "lineNumber": 154
+        },
+        {
+          "caller": "alerts",
+          "callee": "detect_recurring",
+          "lineNumber": 155
+        },
+        {
+          "caller": "alerts",
+          "callee": "date.fromisoformat",
+          "lineNumber": 156
+        },
+        {
+          "caller": "alerts",
+          "callee": "str",
+          "lineNumber": 156
+        },
+        {
+          "caller": "alerts",
+          "callee": "timedelta",
+          "lineNumber": 157
+        },
+        {
+          "caller": "alerts",
+          "callee": "timedelta",
+          "lineNumber": 158
+        },
+        {
+          "caller": "alerts",
+          "callee": "notes.append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "alerts",
+          "callee": "timedelta",
+          "lineNumber": 160
+        },
+        {
+          "caller": "alerts",
+          "callee": "goal.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "alerts",
+          "callee": "date.fromisoformat",
+          "lineNumber": 165
+        },
+        {
+          "caller": "alerts",
+          "callee": "str",
+          "lineNumber": 165
+        },
+        {
+          "caller": "alerts",
+          "callee": "goal_progress",
+          "lineNumber": 166
+        },
+        {
+          "caller": "alerts",
+          "callee": "notes.append",
+          "lineNumber": 167
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "month_bounds",
+          "lineNumber": 180
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "net_worth",
+          "lineNumber": 182
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "alerts",
+          "lineNumber": 183
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "detect_recurring",
+          "lineNumber": 184
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "today.isoformat",
+          "lineNumber": 186
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "spent_of",
+          "lineNumber": 188
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "lines.extend",
+          "lineNumber": 195
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "lines.append",
+          "lineNumber": 197
+        },
+        {
+          "caller": "weekly_digest",
+          "callee": "\"\\n\".join",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_norm_desc",
+          "callee": "re.sub",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_norm_desc",
+          "callee": "text.lower",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_norm_desc",
+          "callee": "re.sub(r\"\\s+\", \" \", cleaned).strip",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_norm_desc",
+          "callee": "re.sub",
+          "lineNumber": 203
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/finance_agent/dashboard.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 109,
+      "functions": [
+        {
+          "name": "spend_by_month_category",
+          "startLine": 16,
+          "endLine": 27,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "income_expense_series",
+          "startLine": 30,
+          "endLine": 35,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "savings_rate_series",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "top_merchants",
+          "startLine": 48,
+          "endLine": 57,
+          "params": [
+            "rows",
+            "limit"
+          ]
+        },
+        {
+          "name": "cashflow_forecast",
+          "startLine": 60,
+          "endLine": 85,
+          "params": [
+            "rows",
+            "recurring",
+            "today",
+            "days"
+          ]
+        },
+        {
+          "name": "cancel_suggestions",
+          "startLine": 88,
+          "endLine": 102,
+          "params": [
+            "recurring"
+          ]
+        },
+        {
+          "name": "lifestyle_inflation",
+          "startLine": 105,
+          "endLine": 127,
+          "params": [
+            "rows",
+            "today"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "spend_by_month_category",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "income_expense_series",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "savings_rate_series",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "top_merchants",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "cashflow_forecast",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "cancel_suggestions",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "lifestyle_inflation",
+          "line": 105,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "spend_by_month_category",
+          "callee": "defaultdict",
+          "lineNumber": 17
+        },
+        {
+          "caller": "spend_by_month_category",
+          "callee": "float",
+          "lineNumber": 19
+        },
+        {
+          "caller": "spend_by_month_category",
+          "callee": "str",
+          "lineNumber": 22
+        },
+        {
+          "caller": "spend_by_month_category",
+          "callee": "str",
+          "lineNumber": 23
+        },
+        {
+          "caller": "spend_by_month_category",
+          "callee": "row.get",
+          "lineNumber": 23
+        },
+        {
+          "caller": "spend_by_month_category",
+          "callee": "abs",
+          "lineNumber": 23
+        },
+        {
+          "caller": "spend_by_month_category",
+          "callee": "sorted",
+          "lineNumber": 26
+        },
+        {
+          "caller": "spend_by_month_category",
+          "callee": "buckets.items",
+          "lineNumber": 26
+        },
+        {
+          "caller": "income_expense_series",
+          "callee": "monthly_series",
+          "lineNumber": 32
+        },
+        {
+          "caller": "income_expense_series",
+          "callee": "out.append",
+          "lineNumber": 33
+        },
+        {
+          "caller": "income_expense_series",
+          "callee": "out.append",
+          "lineNumber": 34
+        },
+        {
+          "caller": "savings_rate_series",
+          "callee": "monthly_series",
+          "lineNumber": 40
+        },
+        {
+          "caller": "savings_rate_series",
+          "callee": "float",
+          "lineNumber": 41
+        },
+        {
+          "caller": "savings_rate_series",
+          "callee": "float",
+          "lineNumber": 42
+        },
+        {
+          "caller": "savings_rate_series",
+          "callee": "out.append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "defaultdict",
+          "lineNumber": 49
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "float",
+          "lineNumber": 51
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "str",
+          "lineNumber": 54
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "row.get",
+          "lineNumber": 54
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "row.get",
+          "lineNumber": 54
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "abs",
+          "lineNumber": 55
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "sorted",
+          "lineNumber": 56
+        },
+        {
+          "caller": "top_merchants",
+          "callee": "totals.items",
+          "lineNumber": 56
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "(today - timedelta(days=FORECAST_LOOKBACK)).isoformat",
+          "lineNumber": 66
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "timedelta",
+          "lineNumber": 66
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "str",
+          "lineNumber": 67
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "sum",
+          "lineNumber": 68
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "float",
+          "lineNumber": 68
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "timedelta",
+          "lineNumber": 71
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "date.fromisoformat",
+          "lineNumber": 73
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "str",
+          "lineNumber": 73
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "rec.get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "timedelta",
+          "lineNumber": 75
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "float",
+          "lineNumber": 78
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "timedelta",
+          "lineNumber": 79
+        },
+        {
+          "caller": "cashflow_forecast",
+          "callee": "float",
+          "lineNumber": 81
+        },
+        {
+          "caller": "cancel_suggestions",
+          "callee": "abs",
+          "lineNumber": 91
+        },
+        {
+          "caller": "cancel_suggestions",
+          "callee": "float",
+          "lineNumber": 91
+        },
+        {
+          "caller": "cancel_suggestions",
+          "callee": "rec.get",
+          "lineNumber": 91
+        },
+        {
+          "caller": "cancel_suggestions",
+          "callee": "out.append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "cancel_suggestions",
+          "callee": "rec.get",
+          "lineNumber": 95
+        },
+        {
+          "caller": "cancel_suggestions",
+          "callee": "out.sort",
+          "lineNumber": 101
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "monthly_series",
+          "lineNumber": 109
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "today.strftime",
+          "lineNumber": 109
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "len",
+          "lineNumber": 110
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "sum",
+          "lineNumber": 115
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "float",
+          "lineNumber": 115
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "sum",
+          "lineNumber": 116
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "float",
+          "lineNumber": 116
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "sum",
+          "lineNumber": 117
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "float",
+          "lineNumber": 117
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "sum",
+          "lineNumber": 118
+        },
+        {
+          "caller": "lifestyle_inflation",
+          "callee": "float",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/finance_agent/insights.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 206,
+      "nonEmptyLines": 172,
+      "functions": [
+        {
+          "name": "month_bounds",
+          "startLine": 15,
+          "endLine": 18,
+          "params": [
+            "period"
+          ]
+        },
+        {
+          "name": "shift_month",
+          "startLine": 21,
+          "endLine": 30,
+          "params": [
+            "period",
+            "delta"
+          ]
+        },
+        {
+          "name": "week_bounds",
+          "startLine": 33,
+          "endLine": 37,
+          "params": [
+            "day"
+          ]
+        },
+        {
+          "name": "spent_of",
+          "startLine": 40,
+          "endLine": 41,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "income_of",
+          "startLine": 44,
+          "endLine": 45,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "in_range",
+          "startLine": 48,
+          "endLine": 49,
+          "params": [
+            "rows",
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "top_categories",
+          "startLine": 52,
+          "endLine": 59,
+          "params": [
+            "rows",
+            "limit"
+          ]
+        },
+        {
+          "name": "monthly_series",
+          "startLine": 62,
+          "endLine": 71,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "weekly_series",
+          "startLine": 74,
+          "endLine": 82,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "range_compare",
+          "startLine": 85,
+          "endLine": 102,
+          "params": [
+            "rows",
+            "start",
+            "end",
+            "prev_start",
+            "prev_end"
+          ]
+        },
+        {
+          "name": "month_compare",
+          "startLine": 105,
+          "endLine": 112,
+          "params": [
+            "rows",
+            "period"
+          ]
+        },
+        {
+          "name": "anomalies",
+          "startLine": 115,
+          "endLine": 142,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "budget_status",
+          "startLine": 145,
+          "endLine": 169,
+          "params": [
+            "rows",
+            "budgets",
+            "period"
+          ]
+        },
+        {
+          "name": "snapshot",
+          "startLine": 172,
+          "endLine": 196,
+          "params": []
+        },
+        {
+          "name": "_fence",
+          "startLine": 199,
+          "endLine": 206,
+          "params": [
+            "values"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "month_bounds",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "shift_month",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "week_bounds",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "spent_of",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "income_of",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "in_range",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "top_categories",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "monthly_series",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "weekly_series",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "range_compare",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "month_compare",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "anomalies",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "budget_status",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "snapshot",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "_fence",
+          "line": 199,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "month_bounds",
+          "callee": "int",
+          "lineNumber": 16
+        },
+        {
+          "caller": "month_bounds",
+          "callee": "period.split",
+          "lineNumber": 16
+        },
+        {
+          "caller": "month_bounds",
+          "callee": "calendar.monthrange",
+          "lineNumber": 17
+        },
+        {
+          "caller": "shift_month",
+          "callee": "int",
+          "lineNumber": 22
+        },
+        {
+          "caller": "shift_month",
+          "callee": "period.split",
+          "lineNumber": 22
+        },
+        {
+          "caller": "week_bounds",
+          "callee": "timedelta",
+          "lineNumber": 34
+        },
+        {
+          "caller": "week_bounds",
+          "callee": "day.weekday",
+          "lineNumber": 34
+        },
+        {
+          "caller": "week_bounds",
+          "callee": "timedelta",
+          "lineNumber": 35
+        },
+        {
+          "caller": "week_bounds",
+          "callee": "start.isocalendar",
+          "lineNumber": 36
+        },
+        {
+          "caller": "week_bounds",
+          "callee": "start.isoformat",
+          "lineNumber": 37
+        },
+        {
+          "caller": "week_bounds",
+          "callee": "end.isoformat",
+          "lineNumber": 37
+        },
+        {
+          "caller": "spent_of",
+          "callee": "sum",
+          "lineNumber": 41
+        },
+        {
+          "caller": "spent_of",
+          "callee": "float",
+          "lineNumber": 41
+        },
+        {
+          "caller": "spent_of",
+          "callee": "float",
+          "lineNumber": 41
+        },
+        {
+          "caller": "income_of",
+          "callee": "sum",
+          "lineNumber": 45
+        },
+        {
+          "caller": "income_of",
+          "callee": "float",
+          "lineNumber": 45
+        },
+        {
+          "caller": "income_of",
+          "callee": "float",
+          "lineNumber": 45
+        },
+        {
+          "caller": "top_categories",
+          "callee": "defaultdict",
+          "lineNumber": 53
+        },
+        {
+          "caller": "top_categories",
+          "callee": "float",
+          "lineNumber": 55
+        },
+        {
+          "caller": "top_categories",
+          "callee": "str",
+          "lineNumber": 57
+        },
+        {
+          "caller": "top_categories",
+          "callee": "abs",
+          "lineNumber": 57
+        },
+        {
+          "caller": "top_categories",
+          "callee": "sorted",
+          "lineNumber": 58
+        },
+        {
+          "caller": "top_categories",
+          "callee": "totals.items",
+          "lineNumber": 58
+        },
+        {
+          "caller": "monthly_series",
+          "callee": "defaultdict",
+          "lineNumber": 63
+        },
+        {
+          "caller": "monthly_series",
+          "callee": "str",
+          "lineNumber": 65
+        },
+        {
+          "caller": "monthly_series",
+          "callee": "float",
+          "lineNumber": 66
+        },
+        {
+          "caller": "monthly_series",
+          "callee": "abs",
+          "lineNumber": 68
+        },
+        {
+          "caller": "monthly_series",
+          "callee": "sorted",
+          "lineNumber": 71
+        },
+        {
+          "caller": "weekly_series",
+          "callee": "defaultdict",
+          "lineNumber": 75
+        },
+        {
+          "caller": "weekly_series",
+          "callee": "float",
+          "lineNumber": 77
+        },
+        {
+          "caller": "weekly_series",
+          "callee": "date.fromisoformat(str(row[\"date\"])).isocalendar",
+          "lineNumber": 80
+        },
+        {
+          "caller": "weekly_series",
+          "callee": "date.fromisoformat",
+          "lineNumber": 80
+        },
+        {
+          "caller": "weekly_series",
+          "callee": "str",
+          "lineNumber": 80
+        },
+        {
+          "caller": "weekly_series",
+          "callee": "abs",
+          "lineNumber": 81
+        },
+        {
+          "caller": "weekly_series",
+          "callee": "sorted",
+          "lineNumber": 82
+        },
+        {
+          "caller": "range_compare",
+          "callee": "in_range",
+          "lineNumber": 92
+        },
+        {
+          "caller": "range_compare",
+          "callee": "in_range",
+          "lineNumber": 93
+        },
+        {
+          "caller": "range_compare",
+          "callee": "spent_of",
+          "lineNumber": 94
+        },
+        {
+          "caller": "range_compare",
+          "callee": "spent_of",
+          "lineNumber": 95
+        },
+        {
+          "caller": "range_compare",
+          "callee": "income_of",
+          "lineNumber": 100
+        },
+        {
+          "caller": "range_compare",
+          "callee": "len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "month_compare",
+          "callee": "month_bounds",
+          "lineNumber": 106
+        },
+        {
+          "caller": "month_compare",
+          "callee": "shift_month",
+          "lineNumber": 107
+        },
+        {
+          "caller": "month_compare",
+          "callee": "month_bounds",
+          "lineNumber": 108
+        },
+        {
+          "caller": "month_compare",
+          "callee": "range_compare",
+          "lineNumber": 109
+        },
+        {
+          "caller": "anomalies",
+          "callee": "float",
+          "lineNumber": 116
+        },
+        {
+          "caller": "anomalies",
+          "callee": "len",
+          "lineNumber": 117
+        },
+        {
+          "caller": "anomalies",
+          "callee": "defaultdict",
+          "lineNumber": 119
+        },
+        {
+          "caller": "anomalies",
+          "callee": "by_cat[str(row[\"category\"])].append",
+          "lineNumber": 121
+        },
+        {
+          "caller": "anomalies",
+          "callee": "str",
+          "lineNumber": 121
+        },
+        {
+          "caller": "anomalies",
+          "callee": "abs",
+          "lineNumber": 122
+        },
+        {
+          "caller": "anomalies",
+          "callee": "float",
+          "lineNumber": 122
+        },
+        {
+          "caller": "anomalies",
+          "callee": "_fence",
+          "lineNumber": 123
+        },
+        {
+          "caller": "anomalies",
+          "callee": "by_cat.items",
+          "lineNumber": 125
+        },
+        {
+          "caller": "anomalies",
+          "callee": "abs",
+          "lineNumber": 126
+        },
+        {
+          "caller": "anomalies",
+          "callee": "float",
+          "lineNumber": 126
+        },
+        {
+          "caller": "anomalies",
+          "callee": "_fence",
+          "lineNumber": 127
+        },
+        {
+          "caller": "anomalies",
+          "callee": "len",
+          "lineNumber": 127
+        },
+        {
+          "caller": "anomalies",
+          "callee": "abs",
+          "lineNumber": 129
+        },
+        {
+          "caller": "anomalies",
+          "callee": "float",
+          "lineNumber": 129
+        },
+        {
+          "caller": "anomalies",
+          "callee": "flagged.append",
+          "lineNumber": 131
+        },
+        {
+          "caller": "anomalies",
+          "callee": "row.get",
+          "lineNumber": 133
+        },
+        {
+          "caller": "anomalies",
+          "callee": "flagged.sort",
+          "lineNumber": 141
+        },
+        {
+          "caller": "anomalies",
+          "callee": "abs",
+          "lineNumber": 141
+        },
+        {
+          "caller": "anomalies",
+          "callee": "float",
+          "lineNumber": 141
+        },
+        {
+          "caller": "budget_status",
+          "callee": "month_bounds",
+          "lineNumber": 150
+        },
+        {
+          "caller": "budget_status",
+          "callee": "defaultdict",
+          "lineNumber": 151
+        },
+        {
+          "caller": "budget_status",
+          "callee": "in_range",
+          "lineNumber": 152
+        },
+        {
+          "caller": "budget_status",
+          "callee": "float",
+          "lineNumber": 153
+        },
+        {
+          "caller": "budget_status",
+          "callee": "str",
+          "lineNumber": 155
+        },
+        {
+          "caller": "budget_status",
+          "callee": "abs",
+          "lineNumber": 155
+        },
+        {
+          "caller": "budget_status",
+          "callee": "float",
+          "lineNumber": 158
+        },
+        {
+          "caller": "budget_status",
+          "callee": "spent.get",
+          "lineNumber": 159
+        },
+        {
+          "caller": "budget_status",
+          "callee": "str",
+          "lineNumber": 159
+        },
+        {
+          "caller": "budget_status",
+          "callee": "out.append",
+          "lineNumber": 160
+        },
+        {
+          "caller": "snapshot",
+          "callee": "list_transactions",
+          "lineNumber": 175
+        },
+        {
+          "caller": "snapshot",
+          "callee": "datetime.now(UTC).date().strftime",
+          "lineNumber": 178
+        },
+        {
+          "caller": "snapshot",
+          "callee": "datetime.now(UTC).date",
+          "lineNumber": 178
+        },
+        {
+          "caller": "snapshot",
+          "callee": "datetime.now",
+          "lineNumber": 178
+        },
+        {
+          "caller": "snapshot",
+          "callee": "month_compare",
+          "lineNumber": 179
+        },
+        {
+          "caller": "snapshot",
+          "callee": "top_categories",
+          "lineNumber": 180
+        },
+        {
+          "caller": "snapshot",
+          "callee": "in_range",
+          "lineNumber": 180
+        },
+        {
+          "caller": "snapshot",
+          "callee": "month_bounds",
+          "lineNumber": 180
+        },
+        {
+          "caller": "snapshot",
+          "callee": "anomalies",
+          "lineNumber": 181
+        },
+        {
+          "caller": "snapshot",
+          "callee": "in_range",
+          "lineNumber": 181
+        },
+        {
+          "caller": "snapshot",
+          "callee": "month_bounds",
+          "lineNumber": 181
+        },
+        {
+          "caller": "snapshot",
+          "callee": "budget_status",
+          "lineNumber": 182
+        },
+        {
+          "caller": "snapshot",
+          "callee": "list_budgets",
+          "lineNumber": 182
+        },
+        {
+          "caller": "snapshot",
+          "callee": "\", \".join",
+          "lineNumber": 188
+        },
+        {
+          "caller": "snapshot",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "snapshot",
+          "callee": "lines.append",
+          "lineNumber": 195
+        },
+        {
+          "caller": "snapshot",
+          "callee": "\"; \".join",
+          "lineNumber": 195
+        },
+        {
+          "caller": "snapshot",
+          "callee": "\"\\n\".join",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_fence",
+          "callee": "len",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_fence",
+          "callee": "statistics.median",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_fence",
+          "callee": "statistics.median",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_fence",
+          "callee": "abs",
+          "lineNumber": 203
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/finance_agent/notify.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "week_monday",
+          "startLine": 12,
+          "endLine": 13,
+          "params": [
+            "day"
+          ]
+        },
+        {
+          "name": "next_bill_date",
+          "startLine": 16,
+          "endLine": 18,
+          "params": [
+            "last",
+            "cadence"
+          ]
+        },
+        {
+          "name": "bill_reminders",
+          "startLine": 21,
+          "endLine": 35,
+          "params": [
+            "recurring",
+            "today"
+          ]
+        },
+        {
+          "name": "week_delta",
+          "startLine": 38,
+          "endLine": 54,
+          "params": [
+            "rows",
+            "today"
+          ]
+        },
+        {
+          "name": "refresh_inbox",
+          "startLine": 57,
+          "endLine": 109,
+          "params": [
+            "today"
+          ]
+        },
+        {
+          "name": "_goal_notes",
+          "startLine": 112,
+          "endLine": 124,
+          "params": [
+            "goals"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "week_monday",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "next_bill_date",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "bill_reminders",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "week_delta",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "refresh_inbox",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "_goal_notes",
+          "line": 112,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "week_monday",
+          "callee": "timedelta",
+          "lineNumber": 13
+        },
+        {
+          "caller": "week_monday",
+          "callee": "day.weekday",
+          "lineNumber": 13
+        },
+        {
+          "caller": "next_bill_date",
+          "callee": "date.fromisoformat",
+          "lineNumber": 18
+        },
+        {
+          "caller": "next_bill_date",
+          "callee": "timedelta",
+          "lineNumber": 18
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "timedelta",
+          "lineNumber": 22
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "next_bill_date",
+          "lineNumber": 25
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "str",
+          "lineNumber": 25
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "str",
+          "lineNumber": 25
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "rec.get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "out.append",
+          "lineNumber": 27
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "due.isoformat",
+          "lineNumber": 30
+        },
+        {
+          "caller": "bill_reminders",
+          "callee": "rec.get",
+          "lineNumber": 32
+        },
+        {
+          "caller": "week_delta",
+          "callee": "week_bounds",
+          "lineNumber": 39
+        },
+        {
+          "caller": "week_delta",
+          "callee": "date.fromisoformat",
+          "lineNumber": 40
+        },
+        {
+          "caller": "week_delta",
+          "callee": "timedelta",
+          "lineNumber": 40
+        },
+        {
+          "caller": "week_delta",
+          "callee": "week_bounds",
+          "lineNumber": 41
+        },
+        {
+          "caller": "week_delta",
+          "callee": "spent_of",
+          "lineNumber": 44
+        },
+        {
+          "caller": "week_delta",
+          "callee": "spent_of",
+          "lineNumber": 45
+        },
+        {
+          "caller": "week_delta",
+          "callee": "len",
+          "lineNumber": 52
+        },
+        {
+          "caller": "week_delta",
+          "callee": "len",
+          "lineNumber": 53
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "list_transactions",
+          "lineNumber": 66
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "today.strftime",
+          "lineNumber": 67
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "detect_recurring",
+          "lineNumber": 68
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "week_monday",
+          "lineNumber": 70
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "weekly_digest",
+          "lineNumber": 72
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "list_budgets",
+          "lineNumber": 74
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "list_goals",
+          "lineNumber": 76
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "list_accounts",
+          "lineNumber": 77
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "week_delta",
+          "lineNumber": 80
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "monday.isoformat",
+          "lineNumber": 87
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "add_notification",
+          "lineNumber": 88
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "monday.isoformat",
+          "lineNumber": 88
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "add_notification",
+          "lineNumber": 94
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "monday.isoformat",
+          "lineNumber": 94
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "week_bounds",
+          "lineNumber": 96
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "anomalies",
+          "lineNumber": 98
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "flag.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "add_notification",
+          "lineNumber": 101
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "bill_reminders",
+          "lineNumber": 103
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "add_notification",
+          "lineNumber": 106
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "_goal_notes",
+          "lineNumber": 108
+        },
+        {
+          "caller": "refresh_inbox",
+          "callee": "list_goals",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_goal_notes",
+          "callee": "goal_progress",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_goal_notes",
+          "callee": "goal.get",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_goal_notes",
+          "callee": "goal.get",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_goal_notes",
+          "callee": "goal.get",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_goal_notes",
+          "callee": "add_notification",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/finance_agent/reports.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 175,
+      "nonEmptyLines": 159,
+      "functions": [
+        {
+          "name": "month_markdown",
+          "startLine": 22,
+          "endLine": 37,
+          "params": [
+            "period",
+            "rows",
+            "budgets"
+          ]
+        },
+        {
+          "name": "week_markdown",
+          "startLine": 40,
+          "endLine": 54,
+          "params": [
+            "day",
+            "rows"
+          ]
+        },
+        {
+          "name": "tax_year_markdown",
+          "startLine": 67,
+          "endLine": 101,
+          "params": [
+            "year",
+            "rows"
+          ]
+        },
+        {
+          "name": "report_pdf",
+          "startLine": 104,
+          "endLine": 126,
+          "params": [
+            "markdown"
+          ]
+        },
+        {
+          "name": "_markdown",
+          "startLine": 129,
+          "endLine": 175,
+          "params": [
+            "title",
+            "start",
+            "end",
+            "compare",
+            "prev_label",
+            "rows",
+            "budgets"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "month_markdown",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "week_markdown",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "tax_year_markdown",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "report_pdf",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "_markdown",
+          "line": 129,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "month_markdown",
+          "callee": "month_bounds",
+          "lineNumber": 27
+        },
+        {
+          "caller": "month_markdown",
+          "callee": "month_compare",
+          "lineNumber": 28
+        },
+        {
+          "caller": "month_markdown",
+          "callee": "_markdown",
+          "lineNumber": 29
+        },
+        {
+          "caller": "month_markdown",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "month_markdown",
+          "callee": "in_range",
+          "lineNumber": 35
+        },
+        {
+          "caller": "month_markdown",
+          "callee": "budget_status",
+          "lineNumber": 36
+        },
+        {
+          "caller": "week_markdown",
+          "callee": "week_bounds",
+          "lineNumber": 41
+        },
+        {
+          "caller": "week_markdown",
+          "callee": "date.fromisoformat",
+          "lineNumber": 42
+        },
+        {
+          "caller": "week_markdown",
+          "callee": "timedelta",
+          "lineNumber": 42
+        },
+        {
+          "caller": "week_markdown",
+          "callee": "week_bounds",
+          "lineNumber": 43
+        },
+        {
+          "caller": "week_markdown",
+          "callee": "in_range",
+          "lineNumber": 44
+        },
+        {
+          "caller": "week_markdown",
+          "callee": "range_compare",
+          "lineNumber": 45
+        },
+        {
+          "caller": "week_markdown",
+          "callee": "_markdown",
+          "lineNumber": 46
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "str(row[\"date\"]).startswith",
+          "lineNumber": 69
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "str",
+          "lineNumber": 69
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "sum",
+          "lineNumber": 70
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "float",
+          "lineNumber": 70
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "float",
+          "lineNumber": 70
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "sum",
+          "lineNumber": 71
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "float",
+          "lineNumber": 71
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "float",
+          "lineNumber": 71
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "top_categories",
+          "lineNumber": 72
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "len",
+          "lineNumber": 81
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "TAX_HINTS.get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "lines.append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "lines.append",
+          "lineNumber": 91
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "lines.extend",
+          "lineNumber": 92
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "sorted",
+          "lineNumber": 93
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "float",
+          "lineNumber": 94
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "row.get",
+          "lineNumber": 96
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "lines.append",
+          "lineNumber": 97
+        },
+        {
+          "caller": "tax_year_markdown",
+          "callee": "\"\\n\".join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "FPDF",
+          "lineNumber": 105
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.set_auto_page_break",
+          "lineNumber": 106
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.add_page",
+          "lineNumber": 107
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "markdown.splitlines",
+          "lineNumber": 109
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "raw.encode(\"ascii\", \"replace\").decode(\"ascii\").strip",
+          "lineNumber": 110
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "raw.encode(\"ascii\", \"replace\").decode",
+          "lineNumber": 110
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "raw.encode",
+          "lineNumber": 110
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.ln",
+          "lineNumber": 112
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "line.startswith",
+          "lineNumber": 114
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.set_font",
+          "lineNumber": 115
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.multi_cell",
+          "lineNumber": 116
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "line.startswith",
+          "lineNumber": 117
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.set_font",
+          "lineNumber": 118
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.multi_cell",
+          "lineNumber": 119
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "line.startswith",
+          "lineNumber": 120
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.set_font",
+          "lineNumber": 121
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.multi_cell",
+          "lineNumber": 122
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.set_font",
+          "lineNumber": 124
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.multi_cell",
+          "lineNumber": 125
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "bytes",
+          "lineNumber": 126
+        },
+        {
+          "caller": "report_pdf",
+          "callee": "pdf.output",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_markdown",
+          "callee": "top_categories",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_markdown",
+          "callee": "anomalies",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_markdown",
+          "callee": "compare.get",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_markdown",
+          "callee": "len",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.extend",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.append",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.extend",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.append",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.append",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.extend",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.extend",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_markdown",
+          "callee": "lines.append",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_markdown",
+          "callee": "\"\\n\".join",
+          "lineNumber": 175
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    }
+  ]
+}

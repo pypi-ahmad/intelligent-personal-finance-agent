@@ -1,0 +1,59 @@
+[
+  {
+    "order": 1,
+    "title": "What this project is",
+    "description": "Start with the README: local-first ledger, your keys, no donations.",
+    "nodeIds": [
+      "document:README.md",
+      "document:DISCLAIMER.md"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "How to launch",
+    "description": "Windows run.cmd or Linux run.sh create a uv .venv and start Streamlit on localhost.",
+    "nodeIds": [
+      "file:run.cmd",
+      "file:run.sh",
+      "file:streamlit_app.py"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "UI composition root",
+    "description": "streamlit_app.py unlocks the vault, wires tabs, and calls the package.",
+    "nodeIds": [
+      "file:streamlit_app.py",
+      "file:src/finance_agent/vault.py"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Ingest and learn categories",
+    "description": "parse_file then user rules, corrections, builtins, leftover LLM fill, insert_many.",
+    "nodeIds": [
+      "file:src/finance_agent/ingest.py",
+      "file:src/finance_agent/categorize.py",
+      "file:src/finance_agent/db.py"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Ask questions",
+    "description": "LangGraph plan → fetch → brief → reply through llm.complete.",
+    "nodeIds": [
+      "file:src/finance_agent/agent.py",
+      "file:src/finance_agent/llm.py"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Store and lock",
+    "description": "SQLite tables in finance.db; optional PFENC1 Fernet lock.",
+    "nodeIds": [
+      "file:src/finance_agent/db.py",
+      "table:src/finance_agent/db.py:transactions",
+      "file:src/finance_agent/vault.py"
+    ]
+  }
+]

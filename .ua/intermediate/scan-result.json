@@ -1,0 +1,394 @@
+{
+  "name": "finance-agent",
+  "description": "Local-first Streamlit personal finance copilot: ingest statements, categorize, chat, and keep the ledger on this machine.",
+  "languages": [
+    "batch",
+    "config",
+    "html",
+    "json",
+    "markdown",
+    "mdc",
+    "python",
+    "shell",
+    "toml",
+    "unknown"
+  ],
+  "frameworks": [
+    "Streamlit",
+    "LangGraph",
+    "pytest"
+  ],
+  "files": [
+    {
+      "path": ".clinerules/caveman.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".cursor/rules/caveman.mdc",
+      "language": "mdc",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".env.example",
+      "language": "config",
+      "sizeLines": 17,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "language": "markdown",
+      "sizeLines": 32,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".opencode/AGENTS.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".python-version",
+      "language": "unknown",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".streamlit/config.toml",
+      "language": "toml",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".windsurf/rules/caveman.md",
+      "language": "markdown",
+      "sizeLines": 19,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "language": "markdown",
+      "sizeLines": 153,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 85,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "language": "markdown",
+      "sizeLines": 34,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Project_Architecture_Blueprint.md",
+      "language": "markdown",
+      "sizeLines": 842,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 156,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "SECURITY.md",
+      "language": "markdown",
+      "sizeLines": 49,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "SUPPORT.md",
+      "language": "markdown",
+      "sizeLines": 45,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/archify/finance-agent.architecture.json",
+      "language": "json",
+      "sizeLines": 144,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/archify/finance-agent.html",
+      "language": "html",
+      "sizeLines": 13155,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/how-to-use.md",
+      "language": "markdown",
+      "sizeLines": 103,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/technical.md",
+      "language": "markdown",
+      "sizeLines": 131,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "sizeLines": 66,
+      "fileCategory": "config"
+    },
+    {
+      "path": "run.cmd",
+      "language": "batch",
+      "sizeLines": 88,
+      "fileCategory": "script"
+    },
+    {
+      "path": "run.sh",
+      "language": "shell",
+      "sizeLines": 72,
+      "fileCategory": "script"
+    },
+    {
+      "path": "src/finance_agent/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/agent.py",
+      "language": "python",
+      "sizeLines": 189,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/categorize.py",
+      "language": "python",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/config.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/copilot.py",
+      "language": "python",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/dashboard.py",
+      "language": "python",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/db.py",
+      "language": "python",
+      "sizeLines": 583,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/ingest.py",
+      "language": "python",
+      "sizeLines": 221,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/insights.py",
+      "language": "python",
+      "sizeLines": 206,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/llm.py",
+      "language": "python",
+      "sizeLines": 154,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/merchants.py",
+      "language": "python",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/notify.py",
+      "language": "python",
+      "sizeLines": 124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/reports.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/finance_agent/vault.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "streamlit_app.py",
+      "language": "python",
+      "sizeLines": 761,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_phase2.py",
+      "language": "python",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_phase3.py",
+      "language": "python",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_phase4.py",
+      "language": "python",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_phase5.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_phase6.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_phase8.py",
+      "language": "python",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 48,
+  "filteredByIgnore": 50,
+  "estimatedComplexity": "moderate",
+  "importMap": {
+    ".clinerules/caveman.md": [],
+    ".cursor/rules/caveman.mdc": [],
+    ".env.example": [],
+    ".github/ISSUE_TEMPLATE/bug_report.md": [],
+    ".github/ISSUE_TEMPLATE/feature_request.md": [],
+    ".github/PULL_REQUEST_TEMPLATE.md": [],
+    ".github/copilot-instructions.md": [],
+    ".opencode/AGENTS.md": [],
+    ".python-version": [],
+    ".streamlit/config.toml": [],
+    ".windsurf/rules/caveman.md": [],
+    "AGENTS.md": [],
+    "ARCHITECTURE.md": [],
+    "CONTRIBUTING.md": [],
+    "DISCLAIMER.md": [],
+    "Project_Architecture_Blueprint.md": [],
+    "README.md": [],
+    "SECURITY.md": [],
+    "SUPPORT.md": [],
+    "docs/archify/finance-agent.architecture.json": [],
+    "docs/archify/finance-agent.html": [],
+    "docs/how-to-use.md": [],
+    "docs/technical.md": [],
+    "pyproject.toml": [],
+    "run.cmd": [],
+    "run.sh": [],
+    "src/finance_agent/__init__.py": [],
+    "src/finance_agent/agent.py": [
+      "src/finance_agent/config.py",
+      "src/finance_agent/copilot.py",
+      "src/finance_agent/db.py",
+      "src/finance_agent/ingest.py",
+      "src/finance_agent/insights.py",
+      "src/finance_agent/llm.py"
+    ],
+    "src/finance_agent/categorize.py": [
+      "src/finance_agent/config.py",
+      "src/finance_agent/merchants.py"
+    ],
+    "src/finance_agent/config.py": [],
+    "src/finance_agent/copilot.py": [
+      "src/finance_agent/config.py",
+      "src/finance_agent/insights.py"
+    ],
+    "src/finance_agent/dashboard.py": [
+      "src/finance_agent/insights.py"
+    ],
+    "src/finance_agent/db.py": [
+      "src/finance_agent/config.py"
+    ],
+    "src/finance_agent/ingest.py": [
+      "src/finance_agent/categorize.py",
+      "src/finance_agent/config.py",
+      "src/finance_agent/merchants.py"
+    ],
+    "src/finance_agent/insights.py": [],
+    "src/finance_agent/llm.py": [
+      "src/finance_agent/config.py"
+    ],
+    "src/finance_agent/merchants.py": [],
+    "src/finance_agent/notify.py": [
+      "src/finance_agent/copilot.py",
+      "src/finance_agent/insights.py"
+    ],
+    "src/finance_agent/reports.py": [
+      "src/finance_agent/insights.py"
+    ],
+    "src/finance_agent/vault.py": [
+      "src/finance_agent/config.py"
+    ],
+    "streamlit_app.py": [],
+    "tests/test_phase1.py": [],
+    "tests/test_phase2.py": [],
+    "tests/test_phase3.py": [],
+    "tests/test_phase4.py": [],
+    "tests/test_phase5.py": [],
+    "tests/test_phase6.py": [],
+    "tests/test_phase8.py": []
+  }
+}

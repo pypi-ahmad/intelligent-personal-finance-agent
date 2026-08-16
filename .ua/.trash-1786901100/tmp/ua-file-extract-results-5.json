@@ -1,0 +1,1875 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [
+    ".cursor/rules/caveman.mdc",
+    ".python-version",
+    "docs/archify/finance-agent.html"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 20,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 9,
+      "failed": 0,
+      "skipped": 11
+    }
+  },
+  "results": [
+    {
+      "path": ".clinerules/caveman.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "What happened",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "What you expected",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Steps to reproduce",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Environment",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Logs",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Extra context",
+          "level": 2,
+          "line": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 32,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "Problem",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Proposed change",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Why it fits",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Alternatives you considered",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Extra context",
+          "level": 2,
+          "line": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 25,
+      "nonEmptyLines": 16,
+      "sections": [
+        {
+          "heading": "What",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Why",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "How you tested",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Checklist",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Notes for reviewers",
+          "level": 2,
+          "line": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": ".opencode/AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": ".streamlit/config.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "theme",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "theme.light",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "theme.dark",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "theme.dark.sidebar",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "browser",
+          "level": 1,
+          "line": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": ".windsurf/rules/caveman.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "docs/archify/finance-agent.architecture.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 144,
+      "nonEmptyLines": 144,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "diagram_type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "components",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "boundaries",
+          "level": 1,
+          "line": 103
+        },
+        {
+          "heading": "connections",
+          "level": 1,
+          "line": 110
+        },
+        {
+          "heading": "cards",
+          "level": 1,
+          "line": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/how-to-use.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 103,
+      "nonEmptyLines": 71,
+      "sections": [
+        {
+          "heading": "How to use the personal finance agent",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Start",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Keys (cloud models only)",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "Local-only",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Ingest",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Tabs",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "Learn from corrections",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "Split a row",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "Export and lock",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "If something fails",
+          "level": 2,
+          "line": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/technical.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 131,
+      "nonEmptyLines": 90,
+      "sections": [
+        {
+          "heading": "Technical reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What this system is",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Layout",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Storage",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "Categorize order",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "LangGraph",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Dashboard and inbox",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "UI",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Commands",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Out of scope",
+          "level": 2,
+          "line": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "src/finance_agent/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "streamlit_app.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 761,
+      "nonEmptyLines": 719,
+      "functions": [
+        {
+          "name": "_today",
+          "startLine": 100,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "_call",
+          "startLine": 104,
+          "endLine": 105,
+          "params": [
+            "provider_name",
+            "model_name",
+            "prompt"
+          ]
+        },
+        {
+          "name": "_hybrid_completes",
+          "startLine": 108,
+          "endLine": 126,
+          "params": [
+            "provider",
+            "model",
+            "key_missing"
+          ]
+        },
+        {
+          "name": "_remember",
+          "startLine": 129,
+          "endLine": 131,
+          "params": [
+            "role",
+            "content"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_today",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "_call",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "_hybrid_completes",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "_remember",
+          "line": 129,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_today",
+          "callee": "datetime.now(UTC).date",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_today",
+          "callee": "datetime.now",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_call",
+          "callee": "complete",
+          "lineNumber": 105
+        },
+        {
+          "caller": "local_fn",
+          "callee": "_call",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_hybrid_completes",
+          "callee": "list_ollama_models",
+          "lineNumber": 116
+        },
+        {
+          "caller": "local_fn",
+          "callee": "_call",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_hybrid_completes",
+          "callee": "is_local_only",
+          "lineNumber": 122
+        },
+        {
+          "caller": "api_fn",
+          "callee": "_call",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_remember",
+          "callee": "st.session_state.messages.append",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_remember",
+          "callee": "append_message",
+          "lineNumber": 131
+        },
+        {
+          "caller": "llm_extract",
+          "callee": "ValueError",
+          "lineNumber": 198
+        },
+        {
+          "caller": "llm_extract",
+          "callee": "complete",
+          "lineNumber": 199
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_phase1.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "test_rule_categories",
+          "startLine": 10,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "test_csv_debit_credit",
+          "startLine": 16,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "test_json_fence",
+          "startLine": 29,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "test_provider_models",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "test_image_mime",
+          "startLine": 40,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "test_insert_dedup_and_update",
+          "startLine": 46,
+          "endLine": 66,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_rule_categories",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "test_csv_debit_credit",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "test_json_fence",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "test_provider_models",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "test_image_mime",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "test_insert_dedup_and_update",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_rule_categories",
+          "callee": "apply_rules",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_rule_categories",
+          "callee": "apply_rules",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_rule_categories",
+          "callee": "apply_rules",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_csv_debit_credit",
+          "callee": "parse_file",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_csv_debit_credit",
+          "callee": "len",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_json_fence",
+          "callee": "parse_json_payload",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_provider_models",
+          "callee": "models_for",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_provider_models",
+          "callee": "models_for",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_provider_models",
+          "callee": "models_for",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_image_mime",
+          "callee": "_image_mime",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_image_mime",
+          "callee": "_image_mime",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_image_mime",
+          "callee": "_image_mime",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "db.insert_many",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "db.insert_many",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "db.list_transactions",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "db.update_category",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "db.list_transactions",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "pytest.raises",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_insert_dedup_and_update",
+          "callee": "db.update_category",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_phase2.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "test_hybrid_local_then_api",
+          "startLine": 11,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "test_hybrid_api_after_local_fail",
+          "startLine": 30,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "test_top_and_month_compare",
+          "startLine": 43,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "test_anomalies_flag_outlier",
+          "startLine": 61,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "test_budget_and_report",
+          "startLine": 74,
+          "endLine": 106,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_week_bounds_monday",
+          "startLine": 109,
+          "endLine": 115,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_hybrid_local_then_api",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "test_hybrid_api_after_local_fail",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "test_top_and_month_compare",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "test_anomalies_flag_outlier",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "test_budget_and_report",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "test_week_bounds_monday",
+          "line": 109,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_hybrid_local_then_api",
+          "callee": "categorize_hybrid",
+          "lineNumber": 24
+        },
+        {
+          "caller": "boom",
+          "callee": "RuntimeError",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_hybrid_api_after_local_fail",
+          "callee": "categorize_hybrid",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_top_and_month_compare",
+          "callee": "top_categories",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_top_and_month_compare",
+          "callee": "month_compare",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_anomalies_flag_outlier",
+          "callee": "anomalies",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_anomalies_flag_outlier",
+          "callee": "any",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_anomalies_flag_outlier",
+          "callee": "any",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "db.insert_many",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "db.upsert_budget",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "db.list_transactions",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "month_markdown",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "db.list_budgets",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "report_pdf",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_budget_and_report",
+          "callee": "pdf.startswith",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_week_bounds_monday",
+          "callee": "week_bounds",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_week_bounds_monday",
+          "callee": "date",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_phase3.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "test_last_quarter_and_infer",
+          "startLine": 18,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "test_travel_food_filter",
+          "startLine": 26,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "test_recurring_monthly",
+          "startLine": 37,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "test_net_worth",
+          "startLine": 48,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "test_history_text_keeps_tail",
+          "startLine": 58,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "test_local_only_blocks_cloud",
+          "startLine": 65,
+          "endLine": 73,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_memory_and_wipe",
+          "startLine": 76,
+          "endLine": 90,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_budget_alert",
+          "startLine": 93,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_last_quarter_and_infer",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "test_travel_food_filter",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "test_recurring_monthly",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "test_net_worth",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "test_history_text_keeps_tail",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "test_local_only_blocks_cloud",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "test_memory_and_wipe",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "test_budget_alert",
+          "line": 93,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_last_quarter_and_infer",
+          "callee": "last_quarter",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_last_quarter_and_infer",
+          "callee": "date",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_last_quarter_and_infer",
+          "callee": "last_quarter",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_last_quarter_and_infer",
+          "callee": "date",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_last_quarter_and_infer",
+          "callee": "infer_range",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_last_quarter_and_infer",
+          "callee": "date",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_last_quarter_and_infer",
+          "callee": "wants_travel",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_travel_food_filter",
+          "callee": "filter_travel",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_travel_food_filter",
+          "callee": "len",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_recurring_monthly",
+          "callee": "detect_recurring",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_recurring_monthly",
+          "callee": "len",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_net_worth",
+          "callee": "net_worth",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_history_text_keeps_tail",
+          "callee": "_history_text",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_local_only_blocks_cloud",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_local_only_blocks_cloud",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_local_only_blocks_cloud",
+          "callee": "db.set_local_only",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_local_only_blocks_cloud",
+          "callee": "pytest.raises",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_local_only_blocks_cloud",
+          "callee": "complete",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.append_message",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.append_message",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.list_messages",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.upsert_account",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.upsert_goal",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.clear_messages",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.list_messages",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.wipe_all",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.privacy_stats",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_memory_and_wipe",
+          "callee": "db.privacy_stats",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_budget_alert",
+          "callee": "alerts",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_budget_alert",
+          "callee": "date",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_budget_alert",
+          "callee": "any",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_phase4.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "test_merchant_aliases",
+          "startLine": 9,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "test_user_rule_beats_builtin",
+          "startLine": 17,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "test_correction_beats_builtin",
+          "startLine": 26,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "test_learn_and_split",
+          "startLine": 36,
+          "endLine": 74,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_merchant_key_fallback",
+          "startLine": 77,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_merchant_aliases",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "test_user_rule_beats_builtin",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "test_correction_beats_builtin",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "test_learn_and_split",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "test_merchant_key_fallback",
+          "line": 77,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_merchant_aliases",
+          "callee": "normalize_merchant",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_merchant_aliases",
+          "callee": "normalize_merchant",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_merchant_aliases",
+          "callee": "normalize_merchant",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_merchant_aliases",
+          "callee": "normalize_merchant",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_merchant_aliases",
+          "callee": "normalize_merchant",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_user_rule_beats_builtin",
+          "callee": "assign_category",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_correction_beats_builtin",
+          "callee": "assign_category",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_correction_beats_builtin",
+          "callee": "apply_rules",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.insert_many",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.list_transactions",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.update_category",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.latest_correction_map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.list_fewshot",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "any",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.upsert_user_rule",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.list_user_rules",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.split_transaction",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "db.list_transactions",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "len",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "all",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "abs",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_learn_and_split",
+          "callee": "sum",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_merchant_key_fallback",
+          "callee": "merchant_key",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_phase5.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "_rows",
+          "startLine": 14,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "test_chart_series",
+          "startLine": 28,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "test_forecast_and_cancel",
+          "startLine": 41,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "test_lifestyle_inflation_flags_rise",
+          "startLine": 50,
+          "endLine": 53,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_rows",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "test_chart_series",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "test_forecast_and_cancel",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "test_lifestyle_inflation_flags_rise",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_chart_series",
+          "callee": "_rows",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_chart_series",
+          "callee": "spend_by_month_category",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_chart_series",
+          "callee": "any",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_chart_series",
+          "callee": "income_expense_series",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_chart_series",
+          "callee": "savings_rate_series",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_chart_series",
+          "callee": "next",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_chart_series",
+          "callee": "top_merchants",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_forecast_and_cancel",
+          "callee": "cashflow_forecast",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_forecast_and_cancel",
+          "callee": "_rows",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_forecast_and_cancel",
+          "callee": "date",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_forecast_and_cancel",
+          "callee": "cancel_suggestions",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_lifestyle_inflation_flags_rise",
+          "callee": "lifestyle_inflation",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_lifestyle_inflation_flags_rise",
+          "callee": "_rows",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_lifestyle_inflation_flags_rise",
+          "callee": "date",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_phase6.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "test_week_monday_and_bills",
+          "startLine": 9,
+          "endLine": 16,
+          "params": []
+        },
+        {
+          "name": "test_week_delta",
+          "startLine": 19,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "test_refresh_inbox_dedupes",
+          "startLine": 31,
+          "endLine": 54,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_week_monday_and_bills",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "test_week_delta",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "test_refresh_inbox_dedupes",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_week_monday_and_bills",
+          "callee": "week_monday",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_week_monday_and_bills",
+          "callee": "date",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_week_monday_and_bills",
+          "callee": "date",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_week_monday_and_bills",
+          "callee": "bill_reminders",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_week_monday_and_bills",
+          "callee": "date",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_week_monday_and_bills",
+          "callee": "len",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_week_delta",
+          "callee": "week_delta",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_week_delta",
+          "callee": "date",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "db.insert_many",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "refresh_inbox",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "date",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "refresh_inbox",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "date",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_refresh_inbox_dedupes",
+          "callee": "db.list_notifications",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_phase8.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "test_encrypt_roundtrip",
+          "startLine": 9,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "test_lock_unlock",
+          "startLine": 17,
+          "endLine": 30,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_tax_report_lists_year",
+          "startLine": 33,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "test_export_zip",
+          "startLine": 66,
+          "endLine": 84,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_encrypt_roundtrip",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "test_lock_unlock",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "test_tax_report_lists_year",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "test_export_zip",
+          "line": 66,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_encrypt_roundtrip",
+          "callee": "encrypt_bytes",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_encrypt_roundtrip",
+          "callee": "blob.startswith",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_encrypt_roundtrip",
+          "callee": "decrypt_bytes",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_encrypt_roundtrip",
+          "callee": "pytest.raises",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_encrypt_roundtrip",
+          "callee": "decrypt_bytes",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "db_path.write_bytes",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 22
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "lock_db",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "db_path.exists",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "vault.is_locked",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "unlock_db",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "db_path.read_bytes",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_lock_unlock",
+          "callee": "vault.is_locked",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_tax_report_lists_year",
+          "callee": "tax_year_markdown",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_export_zip",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_export_zip",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_export_zip",
+          "callee": "db.insert_many",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_export_zip",
+          "callee": "db.export_zip",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

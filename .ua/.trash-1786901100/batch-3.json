@@ -1,0 +1,385 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/finance_agent/categorize.py",
+      "type": "file",
+      "name": "categorize.py",
+      "filePath": "src/finance_agent/categorize.py",
+      "summary": "User rules, corrections, builtins, then hybrid leftover LLM fill.",
+      "tags": [
+        "service",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/categorize.py:apply_rules",
+      "type": "function",
+      "name": "apply_rules",
+      "filePath": "src/finance_agent/categorize.py",
+      "summary": "apply_rules() in src/finance_agent/categorize.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/categorize.py:assign_category",
+      "type": "function",
+      "name": "assign_category",
+      "filePath": "src/finance_agent/categorize.py",
+      "summary": "assign_category() in src/finance_agent/categorize.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/categorize.py:apply_learned",
+      "type": "function",
+      "name": "apply_learned",
+      "filePath": "src/finance_agent/categorize.py",
+      "summary": "apply_learned() in src/finance_agent/categorize.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/categorize.py:categorize_with_llm",
+      "type": "function",
+      "name": "categorize_with_llm",
+      "filePath": "src/finance_agent/categorize.py",
+      "summary": "categorize_with_llm() in src/finance_agent/categorize.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/finance_agent/categorize.py:categorize_hybrid",
+      "type": "function",
+      "name": "categorize_hybrid",
+      "filePath": "src/finance_agent/categorize.py",
+      "summary": "categorize_hybrid() in src/finance_agent/categorize.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/finance_agent/ingest.py",
+      "type": "file",
+      "name": "ingest.py",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "Parse CSV, Excel, PDF, images into row dicts plus merchant.",
+      "tags": [
+        "service",
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:parse_file",
+      "type": "function",
+      "name": "parse_file",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "parse_file() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_norm",
+      "type": "function",
+      "name": "_norm",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_norm() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_pick",
+      "type": "function",
+      "name": "_pick",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_pick() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_parse_date",
+      "type": "function",
+      "name": "_parse_date",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_parse_date() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_parse_amount",
+      "type": "function",
+      "name": "_parse_amount",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_parse_amount() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_from_table",
+      "type": "function",
+      "name": "_from_table",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_from_table() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_pdf_text",
+      "type": "function",
+      "name": "_pdf_text",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_pdf_text() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_from_loose_text",
+      "type": "function",
+      "name": "_from_loose_text",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_from_loose_text() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:parse_json_payload",
+      "type": "function",
+      "name": "parse_json_payload",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "parse_json_payload() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/ingest.py:_from_llm",
+      "type": "function",
+      "name": "_from_llm",
+      "filePath": "src/finance_agent/ingest.py",
+      "summary": "_from_llm() in src/finance_agent/ingest.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/finance_agent/merchants.py",
+      "type": "file",
+      "name": "merchants.py",
+      "filePath": "src/finance_agent/merchants.py",
+      "summary": "Merchant alias map and normalize_merchant / merchant_key.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/merchants.py:normalize_merchant",
+      "type": "function",
+      "name": "normalize_merchant",
+      "filePath": "src/finance_agent/merchants.py",
+      "summary": "normalize_merchant() in src/finance_agent/merchants.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/merchants.py:merchant_key",
+      "type": "function",
+      "name": "merchant_key",
+      "filePath": "src/finance_agent/merchants.py",
+      "summary": "merchant_key() in src/finance_agent/merchants.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/finance_agent/categorize.py",
+      "target": "function:src/finance_agent/categorize.py:apply_rules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/categorize.py",
+      "target": "function:src/finance_agent/categorize.py:assign_category",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/categorize.py",
+      "target": "function:src/finance_agent/categorize.py:apply_learned",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/categorize.py",
+      "target": "function:src/finance_agent/categorize.py:categorize_with_llm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/categorize.py",
+      "target": "function:src/finance_agent/categorize.py:categorize_hybrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/categorize.py",
+      "target": "file:src/finance_agent/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/categorize.py",
+      "target": "file:src/finance_agent/merchants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:parse_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_norm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_pick",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_parse_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_parse_amount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_from_table",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_pdf_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_from_loose_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:parse_json_payload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "function:src/finance_agent/ingest.py:_from_llm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "file:src/finance_agent/categorize.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "file:src/finance_agent/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/ingest.py",
+      "target": "file:src/finance_agent/merchants.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/merchants.py",
+      "target": "function:src/finance_agent/merchants.py:normalize_merchant",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/merchants.py",
+      "target": "function:src/finance_agent/merchants.py:merchant_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

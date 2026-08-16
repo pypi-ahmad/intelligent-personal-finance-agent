@@ -1,0 +1,947 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [
+    "run.cmd"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 11,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 11
+    }
+  },
+  "results": [
+    {
+      "path": ".env.example",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 17,
+      "nonEmptyLines": 13,
+      "definitions": [
+        {
+          "name": "OPENAI_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "OPENAI_BASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "AGNES_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 11,
+          "endLine": 11
+        },
+        {
+          "name": "GOOGLE_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 14,
+          "endLine": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 4
+      }
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 153,
+      "nonEmptyLines": 105,
+      "sections": [
+        {
+          "heading": "Architecture — Personal finance agent",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Part 1 — Whole-repo technical deep-dive",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Tech stack",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "Entry points",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Commands & verification",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Directory layout",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Deployment & runtime",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Data",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Testing",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Part 2 — Context",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Part 3 — Blueprint",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "How to add a feature",
+          "level": 3,
+          "line": 115
+        },
+        {
+          "heading": "Subsystems",
+          "level": 2,
+          "line": 124
+        },
+        {
+          "heading": "Confidence",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "Modernization verdict",
+          "level": 2,
+          "line": 145
+        },
+        {
+          "heading": "Footnotes",
+          "level": 2,
+          "line": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 85,
+      "nonEmptyLines": 59,
+      "sections": [
+        {
+          "heading": "Contributing",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Ways to help",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Before you start",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Architecture rules",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Tests and lint",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Pull requests",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "Code style",
+          "level": 2,
+          "line": 75
+        },
+        {
+          "heading": "Conduct",
+          "level": 2,
+          "line": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 34,
+      "nonEmptyLines": 21,
+      "sections": [
+        {
+          "heading": "Disclaimer",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Your machine, your keys, your data",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Not professional advice",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "No financial support",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Liability",
+          "level": 2,
+          "line": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "Project_Architecture_Blueprint.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 842,
+      "nonEmptyLines": 614,
+      "sections": [
+        {
+          "heading": "Project Architecture Blueprint",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Architecture detection and analysis",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "1.1 Technology stack (detected)",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "1.2 Architectural pattern (detected)",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "2. Architectural overview",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "2.1 Approach",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "2.2 Guiding principles (evident in code)",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "2.3 Boundaries and how they are enforced",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "3. Architecture visualization (C4)",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "3.1 Level 1 — System context",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "3.2 Level 2 — Containers",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "3.3 Level 3 — Components",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "3.4 Data / process flows",
+          "level": 3,
+          "line": 190
+        },
+        {
+          "heading": "4. Core architectural components",
+          "level": 2,
+          "line": 234
+        },
+        {
+          "heading": "4.1 `streamlit_app.py` — composition root / UI",
+          "level": 3,
+          "line": 236
+        },
+        {
+          "heading": "4.2 `config.py` — constants and env",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "4.3 `llm.py` — provider facade",
+          "level": 3,
+          "line": 257
+        },
+        {
+          "heading": "4.4 `ingest.py` — statement parse",
+          "level": 3,
+          "line": 266
+        },
+        {
+          "heading": "4.5 `merchants.py` + `categorize.py` — identity and category pipeline",
+          "level": 3,
+          "line": 275
+        },
+        {
+          "heading": "4.6 `db.py` — persistence facade",
+          "level": 3,
+          "line": 284
+        },
+        {
+          "heading": "4.7 `agent.py` — LangGraph Q&A",
+          "level": 3,
+          "line": 294
+        },
+        {
+          "heading": "4.8 `insights.py` / `copilot.py` / `dashboard.py` — pure-ish analytics",
+          "level": 3,
+          "line": 303
+        },
+        {
+          "heading": "4.9 `notify.py` — on-open inbox",
+          "level": 3,
+          "line": 311
+        },
+        {
+          "heading": "4.10 `reports.py` — documents",
+          "level": 3,
+          "line": 319
+        },
+        {
+          "heading": "4.11 `vault.py` — at-rest lock",
+          "level": 3,
+          "line": 323
+        },
+        {
+          "heading": "5. Architectural layers and dependencies",
+          "level": 2,
+          "line": 329
+        },
+        {
+          "heading": "5.1 Layers as implemented",
+          "level": 3,
+          "line": 331
+        },
+        {
+          "heading": "5.2 Known lazy-import cycle breaks",
+          "level": 3,
+          "line": 342
+        },
+        {
+          "heading": "5.3 Dependency injection",
+          "level": 3,
+          "line": 353
+        },
+        {
+          "heading": "5.4 Circular / layer notes",
+          "level": 3,
+          "line": 357
+        },
+        {
+          "heading": "6. Data architecture",
+          "level": 2,
+          "line": 364
+        },
+        {
+          "heading": "6.1 Physical store",
+          "level": 3,
+          "line": 366
+        },
+        {
+          "heading": "6.2 Tables",
+          "level": 3,
+          "line": 374
+        },
+        {
+          "heading": "6.3 In-memory row shape",
+          "level": 3,
+          "line": 390
+        },
+        {
+          "heading": "6.4 Access patterns",
+          "level": 3,
+          "line": 396
+        },
+        {
+          "heading": "6.5 Relationships (logical)",
+          "level": 3,
+          "line": 407
+        },
+        {
+          "heading": "7. Cross-cutting concerns",
+          "level": 2,
+          "line": 421
+        },
+        {
+          "heading": "7.1 Authentication and authorization",
+          "level": 3,
+          "line": 423
+        },
+        {
+          "heading": "7.2 Error handling and resilience",
+          "level": 3,
+          "line": 436
+        },
+        {
+          "heading": "7.3 Logging and monitoring",
+          "level": 3,
+          "line": 450
+        },
+        {
+          "heading": "7.4 Validation",
+          "level": 3,
+          "line": 454
+        },
+        {
+          "heading": "7.5 Configuration and secrets",
+          "level": 3,
+          "line": 461
+        },
+        {
+          "heading": "8. Service communication patterns",
+          "level": 2,
+          "line": 476
+        },
+        {
+          "heading": "9. Technology-specific patterns",
+          "level": 2,
+          "line": 494
+        },
+        {
+          "heading": "9.1 Python",
+          "level": 3,
+          "line": 496
+        },
+        {
+          "heading": "9.2 Streamlit",
+          "level": 3,
+          "line": 504
+        },
+        {
+          "heading": "9.3 LangGraph",
+          "level": 3,
+          "line": 512
+        },
+        {
+          "heading": "9.4 SQLite",
+          "level": 3,
+          "line": 518
+        },
+        {
+          "heading": "9.5 Stacks not present",
+          "level": 3,
+          "line": 524
+        },
+        {
+          "heading": "10. Implementation patterns",
+          "level": 2,
+          "line": 530
+        },
+        {
+          "heading": "10.1 Interfaces",
+          "level": 3,
+          "line": 532
+        },
+        {
+          "heading": "10.2 “Services”",
+          "level": 3,
+          "line": 542
+        },
+        {
+          "heading": "10.3 Persistence",
+          "level": 3,
+          "line": 546
+        },
+        {
+          "heading": "10.4 “Controllers”",
+          "level": 3,
+          "line": 552
+        },
+        {
+          "heading": "10.5 Domain model",
+          "level": 3,
+          "line": 556
+        },
+        {
+          "heading": "11. Testing architecture",
+          "level": 2,
+          "line": 564
+        },
+        {
+          "heading": "12. Deployment architecture",
+          "level": 2,
+          "line": 583
+        },
+        {
+          "heading": "13. Extension and evolution",
+          "level": 2,
+          "line": 600
+        },
+        {
+          "heading": "13.1 Add a feature (default path)",
+          "level": 3,
+          "line": 602
+        },
+        {
+          "heading": "13.2 Where new code goes",
+          "level": 3,
+          "line": 610
+        },
+        {
+          "heading": "13.3 Modify safely",
+          "level": 3,
+          "line": 623
+        },
+        {
+          "heading": "13.4 Integrate an external system",
+          "level": 3,
+          "line": 630
+        },
+        {
+          "heading": "13.5 Known product gaps (not implemented)",
+          "level": 3,
+          "line": 641
+        },
+        {
+          "heading": "14. Architectural pattern examples",
+          "level": 2,
+          "line": 647
+        },
+        {
+          "heading": "14.1 Local-only gate (policy at the infrastructure edge)",
+          "level": 3,
+          "line": 649
+        },
+        {
+          "heading": "14.2 Category chain of responsibility",
+          "level": 3,
+          "line": 662
+        },
+        {
+          "heading": "14.3 LangGraph linear pipeline",
+          "level": 3,
+          "line": 677
+        },
+        {
+          "heading": "14.4 Unlock composition root",
+          "level": 3,
+          "line": 689
+        },
+        {
+          "heading": "14.5 Hybrid leftover fill (two optional callables)",
+          "level": 3,
+          "line": 699
+        },
+        {
+          "heading": "15. Architectural decision records (inferred from the code)",
+          "level": 2,
+          "line": 714
+        },
+        {
+          "heading": "ADR-1 — Single-process modular monolith",
+          "level": 3,
+          "line": 718
+        },
+        {
+          "heading": "ADR-2 — LangGraph only for Q&A",
+          "level": 3,
+          "line": 725
+        },
+        {
+          "heading": "ADR-3 — Hybrid categorize, rules first",
+          "level": 3,
+          "line": 731
+        },
+        {
+          "heading": "ADR-4 — Env wins over `.env`",
+          "level": 3,
+          "line": 737
+        },
+        {
+          "heading": "ADR-5 — On-open notifications, not cron",
+          "level": 3,
+          "line": 743
+        },
+        {
+          "heading": "ADR-6 — Optional Fernet file lock",
+          "level": 3,
+          "line": 749
+        },
+        {
+          "heading": "ADR-7 — OpenAI-compat for three providers",
+          "level": 3,
+          "line": 755
+        },
+        {
+          "heading": "ADR-8 — Dict rows over ORM",
+          "level": 3,
+          "line": 761
+        },
+        {
+          "heading": "16. Architecture governance",
+          "level": 2,
+          "line": 769
+        },
+        {
+          "heading": "17. Blueprint for new development",
+          "level": 2,
+          "line": 787
+        },
+        {
+          "heading": "17.1 Workflow by feature type",
+          "level": 3,
+          "line": 789
+        },
+        {
+          "heading": "17.2 File template (new domain module)",
+          "level": 3,
+          "line": 801
+        },
+        {
+          "heading": "17.3 Common pitfalls",
+          "level": 3,
+          "line": 816
+        },
+        {
+          "heading": "17.4 Keeping this blueprint current",
+          "level": 3,
+          "line": 829
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 84
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 156,
+      "nonEmptyLines": 110,
+      "sections": [
+        {
+          "heading": "Personal finance agent",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Free software — no money asked",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "You run it — you own the risk",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Features",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Stack",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Architecture",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Getting started",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "Models",
+          "level": 2,
+          "line": 100
+        },
+        {
+          "heading": "Project structure",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "Testing",
+          "level": 2,
+          "line": 128
+        },
+        {
+          "heading": "Community",
+          "level": 2,
+          "line": 142
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "SECURITY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 49,
+      "nonEmptyLines": 33,
+      "sections": [
+        {
+          "heading": "Security",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "How this app is meant to run",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "What to report",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "What not to report as a vulnerability",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "How to report",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Supported versions",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Please do not",
+          "level": 2,
+          "line": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "SUPPORT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 45,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "Support",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Help yourself first",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Ask the community",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "What we cannot do",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Security issues",
+          "level": 2,
+          "line": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 66,
+      "nonEmptyLines": 60,
+      "sections": [
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "build-system",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "dependency-groups",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "tool.ruff",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "tool.ruff.lint",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "tool.ruff.lint.per-file-ignores",
+          "level": 4,
+          "line": 62
+        },
+        {
+          "heading": "tool.ty.environment",
+          "level": 3,
+          "line": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "run.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 72,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "fail",
+          "startLine": 14,
+          "endLine": 18,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

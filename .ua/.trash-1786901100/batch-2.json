@@ -1,0 +1,900 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/finance_agent/copilot.py",
+      "type": "file",
+      "name": "copilot.py",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "Travel window, recurring, net worth, alerts, weekly digest.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:last_quarter",
+      "type": "function",
+      "name": "last_quarter",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "last_quarter() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:infer_range",
+      "type": "function",
+      "name": "infer_range",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "infer_range() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:wants_travel",
+      "type": "function",
+      "name": "wants_travel",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "wants_travel() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:travel_dates",
+      "type": "function",
+      "name": "travel_dates",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "travel_dates() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:filter_travel",
+      "type": "function",
+      "name": "filter_travel",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "filter_travel() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:detect_recurring",
+      "type": "function",
+      "name": "detect_recurring",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "detect_recurring() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:net_worth",
+      "type": "function",
+      "name": "net_worth",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "net_worth() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:goal_progress",
+      "type": "function",
+      "name": "goal_progress",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "goal_progress() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:alerts",
+      "type": "function",
+      "name": "alerts",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "alerts() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:weekly_digest",
+      "type": "function",
+      "name": "weekly_digest",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "weekly_digest() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/copilot.py:_norm_desc",
+      "type": "function",
+      "name": "_norm_desc",
+      "filePath": "src/finance_agent/copilot.py",
+      "summary": "_norm_desc() in src/finance_agent/copilot.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/finance_agent/dashboard.py",
+      "type": "file",
+      "name": "dashboard.py",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "Chart series, 30/60 forecast, inflation, cancel suggestions.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/dashboard.py:spend_by_month_category",
+      "type": "function",
+      "name": "spend_by_month_category",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "spend_by_month_category() in src/finance_agent/dashboard.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/dashboard.py:income_expense_series",
+      "type": "function",
+      "name": "income_expense_series",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "income_expense_series() in src/finance_agent/dashboard.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/dashboard.py:savings_rate_series",
+      "type": "function",
+      "name": "savings_rate_series",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "savings_rate_series() in src/finance_agent/dashboard.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/dashboard.py:top_merchants",
+      "type": "function",
+      "name": "top_merchants",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "top_merchants() in src/finance_agent/dashboard.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/dashboard.py:cashflow_forecast",
+      "type": "function",
+      "name": "cashflow_forecast",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "cashflow_forecast() in src/finance_agent/dashboard.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/dashboard.py:cancel_suggestions",
+      "type": "function",
+      "name": "cancel_suggestions",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "cancel_suggestions() in src/finance_agent/dashboard.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/dashboard.py:lifestyle_inflation",
+      "type": "function",
+      "name": "lifestyle_inflation",
+      "filePath": "src/finance_agent/dashboard.py",
+      "summary": "lifestyle_inflation() in src/finance_agent/dashboard.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/finance_agent/insights.py",
+      "type": "file",
+      "name": "insights.py",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "Month compare, MAD anomalies, budgets, snapshot text.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:month_bounds",
+      "type": "function",
+      "name": "month_bounds",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "month_bounds() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:shift_month",
+      "type": "function",
+      "name": "shift_month",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "shift_month() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:week_bounds",
+      "type": "function",
+      "name": "week_bounds",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "week_bounds() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:spent_of",
+      "type": "function",
+      "name": "spent_of",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "spent_of() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:income_of",
+      "type": "function",
+      "name": "income_of",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "income_of() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:in_range",
+      "type": "function",
+      "name": "in_range",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "in_range() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:top_categories",
+      "type": "function",
+      "name": "top_categories",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "top_categories() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:monthly_series",
+      "type": "function",
+      "name": "monthly_series",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "monthly_series() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:weekly_series",
+      "type": "function",
+      "name": "weekly_series",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "weekly_series() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:range_compare",
+      "type": "function",
+      "name": "range_compare",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "range_compare() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:month_compare",
+      "type": "function",
+      "name": "month_compare",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "month_compare() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:anomalies",
+      "type": "function",
+      "name": "anomalies",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "anomalies() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:budget_status",
+      "type": "function",
+      "name": "budget_status",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "budget_status() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:snapshot",
+      "type": "function",
+      "name": "snapshot",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "snapshot() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/insights.py:_fence",
+      "type": "function",
+      "name": "_fence",
+      "filePath": "src/finance_agent/insights.py",
+      "summary": "_fence() in src/finance_agent/insights.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/finance_agent/notify.py",
+      "type": "file",
+      "name": "notify.py",
+      "filePath": "src/finance_agent/notify.py",
+      "summary": "On-open inbox: Monday digest, bills, anomalies, goals.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/notify.py:week_monday",
+      "type": "function",
+      "name": "week_monday",
+      "filePath": "src/finance_agent/notify.py",
+      "summary": "week_monday() in src/finance_agent/notify.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/notify.py:next_bill_date",
+      "type": "function",
+      "name": "next_bill_date",
+      "filePath": "src/finance_agent/notify.py",
+      "summary": "next_bill_date() in src/finance_agent/notify.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/finance_agent/notify.py:bill_reminders",
+      "type": "function",
+      "name": "bill_reminders",
+      "filePath": "src/finance_agent/notify.py",
+      "summary": "bill_reminders() in src/finance_agent/notify.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/notify.py:week_delta",
+      "type": "function",
+      "name": "week_delta",
+      "filePath": "src/finance_agent/notify.py",
+      "summary": "week_delta() in src/finance_agent/notify.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/notify.py:refresh_inbox",
+      "type": "function",
+      "name": "refresh_inbox",
+      "filePath": "src/finance_agent/notify.py",
+      "summary": "refresh_inbox() in src/finance_agent/notify.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/finance_agent/notify.py:_goal_notes",
+      "type": "function",
+      "name": "_goal_notes",
+      "filePath": "src/finance_agent/notify.py",
+      "summary": "_goal_notes() in src/finance_agent/notify.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/finance_agent/reports.py",
+      "type": "file",
+      "name": "reports.py",
+      "filePath": "src/finance_agent/reports.py",
+      "summary": "Month, week, and tax-year Markdown plus PDF.",
+      "tags": [
+        "utility",
+        "untagged"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/reports.py:month_markdown",
+      "type": "function",
+      "name": "month_markdown",
+      "filePath": "src/finance_agent/reports.py",
+      "summary": "month_markdown() in src/finance_agent/reports.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/reports.py:week_markdown",
+      "type": "function",
+      "name": "week_markdown",
+      "filePath": "src/finance_agent/reports.py",
+      "summary": "week_markdown() in src/finance_agent/reports.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/reports.py:tax_year_markdown",
+      "type": "function",
+      "name": "tax_year_markdown",
+      "filePath": "src/finance_agent/reports.py",
+      "summary": "tax_year_markdown() in src/finance_agent/reports.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/reports.py:report_pdf",
+      "type": "function",
+      "name": "report_pdf",
+      "filePath": "src/finance_agent/reports.py",
+      "summary": "report_pdf() in src/finance_agent/reports.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/finance_agent/reports.py:_markdown",
+      "type": "function",
+      "name": "_markdown",
+      "filePath": "src/finance_agent/reports.py",
+      "summary": "_markdown() in src/finance_agent/reports.py",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:last_quarter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:infer_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:wants_travel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:travel_dates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:filter_travel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:detect_recurring",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:net_worth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:goal_progress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:alerts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:weekly_digest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "function:src/finance_agent/copilot.py:_norm_desc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "file:src/finance_agent/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/copilot.py",
+      "target": "file:src/finance_agent/insights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "function:src/finance_agent/dashboard.py:spend_by_month_category",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "function:src/finance_agent/dashboard.py:income_expense_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "function:src/finance_agent/dashboard.py:savings_rate_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "function:src/finance_agent/dashboard.py:top_merchants",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "function:src/finance_agent/dashboard.py:cashflow_forecast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "function:src/finance_agent/dashboard.py:cancel_suggestions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "function:src/finance_agent/dashboard.py:lifestyle_inflation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/dashboard.py",
+      "target": "file:src/finance_agent/insights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:month_bounds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:shift_month",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:week_bounds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:spent_of",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:income_of",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:in_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:top_categories",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:monthly_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:weekly_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:range_compare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:month_compare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:anomalies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:budget_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:snapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/insights.py",
+      "target": "function:src/finance_agent/insights.py:_fence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "function:src/finance_agent/notify.py:week_monday",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "function:src/finance_agent/notify.py:next_bill_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "function:src/finance_agent/notify.py:bill_reminders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "function:src/finance_agent/notify.py:week_delta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "function:src/finance_agent/notify.py:refresh_inbox",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "function:src/finance_agent/notify.py:_goal_notes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "file:src/finance_agent/copilot.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/notify.py",
+      "target": "file:src/finance_agent/insights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/finance_agent/reports.py",
+      "target": "function:src/finance_agent/reports.py:month_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/reports.py",
+      "target": "function:src/finance_agent/reports.py:week_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/reports.py",
+      "target": "function:src/finance_agent/reports.py:tax_year_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/reports.py",
+      "target": "function:src/finance_agent/reports.py:report_pdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/reports.py",
+      "target": "function:src/finance_agent/reports.py:_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/finance_agent/reports.py",
+      "target": "file:src/finance_agent/insights.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}
