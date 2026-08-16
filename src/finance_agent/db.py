@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
+import csv
+import io
+import json
 import sqlite3
+import zipfile
 from collections.abc import Iterable
 from datetime import UTC, datetime
 from typing import Any
@@ -19,6 +23,8 @@ CREATE TABLE IF NOT EXISTS transactions (
     category TEXT NOT NULL DEFAULT 'OTHER',
     source_file TEXT,
     account TEXT,
+    merchant TEXT,
+    parent_id INTEGER,
     created_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_tx_date ON transactions(date);
@@ -52,7 +58,37 @@ CREATE TABLE IF NOT EXISTS settings (
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS user_rules (
+    id INTEGER PRIMARY KEY,
+    needle TEXT NOT NULL UNIQUE,
+    category TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS corrections (
+    id INTEGER PRIMARY KEY,
+    merchant TEXT NOT NULL,
+    category TEXT NOT NULL,
+    description TEXT,
+    created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_corr_merchant ON corrections(merchant);
+CREATE TABLE IF NOT EXISTS notifications (
+    id INTEGER PRIMARY KEY,
+    kind TEXT NOT NULL,
+    dedupe TEXT NOT NULL UNIQUE,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    read INTEGER NOT NULL DEFAULT 0
+);
 """
+
+TX_COLS = "id, date, description, amount, currency, category, source_file, account, merchant, parent_id"
+GET_TX_SQL = (
+    "SELECT id, date, description, amount, currency, category, source_file, account, merchant, parent_id "
+    "FROM transactions WHERE id = ?"
+)
+SPLIT_MIN_PARTS = 2
+SPLIT_TOL = 0.02
 
 
 def connect() -> sqlite3.Connection:
@@ -60,7 +96,16 @@ def connect() -> sqlite3.Connection:
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(transactions)")}
+    if "merchant" not in cols:
+        conn.execute("ALTER TABLE transactions ADD COLUMN merchant TEXT")
+    if "parent_id" not in cols:
+        conn.execute("ALTER TABLE transactions ADD COLUMN parent_id INTEGER")
 
 
 def insert_many(rows: Iterable[dict[str, Any]]) -> int:
@@ -81,8 +126,9 @@ def insert_many(rows: Iterable[dict[str, Any]]) -> int:
             conn.execute(
                 """
                 INSERT INTO transactions
-                    (date, description, amount, currency, category, source_file, account, created_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    (date, description, amount, currency, category, source_file, account,
+                     merchant, parent_id, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     row["date"],
@@ -92,6 +138,8 @@ def insert_many(rows: Iterable[dict[str, Any]]) -> int:
                     row.get("category") or "OTHER",
                     row.get("source_file"),
                     row.get("account"),
+                    row.get("merchant"),
+                    row.get("parent_id"),
                     now,
                 ),
             )
@@ -103,8 +151,9 @@ def list_transactions(limit: int = 500) -> list[dict[str, Any]]:
     with connect() as conn:
         rows = conn.execute(
             """
-            SELECT id, date, description, amount, currency, category, source_file, account
+            SELECT id, date, description, amount, currency, category, source_file, account, merchant
             FROM transactions
+            WHERE parent_id IS NULL
             ORDER BY date DESC, id DESC
             LIMIT ?
             """,
@@ -123,8 +172,8 @@ def search(  # noqa: PLR0913
     limit: int = 50,
 ) -> list[dict[str, Any]]:
     sql = [
-        "SELECT id, date, description, amount, currency, category, source_file, account",
-        "FROM transactions WHERE 1=1",
+        f"SELECT {TX_COLS}",
+        "FROM transactions WHERE parent_id IS NULL",
     ]
     params: list[Any] = []
     if start_date:
@@ -197,12 +246,129 @@ def list_budgets(period: str) -> list[dict[str, Any]]:
     return [dict(r) for r in rows]
 
 
+def get_transaction(tx_id: int) -> dict[str, Any] | None:
+    with connect() as conn:
+        row = conn.execute(GET_TX_SQL, (tx_id,)).fetchone()
+    return dict(row) if row else None
+
+
 def update_category(tx_id: int, category: str) -> None:
     if category not in CATEGORIES:
         msg = f"Unknown category: {category}"
         raise ValueError(msg)
     with connect() as conn:
+        row = conn.execute("SELECT description FROM transactions WHERE id = ?", (tx_id,)).fetchone()
         conn.execute("UPDATE transactions SET category = ? WHERE id = ?", (category, tx_id))
+    if row:
+        from finance_agent.merchants import merchant_key
+
+        record_correction(merchant_key(str(row["description"])), category, str(row["description"]))
+
+
+def record_correction(merchant: str, category: str, description: str) -> None:
+    if category not in CATEGORIES:
+        msg = f"Unknown category: {category}"
+        raise ValueError(msg)
+    label = merchant.strip()
+    if not label:
+        return
+    now = datetime.now(UTC).replace(microsecond=0).isoformat()
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO corrections (merchant, category, description, created_at)
+            VALUES (?, ?, ?, ?)
+            """,
+            (label, category, description, now),
+        )
+
+
+def latest_correction_map() -> dict[str, str]:
+    with connect() as conn:
+        rows = conn.execute("SELECT merchant, category FROM corrections ORDER BY id").fetchall()
+    out: dict[str, str] = {}
+    for row in rows:
+        out[str(row["merchant"])] = str(row["category"])
+    return out
+
+
+def list_fewshot(limit: int = 16) -> list[dict[str, str]]:
+    mapping = latest_correction_map()
+    items = [{"merchant": key, "category": cat} for key, cat in mapping.items()]
+    return items[-min(max(int(limit), 1), 40) :]
+
+
+def upsert_user_rule(needle: str, category: str) -> None:
+    text = needle.strip().lower()
+    if not text:
+        msg = "Rule needle required"
+        raise ValueError(msg)
+    if category not in CATEGORIES:
+        msg = f"Unknown category: {category}"
+        raise ValueError(msg)
+    with connect() as conn:
+        conn.execute(
+            """
+            INSERT INTO user_rules (needle, category) VALUES (?, ?)
+            ON CONFLICT(needle) DO UPDATE SET category = excluded.category
+            """,
+            (text, category),
+        )
+
+
+def list_user_rules() -> list[dict[str, str]]:
+    with connect() as conn:
+        rows = conn.execute("SELECT needle, category FROM user_rules ORDER BY needle").fetchall()
+    return [dict(r) for r in rows]
+
+
+def split_transaction(tx_id: int, parts: list[dict[str, Any]]) -> int:
+    orig = get_transaction(tx_id)
+    if not orig:
+        msg = f"No transaction {tx_id}"
+        raise ValueError(msg)
+    cleaned: list[dict[str, Any]] = []
+    for part in parts:
+        amount = float(part["amount"])
+        category = str(part.get("category") or orig["category"])
+        if category not in CATEGORIES:
+            msg = f"Unknown category: {category}"
+            raise ValueError(msg)
+        if amount == 0:
+            continue
+        cleaned.append({"amount": amount, "category": category})
+    if len(cleaned) < SPLIT_MIN_PARTS:
+        msg = "Need at least two non-zero parts"
+        raise ValueError(msg)
+    total = sum(item["amount"] for item in cleaned)
+    if abs(total - float(orig["amount"])) > SPLIT_TOL:
+        msg = "Parts must sum to the original amount"
+        raise ValueError(msg)
+    now = datetime.now(UTC).replace(microsecond=0).isoformat()
+    with connect() as conn:
+        conn.execute("DELETE FROM transactions WHERE id = ?", (tx_id,))
+        for item in cleaned:
+            conn.execute(
+                """
+                INSERT INTO transactions
+                    (date, description, amount, currency, category, source_file, account,
+                     merchant, parent_id, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    orig["date"],
+                    f"{orig['description']} (split)",
+                    item["amount"],
+                    orig.get("currency") or "INR",
+                    item["category"],
+                    orig.get("source_file"),
+                    orig.get("account"),
+                    orig.get("merchant"),
+                    None,
+                    now,
+                ),
+            )
+    return len(cleaned)
 
 
 def update_account(tx_id: int, account: str | None) -> None:
@@ -310,6 +476,9 @@ def privacy_stats() -> dict[str, Any]:
             "accounts": conn.execute("SELECT COUNT(*) AS n FROM accounts").fetchone()["n"],
             "goals": conn.execute("SELECT COUNT(*) AS n FROM goals").fetchone()["n"],
             "messages": conn.execute("SELECT COUNT(*) AS n FROM messages").fetchone()["n"],
+            "corrections": conn.execute("SELECT COUNT(*) AS n FROM corrections").fetchone()["n"],
+            "user_rules": conn.execute("SELECT COUNT(*) AS n FROM user_rules").fetchone()["n"],
+            "notifications": conn.execute("SELECT COUNT(*) AS n FROM notifications").fetchone()["n"],
         }
     return {"db_path": str(DB_PATH), "local_only": is_local_only(), **counts}
 
@@ -317,6 +486,84 @@ def privacy_stats() -> dict[str, Any]:
 def clear_messages() -> None:
     with connect() as conn:
         conn.execute("DELETE FROM messages")
+
+
+def add_notification(kind: str, dedupe: str, title: str, body: str) -> bool:
+    now = datetime.now(UTC).replace(microsecond=0).isoformat()
+    with connect() as conn:
+        cur = conn.execute(
+            """
+            INSERT OR IGNORE INTO notifications (kind, dedupe, title, body, created_at, read)
+            VALUES (?, ?, ?, ?, ?, 0)
+            """,
+            (kind, dedupe, title, body, now),
+        )
+        return cur.rowcount > 0
+
+
+def list_notifications(limit: int = 50) -> list[dict[str, Any]]:
+    with connect() as conn:
+        rows = conn.execute(
+            """
+            SELECT id, kind, title, body, created_at, read
+            FROM notifications ORDER BY id DESC LIMIT ?
+            """,
+            (min(max(int(limit), 1), 100),),
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def unread_count() -> int:
+    with connect() as conn:
+        row = conn.execute("SELECT COUNT(*) AS n FROM notifications WHERE read = 0").fetchone()
+    return int(row["n"])
+
+
+def mark_notification_read(note_id: int) -> None:
+    with connect() as conn:
+        conn.execute("UPDATE notifications SET read = 1 WHERE id = ?", (note_id,))
+
+
+def mark_all_notifications_read() -> None:
+    with connect() as conn:
+        conn.execute("UPDATE notifications SET read = 1")
+
+
+def export_snapshot() -> dict[str, list[dict[str, Any]]]:
+    with connect() as conn:
+        return {
+            "transactions": [dict(r) for r in conn.execute("SELECT * FROM transactions").fetchall()],
+            "budgets": [dict(r) for r in conn.execute("SELECT * FROM budgets").fetchall()],
+            "accounts": [dict(r) for r in conn.execute("SELECT * FROM accounts").fetchall()],
+            "goals": [dict(r) for r in conn.execute("SELECT * FROM goals").fetchall()],
+            "messages": [dict(r) for r in conn.execute("SELECT * FROM messages").fetchall()],
+            "user_rules": [dict(r) for r in conn.execute("SELECT * FROM user_rules").fetchall()],
+            "corrections": [dict(r) for r in conn.execute("SELECT * FROM corrections").fetchall()],
+        }
+
+
+def export_zip() -> bytes:
+    snap = export_snapshot()
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr("data.json", json.dumps(snap, default=str, indent=2))
+        csv_buf = io.StringIO()
+        fields = [
+            "id",
+            "date",
+            "description",
+            "amount",
+            "currency",
+            "category",
+            "source_file",
+            "account",
+            "merchant",
+        ]
+        writer = csv.DictWriter(csv_buf, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(snap["transactions"])
+        archive.writestr("transactions.csv", csv_buf.getvalue())
+    return buf.getvalue()
 
 
 def wipe_ledger() -> None:
@@ -331,3 +578,6 @@ def wipe_all() -> None:
         conn.execute("DELETE FROM accounts")
         conn.execute("DELETE FROM goals")
         conn.execute("DELETE FROM messages")
+        conn.execute("DELETE FROM corrections")
+        conn.execute("DELETE FROM user_rules")
+        conn.execute("DELETE FROM notifications")

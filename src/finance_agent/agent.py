@@ -113,8 +113,8 @@ def _fetch(state: AgentState) -> dict[str, Any]:
         rows = filter_travel(rows, category=filters.get("category"))
     lines = [
         (
-            f"{r['date']} | {r['category']} | {r['amount']} {r['currency']} | "
-            f"{r.get('account') or '-'} | {r['description']}"
+            f"{r['date']} | {r.get('merchant') or '-'} | {r['category']} | "
+            f"{r['amount']} {r['currency']} | {r.get('account') or '-'} | {r['description']}"
         )
         for r in rows
     ]
@@ -122,7 +122,13 @@ def _fetch(state: AgentState) -> dict[str, Any]:
 
 
 def _brief(_state: AgentState) -> dict[str, Any]:
-    return {"brief": snapshot()}
+    from finance_agent.db import list_fewshot
+
+    learned = list_fewshot(8)
+    extra = ""
+    if learned:
+        extra = "\nLearned: " + "; ".join(f"{item['merchant']}={item['category']}" for item in learned)
+    return {"brief": snapshot() + extra}
 
 
 def _reply(state: AgentState) -> dict[str, Any]:

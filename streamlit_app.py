@@ -1,37 +1,56 @@
 from contextlib import suppress
 from datetime import UTC, date, datetime
 
+import altair as alt
 import streamlit as st
 
 from finance_agent.agent import ask
-from finance_agent.categorize import categorize_hybrid
+from finance_agent.categorize import apply_learned, categorize_hybrid
 from finance_agent.config import ACCOUNT_KINDS, CATEGORIES, GOAL_KINDS, PROVIDERS
 from finance_agent.copilot import (
     alerts,
     detect_recurring,
+    goal_progress,
     net_worth,
     weekly_digest,
+)
+from finance_agent.dashboard import (
+    cancel_suggestions,
+    cashflow_forecast,
+    income_expense_series,
+    lifestyle_inflation,
+    savings_rate_series,
+    spend_by_month_category,
+    top_merchants,
 )
 from finance_agent.db import (
     append_message,
     clear_messages,
     date_span,
+    export_zip,
     insert_many,
     is_local_only,
     list_accounts,
     list_budgets,
     list_goals,
     list_messages,
+    list_notifications,
     list_transactions,
+    list_user_rules,
+    mark_all_notifications_read,
+    mark_notification_read,
     privacy_stats,
     search,
     set_local_only,
+    split_transaction,
     summary,
+    unread_count,
     update_account,
     update_category,
     upsert_account,
     upsert_budget,
     upsert_goal,
+    upsert_user_rule,
     wipe_all,
     wipe_ledger,
 )
@@ -47,12 +66,32 @@ from finance_agent.insights import (
     weekly_series,
 )
 from finance_agent.llm import complete, list_ollama_models, missing_key, models_for
-from finance_agent.reports import month_markdown, report_pdf, week_markdown
+from finance_agent.notify import refresh_inbox
+from finance_agent.reports import month_markdown, report_pdf, tax_year_markdown, week_markdown
+from finance_agent.vault import is_locked, lock_db, unlock_db
 
-st.set_page_config(page_title="Personal finance agent", page_icon=":material/account_balance:", layout="wide")
+st.set_page_config(
+    page_title="Personal finance agent",
+    page_icon=":material/account_balance:",
+    layout="wide",
+    initial_sidebar_state="auto",
+)
 
 st.session_state.setdefault("messages", [])
 st.session_state.setdefault("last_error", "")
+
+if is_locked():
+    st.title("Unlock database")
+    st.caption("Your ledger is encrypted on disk. Enter the passphrase.")
+    phrase = st.text_input("Passphrase", type="password", key="unlock_pw")
+    if st.button("Unlock", type="primary", icon=":material/lock_open:"):
+        try:
+            unlock_db(phrase)
+            st.rerun()
+        except ValueError as exc:
+            st.error(str(exc))
+    st.stop()
+
 if not st.session_state.get("mem_loaded"):
     st.session_state.messages = list_messages()
     st.session_state.mem_loaded = True
@@ -94,7 +133,7 @@ def _remember(role: str, content: str) -> None:
 
 with st.sidebar:
     st.subheader("Mode")
-    local_on = st.toggle("Local-first", value=is_local_only(), key="local_toggle")
+    local_on = st.toggle("Local-only", value=is_local_only(), key="local_toggle")
     if local_on != is_local_only():
         set_local_only(on=local_on)
         st.rerun()
@@ -111,7 +150,7 @@ with st.sidebar:
     else:
         model = st.selectbox("Model", models, key=f"model_{provider}")
         if provider == "OpenAI":
-            st.caption("gpt-5.6-luna · effort medium")
+            st.caption("gpt-5.6-luna · gpt-5.6-terra · effort medium")
         elif provider == "Agnes AI":
             st.caption("agnes-2.5-flash")
         elif provider == "Google":
@@ -135,15 +174,19 @@ with st.sidebar:
     ingest = st.button("Ingest files", type="primary", icon=":material/upload_file:")
 
 st.title("Personal finance agent")
-st.caption("Phase 3 — copilot: deep questions, accounts, goals, memory, local-first.")
+st.caption("Phase 8 — private, exportable, tax-ready. Dark/light in the app menu.")
+refresh_inbox(_today())
+unread = unread_count()
+if unread:
+    st.info(f"{unread} unread notification(s). Open Notifications.")
 
 stats = summary()
 worth = net_worth(list_accounts())
-m1, m2, m3, m4 = st.columns(4)
-m1.metric("Transactions", f"{stats['count']}")
-m2.metric("Spent", f"{stats['spent']:.2f}")
-m3.metric("Income", f"{stats['income']:.2f}")
-m4.metric("Net worth", f"{worth['net']:.2f}")
+with st.container(horizontal=True):
+    st.metric("Transactions", f"{stats['count']}", border=True)
+    st.metric("Spent", f"{stats['spent']:.2f}", border=True)
+    st.metric("Income", f"{stats['income']:.2f}", border=True)
+    st.metric("Net worth", f"{worth['net']:.2f}", border=True)
 
 if ingest:
     if not uploads:
@@ -161,6 +204,7 @@ if ingest:
                 st.write(upload.name)
                 try:
                     rows = parse_file(upload.name, upload.getvalue(), llm_extract=llm_extract)
+                    rows = apply_learned(rows)
                     if ingest_acct != "(none)":
                         for row in rows:
                             row["account"] = ingest_acct
@@ -181,10 +225,145 @@ if ingest:
         if added_total:
             st.rerun()
 
-chat_tab, table_tab, insights_tab, plan_tab, report_tab, privacy_tab = st.tabs(
-    ["Chat", "Transactions", "Insights", "Plan", "Reports", "Privacy"],
+dash_tab, note_tab, chat_tab, table_tab, insights_tab, plan_tab, report_tab, privacy_tab = st.tabs(
+    ["Dashboard", "Notifications", "Chat", "Transactions", "Insights", "Plan", "Reports", "Privacy"],
     on_change="rerun",
 )
+
+if note_tab.open:
+    with note_tab:
+        notes = list_notifications()
+        with st.container(horizontal=True):
+            st.metric("Unread", f"{unread_count()}")
+            if st.button("Mark all read", icon=":material/done_all:"):
+                mark_all_notifications_read()
+                st.rerun()
+        st.subheader("Inbox")
+        if not notes:
+            st.caption("Nothing yet. Open the app on Monday for the weekly digest, or add transactions.")
+        else:
+            for note in notes:
+                state = "unread" if not note["read"] else "read"
+                with st.container(border=True):
+                    st.markdown(f"**{note['title']}** · {note['kind']} · {state}")
+                    st.write(note["body"])
+                    st.caption(note["created_at"])
+                    if not note["read"] and st.button("Mark read", key=f"read_{note['id']}"):
+                        mark_notification_read(int(note["id"]))
+                        st.rerun()
+        st.subheader("Goals")
+        goals = list_goals()
+        if not goals:
+            st.caption("No goals. Add them on Plan.")
+        else:
+            for goal in goals:
+                ratio = goal_progress(goal)
+                with st.container(border=True):
+                    st.markdown(f"**{goal['name']}** ({goal['kind']})")
+                    st.progress(ratio)
+                    due = goal.get("deadline") or "n/a"
+                    st.caption(f"{goal['current']:.2f} / {goal['target']:.2f} · due {due}")
+
+if dash_tab.open:
+    with dash_tab:
+        all_rows = list_transactions(500)
+        if not all_rows:
+            st.info("No transactions yet. Upload a CSV or Excel sheet to start.")
+        else:
+            period = _today().strftime("%Y-%m")
+            rec = detect_recurring(all_rows)
+            f30 = cashflow_forecast(all_rows, rec, _today(), 30)
+            f60 = cashflow_forecast(all_rows, rec, _today(), 60)
+            with st.container(horizontal=True):
+                st.metric("30-day cashflow", f"{f30['forecast']:.2f}", border=True)
+                st.metric("60-day cashflow", f"{f60['forecast']:.2f}", border=True)
+            infl = lifestyle_inflation(all_rows, _today())
+            if infl and infl["flagged"]:
+                st.warning(
+                    f"Lifestyle inflation: spend up {infl['spend_change']:.0%} vs prior 3 months "
+                    f"(income {infl['income_change']:.0%})."
+                )
+            cat_rows = spend_by_month_category(all_rows)
+            ie_rows = income_expense_series(all_rows)
+            save_rows = savings_rate_series(all_rows)
+            merch_rows = top_merchants(all_rows)
+            c1, c2 = st.columns(2)
+            with c1, st.container(border=True):
+                st.subheader("Monthly spend by category")
+                if cat_rows:
+                    chart = (
+                        alt.Chart(cat_rows)
+                        .mark_bar()
+                        .encode(
+                            x=alt.X("month:N", title="Month"),
+                            y=alt.Y("spent:Q", title="Spent"),
+                            color="category:N",
+                            tooltip=["month", "category", "spent"],
+                        )
+                    )
+                    st.altair_chart(chart)
+            with c2, st.container(border=True):
+                st.subheader("Income vs expense")
+                if ie_rows:
+                    chart = (
+                        alt.Chart(ie_rows)
+                        .mark_bar()
+                        .encode(
+                            x=alt.X("month:N", title="Month"),
+                            y=alt.Y("amount:Q", title="Amount"),
+                            color="kind:N",
+                            xOffset="kind:N",
+                            tooltip=["month", "kind", "amount"],
+                        )
+                    )
+                    st.altair_chart(chart)
+            c3, c4 = st.columns(2)
+            with c3, st.container(border=True):
+                st.subheader("Savings rate")
+                if save_rows:
+                    chart = (
+                        alt.Chart(save_rows)
+                        .mark_line(point=True)
+                        .encode(
+                            x=alt.X("month:N", title="Month"),
+                            y=alt.Y("savings_rate:Q", title="Savings rate", axis=alt.Axis(format="%")),
+                            tooltip=["month", "savings_rate"],
+                        )
+                    )
+                    st.altair_chart(chart)
+            with c4, st.container(border=True):
+                st.subheader("Top merchants")
+                if merch_rows:
+                    chart = (
+                        alt.Chart(merch_rows)
+                        .mark_bar()
+                        .encode(
+                            x=alt.X("spent:Q", title="Spent"),
+                            y=alt.Y("merchant:N", sort="-x", title="Merchant"),
+                            tooltip=["merchant", "spent"],
+                        )
+                    )
+                    st.altair_chart(chart)
+            with st.container(border=True):
+                st.subheader("Budget vs actual")
+                status = budget_status(all_rows, list_budgets(period), period)
+                if not status:
+                    st.caption("No budgets this month. Set them on Plan.")
+                else:
+                    for item in status:
+                        label = f"{item['category']}: {item['actual']:.2f} / {item['budget']:.2f}"
+                        st.markdown(f"**{label}**")
+                        ratio = 0.0 if item["budget"] <= 0 else min(item["actual"] / item["budget"], 1.0)
+                        st.progress(ratio)
+                        st.caption("Over budget" if item["over"] else f"{item['remaining']:.2f} left")
+            with st.container(border=True):
+                st.subheader("Subscriptions you can cancel")
+                tips = cancel_suggestions(rec)
+                if tips:
+                    st.dataframe(tips, hide_index=True)
+                    st.caption(f"Yearly if cancelled: {sum(t['yearly_savings'] for t in tips):.2f}")
+                else:
+                    st.caption("None detected (need 3+ similar charges).")
 
 if chat_tab.open:
     with chat_tab:
@@ -267,11 +446,12 @@ if table_tab.open:
                 edited = st.data_editor(
                     rows,
                     hide_index=True,
-                    disabled=["id", "date", "description", "amount", "currency", "source_file"],
+                    disabled=["id", "date", "description", "amount", "currency", "source_file", "merchant"],
                     column_config={
                         "id": st.column_config.NumberColumn("Id", format="%d"),
                         "date": st.column_config.TextColumn("Date"),
                         "description": st.column_config.TextColumn("Description", pinned=True),
+                        "merchant": st.column_config.TextColumn("Merchant"),
                         "amount": st.column_config.NumberColumn("Amount", format="%.2f"),
                         "currency": st.column_config.TextColumn("Currency"),
                         "category": st.column_config.SelectboxColumn("Category", options=list(CATEGORIES)),
@@ -280,6 +460,7 @@ if table_tab.open:
                             "Account",
                             options=["", *acct_names],
                         ),
+                        "parent_id": None,
                     },
                     key=f"tx_editor_{start_s}_{end_s}_{cat}_{acct}_{query}",
                     num_rows="fixed",
@@ -296,6 +477,25 @@ if table_tab.open:
                     old_acct = orig.get("account") or ""
                     if str(new_acct or "") != str(old_acct):
                         update_account(int(orig["id"]), new_acct or None)
+                st.caption("Category edits are stored and reused as few-shot examples.")
+                with st.form("split_form"):
+                    st.markdown("**Split a transaction**")
+                    sid = st.number_input("Transaction id", min_value=1, step=1, key="split_id")
+                    a1 = st.number_input("Part 1 amount", step=1.0, key="split_a1")
+                    c1 = st.selectbox("Part 1 category", CATEGORIES, key="split_c1")
+                    a2 = st.number_input("Part 2 amount", step=1.0, key="split_a2")
+                    c2 = st.selectbox("Part 2 category", CATEGORIES, key="split_c2")
+                    split_go = st.form_submit_button("Split", icon=":material/call_split:")
+                if split_go:
+                    try:
+                        n = split_transaction(int(sid), [
+                            {"amount": float(a1), "category": c1},
+                            {"amount": float(a2), "category": c2},
+                        ])
+                        st.success(f"Split into {n} rows")
+                        st.rerun()
+                    except ValueError as exc:
+                        st.error(str(exc))
 
 if insights_tab.open:
     with insights_tab:
@@ -404,6 +604,22 @@ if plan_tab.open:
                     leftover = f"{item['remaining']:.2f} left"
                     st.caption("Over budget" if item["over"] else leftover)
 
+        st.subheader("Custom category rules")
+        with st.form("rule_form"):
+            needle = st.text_input("If description contains")
+            rcat = st.selectbox("Then category", CATEGORIES, key="rule_cat")
+            rule_go = st.form_submit_button("Save rule", icon=":material/rule:")
+        if rule_go:
+            try:
+                upsert_user_rule(needle, rcat)
+                st.success(f"Rule: {needle} → {rcat}")
+                st.rerun()
+            except ValueError as exc:
+                st.error(str(exc))
+        rules = list_user_rules()
+        if rules:
+            st.dataframe(rules, hide_index=True)
+
         st.subheader("Accounts")
         with st.form("account_form"):
             aname = st.text_input("Account name")
@@ -452,11 +668,21 @@ if report_tab.open:
         if not all_rows:
             st.info("No transactions yet.")
         else:
-            kind = st.segmented_control("Report", ["Month", "Week"], key="rpt_kind", default="Month")
+            kind = st.segmented_control(
+                "Report",
+                ["Month", "Week", "Tax year"],
+                key="rpt_kind",
+                default="Month",
+            )
             if kind == "Week":
                 day = st.date_input("Week of", value=_today(), key="rpt_week")
                 text = week_markdown(day, all_rows)
                 stamp = week_bounds(day)[2]
+            elif kind == "Tax year":
+                years = sorted({int(r["date"][:4]) for r in all_rows}, reverse=True)
+                year = st.selectbox("Year", years, key="rpt_year")
+                text = tax_year_markdown(int(year), all_rows)
+                stamp = f"tax-{year}"
             else:
                 months = sorted({r["date"][:7] for r in all_rows}, reverse=True)
                 today_m = _today().strftime("%Y-%m")
@@ -488,11 +714,37 @@ if privacy_tab.open:
         stats = privacy_stats()
         st.subheader("What is stored")
         st.write(
-            "All data is a local SQLite file. Keys stay in `.env`. "
-            "Chat history is saved so follow-ups work after restart."
+            "Ledger is a local SQLite file (`data/finance.db`). "
+            "API keys are never stored here — they come from this machine's environment. "
+            "Chat, corrections, and rules stay in the same file."
         )
         st.json(stats)
-        st.caption("Tables: transactions, budgets, accounts, goals, messages, settings.")
+        st.caption("Also: settings, notifications, user_rules, corrections.")
+        st.subheader("Export")
+        st.download_button(
+            "Download full export (zip)",
+            data=export_zip(),
+            file_name="finance-export.zip",
+            mime="application/zip",
+            icon=":material/download:",
+        )
+        st.caption("Contains data.json plus transactions.csv.")
+        st.subheader("Encrypt database")
+        with st.form("lock_db"):
+            pw1 = st.text_input("Passphrase", type="password", key="lock_pw")
+            pw2 = st.text_input("Confirm passphrase", type="password", key="lock_pw2")
+            lock_go = st.form_submit_button("Lock database", icon=":material/lock:")
+        if lock_go:
+            if pw1 != pw2 or not pw1:
+                st.error("Passphrases must match and not be empty.")
+            else:
+                try:
+                    lock_db(pw1)
+                    st.session_state.mem_loaded = False
+                    st.success("Locked. Reload and unlock to continue.")
+                    st.rerun()
+                except ValueError as exc:
+                    st.error(str(exc))
         if st.button("Delete chat history", icon=":material/chat_bubble:"):
             clear_messages()
             st.session_state.messages = []

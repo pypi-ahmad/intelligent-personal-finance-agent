@@ -2,7 +2,7 @@
 
 https://github.com/pypi-ahmad/intelligent-personal-finance-agent
 
-Local-first Phase 3 copilot: ingest statements, categorize, ask questions, and keep the ledger on disk.
+Local-first Phase 8 copilot: private ledger, dashboard first, optional encryption, tax export.
 
 [How to use](docs/how-to-use.md) · [Technical reference](docs/technical.md)
 
@@ -15,6 +15,10 @@ Local-first Phase 3 copilot: ingest statements, categorize, ask questions, and k
 - Insights, budgets vs actual, accounts/net worth, goals, recurring, alerts
 - Monthly/weekly report as Markdown or PDF
 - Privacy tab (inspect / delete) and a **Local-first** toggle (Ollama only)
+- Learns category corrections, normalizes merchants, splits, custom rules
+- Dashboard: category spend, income vs expense, savings rate, top merchants, 30/60-day forecast
+- Notifications: Monday digest, bills, anomalies, what changed this week
+- Privacy: full zip export, optional passphrase lock, tax-year report, dark/light theme
 
 CSV and Excel ingest work with no model. PDF, images, leftover LLM fill, and chat need one.
 
@@ -63,7 +67,7 @@ Details: [docs/technical.md](docs/technical.md)
 > [!NOTE]
 > Sidebar errors on a missing cloud key. CSV/Excel ingest still works.
 
-**Use it:** pick provider/model → ingest files → **Chat**, **Transactions**, **Insights**, **Plan**, **Reports**, **Privacy**.
+**Use it:** pick provider/model → ingest files → **Dashboard**, **Notifications**, **Chat**, **Transactions**, **Insights**, **Plan**, **Reports**, **Privacy**. Dark/light is in the Streamlit menu.
 
 Expenses are negative, income positive. Default currency is INR.
 
@@ -74,7 +78,7 @@ Full walkthrough: [docs/how-to-use.md](docs/how-to-use.md)
 | Provider | Models | Key |
 | --- | --- | --- |
 | Ollama | all local models from `/api/tags` | none (`OLLAMA_HOST` optional) |
-| OpenAI | `gpt-5.6-luna` (medium effort) | `OPENAI_API_KEY`, optional `OPENAI_BASE_URL` |
+| OpenAI | `gpt-5.6-luna`, `gpt-5.6-terra` (medium effort) | `OPENAI_API_KEY`, optional `OPENAI_BASE_URL` |
 | Agnes AI | `agnes-2.5-flash` | `AGNES_API_KEY` |
 | Google | `gemini-3.5-flash-lite`, `gemini-3.7-flash` | `GOOGLE_API_KEY` |
 
