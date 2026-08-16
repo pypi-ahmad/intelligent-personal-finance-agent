@@ -15,4 +15,5 @@ wheels/
 # Local secrets and data
 .env
 data/
+*.db.enc
 .streamlit/secrets.toml

@@ -432,6 +432,7 @@ name = "finance-agent"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "cryptography" },
     { name = "fpdf2" },
     { name = "google-genai" },
     { name = "httpx" },
@@ -454,6 +455,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "cryptography", specifier = ">=50.0.0" },
     { name = "fpdf2", specifier = ">=2.8.8" },
     { name = "google-genai", specifier = ">=2.18.1" },
     { name = "httpx", specifier = ">=0.28.1" },

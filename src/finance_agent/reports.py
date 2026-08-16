@@ -54,6 +54,53 @@ def week_markdown(day: date, rows: list[dict[str, Any]]) -> str:
     )
 
 
+TAX_HINTS = {
+    "TRANSPORT": "Possible business travel / commute",
+    "UTILITIES": "Possible home-office share",
+    "RENT": "Possible workspace / home office",
+    "HEALTH": "Possible medical",
+    "FEES": "Possible professional fees",
+    "OTHER": "Review for business use",
+}
+
+
+def tax_year_markdown(year: int, rows: list[dict[str, Any]]) -> str:
+    year_s = f"{year:04d}"
+    year_rows = [row for row in rows if str(row["date"]).startswith(year_s)]
+    spent = sum(float(r["amount"]) for r in year_rows if float(r["amount"]) < 0)
+    income = sum(float(r["amount"]) for r in year_rows if float(r["amount"]) > 0)
+    by_cat = top_categories(year_rows, limit=20)
+    lines = [
+        f"# Tax-ready expense report {year_s}",
+        "",
+        "For your accountant. Not tax advice. Review every line.",
+        "",
+        f"Income: {income:.2f}",
+        f"Expenses: {spent:.2f}",
+        f"Net: {income + spent:.2f}",
+        f"Transactions: {len(year_rows)}",
+        "",
+        "## Spend by category",
+    ]
+    if by_cat:
+        for item in by_cat:
+            hint = TAX_HINTS.get(item["category"], "")
+            extra = f" — {hint}" if hint else ""
+            lines.append(f"- {item['category']}: {item['spent']:.2f}{extra}")
+    else:
+        lines.append("- None")
+    lines.extend(["", "## Expense lines"])
+    for row in sorted(year_rows, key=lambda item: item["date"]):
+        if float(row["amount"]) >= 0:
+            continue
+        merch = row.get("merchant") or ""
+        lines.append(
+            f"- {row['date']} | {row['category']} | {row['amount']} | "
+            f"{merch} | {row['description']}"
+        )
+    return "\n".join(lines) + "\n"
+
+
 def report_pdf(markdown: str) -> bytes:
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)

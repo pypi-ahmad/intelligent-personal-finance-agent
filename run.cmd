@@ -23,6 +23,6 @@ if errorlevel 1 (
   exit /b 1
 )
 
-uv run streamlit run streamlit_app.py --server.headless true
+uv run streamlit run streamlit_app.py --server.headless true --server.address localhost
 if errorlevel 1 pause
 endlocal
