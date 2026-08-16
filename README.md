@@ -2,47 +2,54 @@
 
 https://github.com/pypi-ahmad/intelligent-personal-finance-agent
 
-Phase 3: local-first finance copilot — ingest, analyze, remember, and stay private.
+Local-first Phase 3 copilot: ingest statements, categorize, ask questions, and keep the ledger on disk.
 
-Data stays on disk in `data/finance.db`. API keys stay in `.env`.
+[How to use](docs/how-to-use.md) · [Technical reference](docs/technical.md)
 
 ## Features
 
 - Upload CSV, Excel, PDF, or statement images
-- Hybrid categories: rules, then local Ollama leftovers, then the selected API model only if still `OTHER`
-- Deduped SQLite ledger (`date` + `description` + `amount`)
-- Chat via LangGraph: plan → fetch → brief (insights/budgets) → answer
-- Insights: top categories, month vs last month, weekly/monthly charts, anomalies
-- Monthly budgets vs actual
-- Transaction filters (date, category, search) and editable category
-- Monthly/weekly report download as Markdown or PDF
-- Deep questions (category + travel window + last quarter), follow-ups with chat history
-- Accounts, net worth, recurring detection, savings/debt goals, alerts + weekly digest
-- Chat memory across restarts; privacy tab to inspect/delete local data
-- Local-first toggle: Ollama only, cloud APIs blocked
-- Sidebar model picker: Ollama, OpenAI, Agnes AI, Google
+- Hybrid categories: rules → local Ollama leftovers → selected API only if still `OTHER`
+- SQLite ledger with dedupe (`date` + `description` + `amount`)
+- LangGraph chat: plan → fetch → brief → reply, plus follow-ups and saved history
+- Insights, budgets vs actual, accounts/net worth, goals, recurring, alerts
+- Monthly/weekly report as Markdown or PDF
+- Privacy tab (inspect / delete) and a **Local-first** toggle (Ollama only)
 
-CSV and Excel ingest work with no model. PDF, images, leftover-category fill, and chat need one.
+CSV and Excel ingest work with no model. PDF, images, leftover LLM fill, and chat need one.
 
-## Prerequisites
+> [!WARNING]
+> Not a bank connection. Do not commit `.env` or `data/`.
 
-- Python 3.11+
-- [uv](https://docs.astral.sh/uv/)
-- A model only if you want PDF/image extract, LLM categories, or chat:
-  - local [Ollama](https://ollama.com/), or
-  - `OPENAI_API_KEY` / `AGNES_API_KEY` / `GOOGLE_API_KEY`
+## Stack
+
+| Layer | Choice |
+| --- | --- |
+| Language | Python 3.11+ |
+| UI | Streamlit 1.61+ |
+| Agent | LangGraph |
+| Store | SQLite (`data/finance.db`) |
+| Package | uv + `uv.lock` |
+| Dev | pytest, ruff, ty |
+
+## Architecture
+
+```
+upload → parse → rules → local leftovers → API leftovers → SQLite
+question → plan filters → search (+ travel window) → brief → answer
+```
+
+Single process. No hosted API. Digests and reports compute when you open the tab.
+
+Details: [docs/technical.md](docs/technical.md)
 
 ## Getting started
 
-1. Copy env file:
+**Need:** Python 3.11+, [uv](https://docs.astral.sh/uv/). Optional: [Ollama](https://ollama.com/) or cloud keys.
 
-   ```bat
-   copy .env.example .env
-   ```
-
-2. Keys come from this machine's environment first (`OPENAI_API_KEY`, `OPENAI_BASE_URL`, `AGNES_API_KEY`, `GOOGLE_API_KEY`). `.env.example` is only a template for other machines. Ollama needs no key; optional `OLLAMA_HOST` defaults to `http://localhost:11434`.
-
-3. Start the app:
+1. Keys come from this machine first: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `AGNES_API_KEY`, `GOOGLE_API_KEY`.
+2. On a new machine with no OS vars, copy `.env.example` → `.env` and fill only what you use.
+3. Start:
 
    Double-click `run.cmd`, or:
 
@@ -51,65 +58,48 @@ CSV and Excel ingest work with no model. PDF, images, leftover-category fill, an
    uv run streamlit run streamlit_app.py
    ```
 
-`run.cmd` installs uv if missing, copies `.env.example` → `.env` when needed, syncs deps, then starts Streamlit.
+`run.cmd` installs uv if missing, syncs deps, starts Streamlit. It does **not** create a blank `.env`.
 
 > [!NOTE]
-> OpenAI, Agnes AI, and Google show an error in the sidebar until the matching key is set. CSV/Excel ingest still works.
+> Sidebar errors on a missing cloud key. CSV/Excel ingest still works.
 
-## Use it
+**Use it:** pick provider/model → ingest files → **Chat**, **Transactions**, **Insights**, **Plan**, **Reports**, **Privacy**.
 
-1. Pick a provider and model in the sidebar (skip for CSV/Excel only).
-2. Upload one or more statements → **Ingest files**.
-3. Check totals at the top (count, spent, income).
-4. **Chat** (memory + follow-ups). **Transactions**, **Insights**, **Plan** (budgets/accounts/goals), **Reports**, **Privacy**.
+Expenses are negative, income positive. Default currency is INR.
 
-Amounts: expenses/debits are negative, income/credits positive. Default currency is INR.
+Full walkthrough: [docs/how-to-use.md](docs/how-to-use.md)
 
-### Categories
-
-`FOOD` `GROCERIES` `TRANSPORT` `UTILITIES` `RENT` `SHOPPING` `HEALTH` `ENTERTAINMENT` `TRANSFER` `INCOME` `FEES` `OTHER`
-
-Rules live in `src/finance_agent/categorize.py`.
-
-### Models
+## Models
 
 | Provider | Models | Key |
 | --- | --- | --- |
-| Ollama | whatever is installed locally | none |
-| OpenAI | `gpt-5.6-luna` (medium effort) | `OPENAI_API_KEY` + optional `OPENAI_BASE_URL` |
+| Ollama | all local models from `/api/tags` | none (`OLLAMA_HOST` optional) |
+| OpenAI | `gpt-5.6-luna` (medium effort) | `OPENAI_API_KEY`, optional `OPENAI_BASE_URL` |
 | Agnes AI | `agnes-2.5-flash` | `AGNES_API_KEY` |
 | Google | `gemini-3.5-flash-lite`, `gemini-3.7-flash` | `GOOGLE_API_KEY` |
 
-Optional: `OPENAI_BASE_URL` for an OpenAI-compatible gateway.
+Agnes base URL is fixed: `https://apihub.agnes-ai.com/v1`.
 
-## How it works
+## Project structure
 
 ```
-upload → parse → rules → local leftovers → API leftovers → SQLite
-question → plan filters → search rows → brief (insights/budgets) → answer
+streamlit_app.py          UI
+src/finance_agent/        package
+  ingest.py               parse files
+  categorize.py           rules + hybrid leftovers
+  db.py                   SQLite
+  agent.py                LangGraph
+  insights.py / copilot.py
+  llm.py / reports.py
+docs/                     how-to + technical
+tests/                    phase 1–3
 ```
 
-| Path | Role |
-| --- | --- |
-| `streamlit_app.py` | UI |
-| `src/finance_agent/ingest.py` | Parse files |
-| `src/finance_agent/categorize.py` | Rules + hybrid leftovers |
-| `src/finance_agent/insights.py` | Trends, compare, anomalies |
-| `src/finance_agent/reports.py` | Markdown / PDF |
-| `src/finance_agent/db.py` | SQLite + budgets |
-| `src/finance_agent/agent.py` | LangGraph Q&A + follow-ups |
-| `src/finance_agent/copilot.py` | Travel filter, recurring, alerts, digest |
-| `src/finance_agent/llm.py` | Provider wrappers + local-first gate |
-
-`data/` and `.env` are gitignored.
-
-## Tests
+## Testing
 
 ```bat
 uv run pytest
+uv run ruff check
 ```
 
-Covers ingest, hybrid leftover fill, insights, budgets, and report export.
-
-> [!WARNING]
-> This is a local Phase 3 tool, not a bank connection. Do not commit `.env` or `data/`.
+Covers parse/rules, hybrid leftovers, insights/budgets/reports, travel/recurring/memory/local-first.
