@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Personal finance agent",
+    "subtitle": "Local-first Streamlit copilot — SQLite ledger, LangGraph Q&A, optional cloud LLMs",
+    "output": "finance-agent.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/pypi-ahmad/intelligent-personal-finance-agent",
+      "revision": "0109ff3e0e60c2c8cbfb3017eb29a7c651dcf429"
+    },
+    "views": [
+      {
+        "id": "main-path",
+        "label": "Use the app",
+        "focus": ["user", "ui", "pkg", "db"],
+        "note": "Browser hits Streamlit; finance_agent reads and writes the local ledger."
+      },
+      {
+        "id": "models",
+        "label": "Model providers",
+        "focus": ["pkg", "ollama", "cloud"],
+        "note": "Ollama is local. Cloud OpenAI, Agnes, and Gemini are blocked when Local-only is on."
+      },
+      {
+        "id": "privacy",
+        "label": "Lock and unlock",
+        "focus": ["ui", "vault", "db"],
+        "note": "Privacy tab locks finance.db with PFENC1 + Fernet. Unlock is required before other tabs."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "user",
+      "type": "external",
+      "label": "You",
+      "sublabel": "Browser",
+      "pos": [48, 280],
+      "size": [120, 60]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Streamlit UI",
+      "sublabel": "eight tabs",
+      "pos": [260, 280],
+      "size": [140, 64],
+      "sources": [{ "path": "streamlit_app.py", "label": "app" }]
+    },
+    {
+      "id": "pkg",
+      "type": "backend",
+      "label": "finance_agent",
+      "sublabel": "ingest · chat · insights",
+      "pos": [500, 280],
+      "size": [168, 64],
+      "sources": [
+        { "path": "src/finance_agent/agent.py", "label": "LangGraph" },
+        { "path": "src/finance_agent/ingest.py", "label": "parse" },
+        { "path": "src/finance_agent/categorize.py", "label": "hybrid" }
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "SQLite",
+      "sublabel": "data/finance.db",
+      "pos": [760, 280],
+      "size": [148, 64],
+      "sources": [{ "path": "src/finance_agent/db.py", "label": "connect" }]
+    },
+    {
+      "id": "ollama",
+      "type": "backend",
+      "label": "Ollama",
+      "sublabel": "/api/tags",
+      "pos": [500, 96],
+      "size": [168, 60],
+      "sources": [{ "path": "src/finance_agent/llm.py", "label": "complete" }]
+    },
+    {
+      "id": "cloud",
+      "type": "cloud",
+      "label": "Cloud LLMs",
+      "sublabel": "OpenAI · Agnes · Gemini",
+      "pos": [760, 96],
+      "size": [168, 60],
+      "sources": [{ "path": "src/finance_agent/config.py", "label": "env" }]
+    },
+    {
+      "id": "vault",
+      "type": "security",
+      "label": "Vault",
+      "sublabel": "PFENC1 + Fernet",
+      "pos": [260, 460],
+      "size": [140, 64],
+      "tag": "passphrase",
+      "sources": [{ "path": "src/finance_agent/vault.py", "label": "lock" }]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "This machine",
+      "wraps": ["ui", "pkg", "db", "ollama", "vault"]
+    }
+  ],
+  "connections": [
+    { "id": "user-to-ui", "from": "user", "to": "ui", "variant": "emphasis" },
+    { "id": "ui-to-pkg", "from": "ui", "to": "pkg" },
+    { "id": "pkg-to-db", "from": "pkg", "to": "db" },
+    { "id": "pkg-to-ollama", "from": "pkg", "to": "ollama", "fromSide": "top", "toSide": "bottom" },
+    { "id": "pkg-to-cloud", "from": "pkg", "to": "cloud", "variant": "dashed" },
+    { "id": "ui-to-vault", "from": "ui", "to": "vault", "variant": "security", "fromSide": "bottom", "toSide": "top" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Local first",
+      "items": [
+        "Single process on localhost; no bank API",
+        "CSV/Excel ingest works with no model"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Ledger and Q&A",
+      "items": [
+        "Hybrid categories: rules, corrections, then LLM",
+        "LangGraph: plan → fetch → brief → reply"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Privacy",
+      "items": [
+        "Local-only blocks cloud complete()",
+        "Optional passphrase lock deletes plaintext db"
+      ]
+    }
+  ]
+}
