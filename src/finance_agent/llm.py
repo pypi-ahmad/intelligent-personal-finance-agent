@@ -23,7 +23,7 @@ def list_ollama_models() -> list[str]:
         resp = httpx.get(f"{OLLAMA_HOST.rstrip('/')}/api/tags", timeout=2.0)
         resp.raise_for_status()
         names = [m.get("name", "") for m in resp.json().get("models", [])]
-        return [n for n in names if n]
+        return sorted(n for n in names if n)
     except httpx.HTTPError:
         return []
 

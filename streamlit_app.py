@@ -109,7 +109,15 @@ with st.sidebar:
         st.warning("No models found. Start Ollama or check API keys.")
         model = ""
     else:
-        model = st.selectbox("Model", models, key="model")
+        model = st.selectbox("Model", models, key=f"model_{provider}")
+        if provider == "OpenAI":
+            st.caption("gpt-5.6-luna · effort medium")
+        elif provider == "Agnes AI":
+            st.caption("agnes-2.5-flash")
+        elif provider == "Google":
+            st.caption("gemini-3.5-flash-lite · gemini-3.7-flash")
+        elif provider == "Ollama":
+            st.caption(f"{len(models)} local model(s)")
     key_missing = missing_key(provider)
     if key_missing:
         st.error(f"Missing {key_missing} in environment")
