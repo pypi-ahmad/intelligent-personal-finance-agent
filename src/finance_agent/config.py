@@ -7,7 +7,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
+# Machine / process env wins. .env only fills missing keys (for other machines).
+load_dotenv(override=False)
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
@@ -15,7 +16,7 @@ DB_PATH = DATA_DIR / "finance.db"
 
 PROVIDERS = ("Ollama", "OpenAI", "Agnes AI", "Google")
 
-OPENAI_MODELS = ("gpt-5.6-luna", "gpt-5.6-terra")
+OPENAI_MODELS = ("gpt-5.6-luna",)
 OPENAI_EFFORT = "medium"
 
 AGNES_MODEL = "agnes-2.5-flash"
@@ -62,4 +63,15 @@ CATEGORIES = (
 
 
 def env(name: str) -> str:
-    return os.getenv(name, "").strip()
+    val = os.getenv(name, "").strip()
+    if val:
+        return val
+    if os.name != "nt":
+        return ""
+    try:
+        import winreg
+
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Environment") as key:
+            return str(winreg.QueryValueEx(key, name)[0]).strip()
+    except OSError:
+        return ""
