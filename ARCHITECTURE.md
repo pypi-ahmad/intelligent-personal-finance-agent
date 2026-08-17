@@ -2,9 +2,7 @@
 
 Local-first snapshot of the checkout. Claims below are from files on disk.
 
-**Identity.** Remote `https://github.com/pypi-ahmad/intelligent-personal-finance-agent.git`. Branch `main`. HEAD `0109ff3`. Package `finance-agent` `0.1.0` (`pyproject.toml` L1–3). No license file.
-
-**[Resolved contradiction]** `pyproject.toml` L4 still says “Phase 1 … ingest … chat”. Runtime `__init__.py` L1 and `README.md` describe Phase 8. Trust the code and README, not that one-line description.
+**Identity.** Remote `https://github.com/pypi-ahmad/intelligent-personal-finance-agent.git`. Branch `main`. HEAD `0109ff3`. Package `finance-agent` `0.1.0` (`pyproject.toml` L1–3). MIT license (`LICENSE`).
 
 ---
 
@@ -138,7 +136,6 @@ Layering is import convention only. No import-linter.
 | `uv run pytest` = 35 | High as of last agent run |
 | Streamlit live UI | Unverified this pass (no app launch) |
 | CI / branch protection | Unverified |
-| `pyproject` Phase 1 blurb | Stale vs Phase 8 code |
 
 ---
 
