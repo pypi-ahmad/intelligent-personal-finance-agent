@@ -1,12 +1,26 @@
 # Personal finance agent
 
-https://github.com/pypi-ahmad/intelligent-personal-finance-agent
+Repository: [github.com/pypi-ahmad/intelligent-personal-finance-agent](https://github.com/pypi-ahmad/intelligent-personal-finance-agent)
 
 A **free, local-first** Phase 8 copilot: ingest statements, learn your category fixes, and keep the ledger on **your** machine. Clone it, run it, test it, file issues, suggest features, and send pull requests. You are welcome here.
 
 This project is **community-driven**. There is no hosted product, no account, and no backend that sees your statements. Everything runs on the computer you control, with **your** API keys if you choose to use a cloud model.
 
 [How to use](docs/how-to-use.md) · [Technical reference](docs/technical.md) · [Architecture](ARCHITECTURE.md) · [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md) · [Disclaimer](DISCLAIMER.md) · [Security](SECURITY.md) · [License](LICENSE)
+
+## Contents
+
+- [Free software — no money asked](#free-software--no-money-asked)
+- [You run it — you own the risk](#you-run-it--you-own-the-risk)
+- [Features](#features)
+- [Stack](#stack)
+- [Architecture](#architecture)
+- [Getting started](#getting-started)
+- [Models](#models)
+- [Project structure](#project-structure)
+- [Testing](#testing)
+- [Community](#community)
+- [License](#license)
 
 ## Free software — no money asked
 
