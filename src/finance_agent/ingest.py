@@ -38,6 +38,9 @@ def parse_file(name: str, data: bytes, llm_extract: Any | None = None) -> list[d
         rows = _from_table(pd.read_excel(io.BytesIO(data)))
     elif suffix == ".pdf":
         text = _pdf_text(data)
+        # LLM extraction first (if a model is selected); if that's
+        # unavailable or returns nothing usable, fall back to a regex
+        # line-scan heuristic rather than failing the whole file.
         rows = _from_llm(text, name, llm_extract) if llm_extract else []
         if not rows and text.strip():
             rows = _from_loose_text(text)
@@ -86,6 +89,9 @@ def _parse_date(value: Any) -> str | None:
             return datetime.strptime(text[:32], fmt).date().isoformat()
         except ValueError:
             continue
+    # None of the explicit formats matched (e.g. a locale variant). Fall
+    # back to pandas with dayfirst=True: an ambiguous "01/02/2024" reads as
+    # 1 Feb, matching the day-first statements this app targets (INR/UPI).
     parsed = pd.to_datetime(text, dayfirst=True, errors="coerce")
     if pd.isna(parsed):
         return None
@@ -99,6 +105,9 @@ def _parse_amount(value: Any) -> float | None:
         return float(value)
     text = str(value).strip().replace(",", "")
     text = re.sub(r"[₹$€£]", "", text)
+    # Bank-statement accounting notation: trailing CR/DR suffixes and
+    # parenthesized values both mean "this is a debit", so normalize both
+    # to a leading minus sign before the float() call below.
     if text.endswith("CR"):
         text = text.removesuffix("CR")
     if text.endswith("DR"):
@@ -178,6 +187,10 @@ def _from_loose_text(text: str) -> list[dict[str, Any]]:
 
 
 def parse_json_payload(text: str) -> Any:
+    # LLM output is untrusted/unstructured: it may wrap JSON in a markdown
+    # code fence and/or add prose before or after it. Strip fences, then
+    # take the outermost [...]/{...} span rather than assuming the whole
+    # string is valid JSON.
     cleaned = text.strip()
     if cleaned.startswith("```"):
         cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned)
@@ -192,6 +205,8 @@ def parse_json_payload(text: str) -> Any:
 
 
 def _from_llm(text: str, name: str, llm_extract: Any, image: bytes | None = None) -> list[dict[str, Any]]:
+    # Truncate to keep the prompt within a reasonable context/cost budget;
+    # long statements are still readable via the CSV/Excel path instead.
     raw = llm_extract(EXTRACT_PROMPT + "\n\n" + text[:12000], image=image)
     payload = parse_json_payload(raw)
     if not isinstance(payload, list):

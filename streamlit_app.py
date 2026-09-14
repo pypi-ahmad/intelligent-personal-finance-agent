@@ -1,3 +1,12 @@
+"""Single-page Streamlit UI for the finance agent.
+
+Streamlit reruns this whole script top-to-bottom on every widget
+interaction; st.session_state is the only state that survives a rerun.
+Business logic lives in the finance_agent package (db.py for storage,
+agent.py for chat, ingest.py for statement parsing) — this file wires
+those into widgets and should stay presentation-only.
+"""
+
 from contextlib import suppress
 from datetime import UTC, date, datetime
 
@@ -80,6 +89,9 @@ st.set_page_config(
 st.session_state.setdefault("messages", [])
 st.session_state.setdefault("last_error", "")
 
+
+# Must run before any db.py access: while locked, DB_PATH doesn't exist and
+# db.connect() would just create an empty database over the encrypted one.
 if is_locked():
     st.title("Unlock database")
     st.caption("Your ledger is encrypted on disk. Enter the passphrase.")
@@ -106,6 +118,10 @@ def _call(provider_name: str, model_name: str, prompt: str) -> str:
 
 
 def _hybrid_completes(provider: str, model: str, key_missing: str | None):
+    # provider/model/local_models[0] are captured as default-argument values
+    # (_p, _m), not by closure reference, so each returned function keeps
+    # the value it had at definition time even though `provider`/`model`
+    # are ordinary script-level names that could otherwise be reused later.
     local_fn = None
     api_fn = None
     if provider == "Ollama" and model:
@@ -220,6 +236,9 @@ if ingest:
                     added_total += added
                     st.write(f"{len(rows)} parsed, {added} new")
                 except Exception as exc:
+                    # Broad on purpose: one malformed statement (bad parse,
+                    # LLM extraction failure, etc.) shouldn't abort the rest
+                    # of a multi-file batch upload.
                     st.write(f"Failed: {exc}")
             status.update(label=f"Ingest done — {added_total} new rows", state="complete")
         if added_total:
@@ -229,6 +248,9 @@ dash_tab, note_tab, chat_tab, table_tab, insights_tab, plan_tab, report_tab, pri
     ["Dashboard", "Notifications", "Chat", "Transactions", "Insights", "Plan", "Reports", "Privacy"],
     on_change="rerun",
 )
+# Each `if X_tab.open:` block below only runs while that tab is the active
+# one — switching tabs reruns the script but skips the other tabs' queries
+# and widgets rather than rendering all of them hidden.
 
 if note_tab.open:
     with note_tab:
@@ -384,6 +406,14 @@ if chat_tab.open:
             with st.chat_message(msg["role"]):
                 st.write(msg["content"])
 
+        # A submitted chat_input only has a value on the run it was
+        # submitted; the answer is generated on that same run below, and
+        # the exchange is also persisted to session_state/db so it survives
+        # later reruns triggered by unrelated widgets. `pending` therefore
+        # covers two cases: a fresh submission, or a user message from a
+        # prior run that never got a reply appended (e.g. the run was
+        # interrupted) — guarded by checking the message *before* it isn't
+        # already an assistant reply, so an answered question isn't redone.
         prompt = st.chat_input("Ask about your transactions", submit_mode="disable")
         pending = None
         if prompt:
@@ -465,12 +495,18 @@ if table_tab.open:
                     key=f"tx_editor_{start_s}_{end_s}_{cat}_{acct}_{query}",
                     num_rows="fixed",
                 )
+                # st.data_editor can return a pandas DataFrame or a plain
+                # list of dicts depending on the environment; branch on
+                # shape to read edited columns either way.
                 if hasattr(edited, "columns"):
                     new_cats = edited["category"]
                     new_accts = edited["account"]
                 else:
                     new_cats = [r["category"] for r in edited]
                     new_accts = [r.get("account") for r in edited]
+                # Pairing by position relies on num_rows="fixed" and the id
+                # column being disabled, so `edited` is always the same rows
+                # as `rows` in the same order — no row identity is checked.
                 for orig, new_cat, new_acct in zip(rows, new_cats, new_accts, strict=True):
                     if new_cat != orig["category"] and new_cat in CATEGORIES:
                         update_category(int(orig["id"]), new_cat)
@@ -740,6 +776,9 @@ if privacy_tab.open:
             else:
                 try:
                     lock_db(pw1)
+                    # Forces chat history to be reloaded from disk on next
+                    # unlock instead of leaving the now-hidden data's
+                    # messages visible in this session's memory.
                     st.session_state.mem_loaded = False
                     st.success("Locked. Reload and unlock to continue.")
                     st.rerun()
@@ -755,6 +794,8 @@ if privacy_tab.open:
         with st.form("wipe_all"):
             phrase = st.text_input("Type DELETE to wipe ledger, chat, budgets, accounts, goals")
             go = st.form_submit_button("Wipe all local data", icon=":material/delete:")
+        # Typed-confirmation gate for an irreversible action (db.wipe_all
+        # has no undo) — this is the one check standing in front of it.
         if go and phrase.strip() == "DELETE":
             wipe_all()
             st.session_state.messages = []

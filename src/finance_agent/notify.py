@@ -14,6 +14,9 @@ def week_monday(day: date) -> date:
 
 
 def next_bill_date(last: str, cadence: str) -> date:
+    # Cadence is a fixed day-count, not a calendar month (30, not "same day
+    # next month") — same approximation copilot.detect_recurring uses to
+    # classify a pattern as monthly/weekly in the first place.
     step = 30 if cadence == "monthly" else 7
     return date.fromisoformat(last) + timedelta(days=step)
 
@@ -55,6 +58,10 @@ def week_delta(rows: list[dict[str, Any]], today: date) -> dict[str, Any]:
 
 
 def refresh_inbox(today: date) -> int:
+    # Meant to be called on every page load (streamlit_app.py does). Each
+    # add_notification() call below is deduped by a stable key (e.g.
+    # "digest-<monday>"), so repeated calls the same day/week are no-ops —
+    # `added` only counts genuinely new notifications.
     from finance_agent.db import (
         add_notification,
         list_accounts,

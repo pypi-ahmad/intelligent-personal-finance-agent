@@ -51,6 +51,9 @@ def missing_key(provider: str) -> str | None:
 
 
 def _image_mime(data: bytes) -> str:
+    # Callers only have raw bytes (from a Streamlit file upload), not a
+    # trustworthy content-type, so sniff the format from magic bytes for
+    # the data: URL / inline-part APIs below.
     if data.startswith(b"\x89PNG\r\n\x1a\n"):
         return "image/png"
     if data.startswith(b"\xff\xd8\xff"):
@@ -70,6 +73,9 @@ def complete(
 ) -> str:
     from finance_agent.db import is_local_only
 
+    # Privacy gate: once local-only mode is on, only Ollama (fully local)
+    # may run. This must be checked before any provider dispatch below —
+    # it's the one place that enforces the boundary.
     if is_local_only() and provider != "Ollama":
         msg = "Local-first mode blocks cloud providers."
         raise PermissionError(msg)
@@ -114,6 +120,9 @@ def _openai_compat(provider: str, model: str, messages: list[dict]) -> str:
     try:
         resp = client.chat.completions.create(**kwargs)
     except Exception:
+        # Not every OpenAI model accepts reasoning_effort. Retry once
+        # without it rather than failing the whole request; if `extra` was
+        # already empty there's nothing to drop, so re-raise.
         if extra:
             kwargs.pop("reasoning_effort", None)
             resp = client.chat.completions.create(**kwargs)
@@ -127,6 +136,9 @@ def _google(model: str, messages: list[dict]) -> str:
     from google.genai import types
 
     client = genai.Client(api_key=env("GOOGLE_API_KEY") or None)
+    # Translate the OpenAI-style {role, content} messages (built in
+    # complete() above) into google-genai's flat parts list, since the two
+    # SDKs use different shapes for text/image content and system prompts.
     parts: list = []
     system = None
     for msg in messages:

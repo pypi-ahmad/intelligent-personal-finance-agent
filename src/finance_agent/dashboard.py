@@ -39,7 +39,7 @@ def savings_rate_series(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for item in monthly_series(rows):
         income = float(item["income"])
-        spent = float(item["spent"])
+        spent = float(item["spent"])  # already a positive magnitude, per monthly_series()
         rate = (income - spent) / income if income > 0 else 0.0
         out.append({"month": item["month"], "savings_rate": rate})
     return out
@@ -63,6 +63,9 @@ def cashflow_forecast(
     today: date,
     days: int,
 ) -> dict[str, float]:
+    # Naive linear projection, not a statistical model: trailing 30-day net
+    # cashflow scaled to the forecast horizon, plus known recurring charges
+    # (from copilot.detect_recurring) explicitly due within that horizon.
     start = (today - timedelta(days=FORECAST_LOOKBACK)).isoformat()
     window = [row for row in rows if str(row["date"]) >= start]
     net = sum(float(row["amount"]) for row in window)
@@ -109,6 +112,9 @@ def lifestyle_inflation(
     complete = [item for item in monthly_series(rows) if item["month"] < today.strftime("%Y-%m")]
     if len(complete) < INFLATION_MONTHS:
         return None
+    # Compares the most recent `half` complete months against the `half`
+    # before that (3 and 3, today). The literal "/ 3" divisors below assume
+    # half == 3 — if INFLATION_MONTHS changes, these must change to match.
     half = INFLATION_MONTHS // 2
     recent = complete[-half:]
     prior = complete[-INFLATION_MONTHS:-half]
