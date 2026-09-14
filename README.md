@@ -2,16 +2,16 @@
 
 Repository: [github.com/pypi-ahmad/intelligent-personal-finance-agent](https://github.com/pypi-ahmad/intelligent-personal-finance-agent)
 
-A **free, local-first** Phase 8 copilot: ingest statements, learn your category fixes, and keep the ledger on **your** machine. Clone it, run it, test it, file issues, suggest features, and send pull requests. You are welcome here.
+A free, local-first Phase 8 copilot: ingest statements, learn your category fixes, and keep the ledger on your own machine. Clone it, run it, test it, file issues, suggest features, and send pull requests.
 
-This project is **community-driven**. There is no hosted product, no account, and no backend that sees your statements. Everything runs on the computer you control, with **your** API keys if you choose to use a cloud model.
+This project is community-driven. There is no hosted product, no account, and no backend that sees your statements. Everything runs on the computer you control, with your own API keys if you choose to use a cloud model.
 
 [How to use](docs/how-to-use.md) · [Technical reference](docs/technical.md) · [Architecture](ARCHITECTURE.md) · [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md) · [Disclaimer](DISCLAIMER.md) · [Security](SECURITY.md) · [License](LICENSE)
 
 ## Contents
 
-- [Free software — no money asked](#free-software--no-money-asked)
-- [You run it — you own the risk](#you-run-it--you-own-the-risk)
+- [Free software: no money asked](#free-software-no-money-asked)
+- [You run it, you own the risk](#you-run-it-you-own-the-risk)
 - [Features](#features)
 - [Stack](#stack)
 - [Architecture](#architecture)
@@ -22,15 +22,15 @@ This project is **community-driven**. There is no hosted product, no account, an
 - [Community](#community)
 - [License](#license)
 
-## Free software — no money asked
+## Free software: no money asked
 
-This software is MIT-licensed and **free to use**. The author does **not** want financial help, donations, sponsorships, “buy me a coffee,” paid support, or bounty programs. Please do not send money or open issues offering funds. Time, bug reports, and careful pull requests are the only contributions that help.
+This software is MIT-licensed and free to use. The author does not want financial help, donations, sponsorships, "buy me a coffee," paid support, or bounty programs. Please do not send money or open issues offering funds. Time, bug reports, and careful pull requests are the only contributions that help.
 
-## You run it — you own the risk
+## You run it, you own the risk
 
-- Run the app **only on your own machine**.
-- Bring **your own** credentials (`OPENAI_API_KEY`, `AGNES_API_KEY`, `GOOGLE_API_KEY`, optional `OLLAMA_HOST`). The maintainers never receive them and never need them.
-- **All data you upload, store, encrypt, export, or send to a model is 100% your responsibility.** Bank CSVs, PDFs, images, chat history, and the SQLite file stay on your disk (and may leave it if you pick a cloud provider). Read [DISCLAIMER.md](DISCLAIMER.md).
+- Run the app only on your own machine.
+- Bring your own credentials (`OPENAI_API_KEY`, `AGNES_API_KEY`, `GOOGLE_API_KEY`, optional `OLLAMA_HOST`). The maintainers never receive them and never need them.
+- All data you upload, store, encrypt, export, or send to a model is your responsibility. Bank CSVs, PDFs, images, chat history, and the SQLite file stay on your disk, and may leave it if you pick a cloud provider. Read [DISCLAIMER.md](DISCLAIMER.md).
 
 This is not a bank connection, not financial advice, and not a tax professional.
 
@@ -77,7 +77,7 @@ Details: [docs/technical.md](docs/technical.md) · [ARCHITECTURE.md](ARCHITECTUR
 
 ## Getting started
 
-**Need:** a network the first time. Native **Windows** (`run.cmd`) or native **Linux** (`run.sh`). No Docker or WSL required. Optional later: [Ollama](https://ollama.com/) or cloud keys **you** create.
+**Need:** a network the first time. Native Windows (`run.cmd`) or native Linux (`run.sh`). No Docker or WSL required. Optional later: [Ollama](https://ollama.com/) or cloud keys you create.
 
 ```bash
 git clone https://github.com/pypi-ahmad/intelligent-personal-finance-agent.git
@@ -105,7 +105,7 @@ Keys come from this machine first: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `AGNES_A
 > [!NOTE]
 > Sidebar errors on a missing cloud key. CSV/Excel ingest still works. Locked DBs show an unlock screen first.
 
-**Use it:** provider/model → ingest → **Dashboard** (landing), **Notifications**, **Chat**, **Transactions**, **Insights**, **Plan**, **Reports**, **Privacy**.
+**Use it:** provider/model → ingest → Dashboard (landing), Notifications, Chat, Transactions, Insights, Plan, Reports, Privacy.
 
 Expenses are negative, income positive. Default currency is INR.
 
@@ -136,7 +136,7 @@ src/finance_agent/         package
   insights.py / copilot.py / dashboard.py / notify.py
   reports.py
 docs/                      how-to + technical
-tests/                     phase 1–6 and 8
+tests/                     phase 1-6 and 8
 ```
 
 ## Testing

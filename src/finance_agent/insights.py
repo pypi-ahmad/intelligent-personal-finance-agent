@@ -31,6 +31,7 @@ def shift_month(period: str, delta: int) -> str:
 
 
 def week_bounds(day: date) -> tuple[str, str, str]:
+    # ISO week: Monday-start (date.weekday() is 0 for Monday), not Sunday-start.
     start = day - timedelta(days=day.weekday())
     end = start + timedelta(days=6)
     iso = start.isocalendar()
@@ -127,6 +128,9 @@ def anomalies(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         median, fence = _fence(values) if len(values) >= MIN_SAMPLES else (global_med, global_fence)
         for row in items:
             amount = abs(float(row["amount"]))
+            # Both conditions must hold: `fence` alone can trip on trivial
+            # differences when the category's median is tiny, so also
+            # require at least 2x the typical spend for that category.
             if amount > fence and amount > median * 2:
                 flagged.append(
                     {
@@ -197,6 +201,11 @@ def snapshot() -> str:
 
 
 def _fence(values: list[float]) -> tuple[float, float]:
+    # Robust outlier fence via median absolute deviation (MAD), so a single
+    # huge transaction can't skew the threshold the way a mean/stdev would.
+    # 1.4826 rescales MAD to be comparable to a normal distribution's
+    # standard deviation; 3x that is the fence. If every value is equal
+    # (mad == 0) there's no spread to scale, so fall back to 3x the median.
     if len(values) < MIN_SAMPLES:
         return 0.0, 0.0
     median = statistics.median(values)

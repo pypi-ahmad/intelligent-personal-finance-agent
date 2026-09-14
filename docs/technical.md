@@ -91,10 +91,10 @@ Optional lock: `vault.lock_db(passphrase)` writes `data/finance.db.enc` (`PFENC1
 
 `START → plan → fetch → brief → reply → END`
 
-- **plan** — JSON filters; `infer_range` fills last quarter / month / week; travel flag
-- **fetch** — `search()`; travel days from `TRAVEL_NEEDLES` ±1 day
-- **brief** — `snapshot()` + learned merchant=category
-- **reply** — last eight chat lines + context only
+- **plan**: JSON filters; `infer_range` fills last quarter / month / week; travel flag
+- **fetch**: `search()`; travel days from `TRAVEL_NEEDLES` ±1 day
+- **brief**: `snapshot()` + learned merchant=category
+- **reply**: last eight chat lines + context only
 
 ## Dashboard and inbox
 

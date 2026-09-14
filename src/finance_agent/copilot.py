@@ -14,6 +14,9 @@ from finance_agent.config import TRAVEL_NEEDLES
 from finance_agent.insights import MONTHS, anomalies, budget_status, month_bounds, spent_of
 
 RECUR_MIN = 3
+# Tolerance windows, not exact day counts: calendar months vary 28-31 days
+# and billing dates drift a few days, so a range is treated as "monthly"
+# or "weekly" rather than requiring an exact gap.
 MONTHLY_GAP = (25, 35)
 WEEKLY_GAP = (6, 8)
 GOAL_BEHIND = 0.5
@@ -129,6 +132,10 @@ def goal_progress(goal: dict[str, Any]) -> float:
     if target <= 0:
         return 0.0
     current = float(goal["current"])
+    # Note: this computes the same current/target ratio for both kinds.
+    # Unclear from this file whether a "debt" goal is meant to track
+    # pay-down progress differently (e.g. from an original balance); as
+    # written, "current" is expected to already represent progress either way.
     if goal.get("kind") == "debt":
         return max(0.0, min(1.0, current / target))
     return max(0.0, min(1.0, current / target))
@@ -199,5 +206,8 @@ def weekly_digest(  # noqa: PLR0913
 
 
 def _norm_desc(text: str) -> str:
+    # Statement descriptions for the same recurring merchant often embed a
+    # changing reference/transaction number; stripping digits lets
+    # detect_recurring() group repeat charges from the same source together.
     cleaned = re.sub(r"\d+", "", text.lower())
     return re.sub(r"\s+", " ", cleaned).strip()

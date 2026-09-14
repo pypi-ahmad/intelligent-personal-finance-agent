@@ -1,4 +1,11 @@
-"""LangGraph Q&A over stored transactions."""
+"""LangGraph Q&A over stored transactions.
+
+Four-node pipeline: plan (LLM turns the question into search filters) ->
+fetch (db.search over those filters) -> brief (adds insights.snapshot() +
+learned corrections as context) -> reply (LLM answers from that context).
+See db.py for the underlying transaction store and copilot.py for the
+travel/date-range heuristics used when the LLM's plan is unusable.
+"""
 
 from __future__ import annotations
 
@@ -61,6 +68,10 @@ def _plan(state: AgentState) -> dict[str, Any]:
             history=state.get("history") or "(none)",
         ),
     )
+    # The LLM's plan is untrusted output: if it isn't valid JSON or isn't an
+    # object, fall through to an empty plan so every field below degrades to
+    # its keyword-heuristic fallback (infer_range, wants_travel) instead of
+    # raising.
     try:
         data = parse_json_payload(raw)
     except (ValueError, TypeError):
@@ -101,6 +112,10 @@ def _plan(state: AgentState) -> dict[str, Any]:
 def _fetch(state: AgentState) -> dict[str, Any]:
     filters = state["filters"]
     travel = bool(filters.get("travel"))
+    # Travel matching needs "was this near a travel-tagged transaction",
+    # which SQL can't express here — so for travel questions, pull a wide
+    # window (ignoring category/text at the DB layer) and let
+    # copilot.filter_travel() do the date-adjacency filtering in Python.
     rows = search(
         start_date=filters.get("start_date"),
         end_date=filters.get("end_date"),
@@ -146,7 +161,7 @@ def _reply(state: AgentState) -> dict[str, Any]:
     return {"answer": answer}
 
 
-@lru_cache(maxsize=1)
+@lru_cache(maxsize=1)  # graph is stateless/reusable — compile once per process, not per ask() call
 def build_graph():
     graph = StateGraph(AgentState)  # type: ignore[invalid-argument-type]
     graph.add_node("plan", _plan)
@@ -164,6 +179,8 @@ def build_graph():
 def _history_text(history: list[dict[str, str]] | None) -> str:
     if not history:
         return "(none)"
+    # Cap at the last 8 turns to keep the plan/answer prompts within a
+    # reasonable size budget; older turns are dropped, not summarized.
     lines = [f"{item.get('role', '?')}: {item.get('content', '')}" for item in history[-8:]]
     return "\n".join(lines) or "(none)"
 

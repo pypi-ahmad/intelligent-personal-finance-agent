@@ -107,6 +107,10 @@ def report_pdf(markdown: str) -> bytes:
     pdf.add_page()
     width = pdf.epw
     for raw in markdown.splitlines():
+        # FPDF's built-in Helvetica core font only supports ASCII/Latin-1;
+        # no Unicode font is embedded here. Non-ASCII characters (currency
+        # symbols, non-Latin merchant/description text) become "?" rather
+        # than raising or rendering as boxes.
         line = raw.encode("ascii", "replace").decode("ascii").strip()
         if not line:
             pdf.ln(3)

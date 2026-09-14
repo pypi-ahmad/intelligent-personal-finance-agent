@@ -68,6 +68,9 @@ def env(name: str) -> str:
         return val
     if os.name != "nt":
         return ""
+    # Windows fallback: a user env var set via System Properties may not be
+    # visible in os.environ until a fresh logon/terminal. Read the registry
+    # directly so a key added there is picked up without restarting.
     try:
         import winreg
 

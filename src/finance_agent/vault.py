@@ -1,4 +1,10 @@
-"""Optional at-rest lock for the SQLite file. Passphrase never stored."""
+"""Optional at-rest lock for the SQLite file. Passphrase never stored.
+
+Swaps data/finance.db for an encrypted data/finance.db.enc and back.
+db.py assumes DB_PATH exists and is plaintext SQLite; callers must check
+is_locked() (streamlit_app.py does, before any db.py access) rather than
+letting db.py fail on a missing file.
+"""
 
 from __future__ import annotations
 
@@ -11,13 +17,20 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 from finance_agent.config import DATA_DIR, DB_PATH
 
+# On-disk blob layout: MAGIC + salt + Fernet token. A fresh random salt per
+# encrypt_bytes() call means the same passphrase never produces the same
+# ciphertext twice.
 MAGIC = b"PFENC1"
 SALT_LEN = 16
-KDF_ROUNDS = 200_000
+KDF_ROUNDS = 200_000  # PBKDF2-HMAC-SHA256 iterations: higher = slower brute force, slower unlock.
 ENC_PATH = DATA_DIR / "finance.db.enc"
 
 
 def is_locked() -> bool:
+    # Locked state is inferred purely from file presence. If both files exist
+    # (e.g. an unlock was interrupted, or a plaintext copy was restored by
+    # hand) this reports unlocked and DB_PATH is used, leaving the stale
+    # .enc file untouched rather than raising.
     return ENC_PATH.exists() and not DB_PATH.exists()
 
 

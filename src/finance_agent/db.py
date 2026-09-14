@@ -1,4 +1,11 @@
-"""SQLite storage. Parameterized queries only."""
+"""SQLite storage. Parameterized queries only.
+
+Owns the schema and every read/write to data/finance.db. Keep business
+logic (categorization, insights, report text) in the other modules, not
+here. See vault.py for the at-rest encryption that sits in front of
+DB_PATH, and categorize.py for how a row's category/merchant are decided
+before reaching insert_many().
+"""
 
 from __future__ import annotations
 
@@ -13,6 +20,9 @@ from typing import Any
 
 from finance_agent.config import ACCOUNT_KINDS, CATEGORIES, DATA_DIR, DB_PATH, GOAL_KINDS
 
+# Additive-only schema: new columns for existing installs are added in
+# _migrate() below, not by editing the CREATE TABLE here. Renaming or
+# retyping a column would break older databases with no migration path.
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS transactions (
     id INTEGER PRIMARY KEY,
@@ -27,6 +37,11 @@ CREATE TABLE IF NOT EXISTS transactions (
     parent_id INTEGER,
     created_at TEXT NOT NULL
 );
+-- parent_id is meant to link a split's child rows back to the original
+-- transaction, and list_transactions()/search() below filter on
+-- "parent_id IS NULL" to hide children from the main ledger view. No code
+-- path currently sets it to non-NULL: split_transaction() deletes the
+-- original row and inserts replacements with parent_id left NULL.
 CREATE INDEX IF NOT EXISTS idx_tx_date ON transactions(date);
 CREATE INDEX IF NOT EXISTS idx_tx_category ON transactions(category);
 CREATE TABLE IF NOT EXISTS budgets (
@@ -88,7 +103,7 @@ GET_TX_SQL = (
     "FROM transactions WHERE id = ?"
 )
 SPLIT_MIN_PARTS = 2
-SPLIT_TOL = 0.02
+SPLIT_TOL = 0.02  # amounts are stored as REAL; allow for float rounding when parts must sum to the original
 
 
 def connect() -> sqlite3.Connection:
@@ -101,6 +116,9 @@ def connect() -> sqlite3.Connection:
 
 
 def _migrate(conn: sqlite3.Connection) -> None:
+    # Runs on every connect(); cheap PRAGMA check makes each ALTER idempotent
+    # so older databases (created before these columns existed) catch up
+    # without a separate migration step.
     cols = {row[1] for row in conn.execute("PRAGMA table_info(transactions)")}
     if "merchant" not in cols:
         conn.execute("ALTER TABLE transactions ADD COLUMN merchant TEXT")
@@ -109,6 +127,10 @@ def _migrate(conn: sqlite3.Connection) -> None:
 
 
 def insert_many(rows: Iterable[dict[str, Any]]) -> int:
+    # Dedupe key is (date, description, amount) — exact match, no source_file
+    # or id involved. Re-ingesting the same statement is a no-op, but two
+    # genuinely different transactions that happen to share all three fields
+    # will also be silently skipped as a false duplicate.
     now = datetime.now(UTC).replace(microsecond=0).isoformat()
     added = 0
     with connect() as conn:
@@ -344,6 +366,9 @@ def split_transaction(tx_id: int, parts: list[dict[str, Any]]) -> int:
     if abs(total - float(orig["amount"])) > SPLIT_TOL:
         msg = "Parts must sum to the original amount"
         raise ValueError(msg)
+    # Replaces the row rather than linking children to it: the original id
+    # is deleted and each part is inserted fresh with parent_id left NULL,
+    # so parent_id (see schema above) never actually links back to tx_id.
     now = datetime.now(UTC).replace(microsecond=0).isoformat()
     with connect() as conn:
         conn.execute("DELETE FROM transactions WHERE id = ?", (tx_id,))
@@ -489,6 +514,9 @@ def clear_messages() -> None:
 
 
 def add_notification(kind: str, dedupe: str, title: str, body: str) -> bool:
+    # INSERT OR IGNORE against the UNIQUE dedupe column makes this idempotent:
+    # callers (notify.refresh_inbox) can run on every page load and only get
+    # a row (and a True return) the first time a given dedupe key is seen.
     now = datetime.now(UTC).replace(microsecond=0).isoformat()
     with connect() as conn:
         cur = conn.execute(
@@ -567,6 +595,9 @@ def export_zip() -> bytes:
 
 
 def wipe_ledger() -> None:
+    # Irreversible, no soft-delete. The confirmation gate (typed "DELETE")
+    # lives in the UI layer (streamlit_app.py), not here — this function
+    # trusts its caller.
     with connect() as conn:
         conn.execute("DELETE FROM transactions")
 

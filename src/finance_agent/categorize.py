@@ -84,6 +84,8 @@ def categorize_with_llm(
     *,
     examples: list[dict[str, str]] | None = None,
 ) -> list[dict[str, Any]]:
+    # Only rows no rule matched (still "OTHER") are sent to the LLM, to
+    # limit calls/tokens to genuine leftovers.
     pending = [r for r in rows if r.get("category") == "OTHER"]
     if not pending:
         return rows
@@ -105,6 +107,9 @@ def categorize_with_llm(
     from finance_agent.ingest import parse_json_payload
 
     mapped = parse_json_payload(raw)
+    # "id" here is the position of the row in `pending` (see enumerate()
+    # above), not a transactions.id from the database — it only exists to
+    # reconcile the LLM's response back to `pending` below.
     by_id: dict[int, str] = {}
     if isinstance(mapped, list):
         for item in mapped:
@@ -133,6 +138,9 @@ def categorize_hybrid(
     from finance_agent.db import list_fewshot
 
     examples = list_fewshot(16)
+    # LLM categorization is best-effort: a network error or a response that
+    # doesn't parse as JSON must not block ingestion. Rows simply keep
+    # whatever rule-based category (often OTHER) they already had.
     if local_complete:
         with suppress(ValueError, TypeError, OSError, RuntimeError):
             categorize_with_llm(rows, local_complete, examples=examples)
