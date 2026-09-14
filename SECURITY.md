@@ -4,10 +4,10 @@ Thank you for helping keep people who run this app safer. The ledger, chat histo
 
 ## How this app is meant to run
 
-- **Local only.** There is no official hosted instance. You clone the repo and run Streamlit on `localhost`.
-- **Your credentials.** `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `AGNES_API_KEY`, `GOOGLE_API_KEY`, and `OLLAMA_HOST` come from **your** environment (or a local `.env` that must never be committed). Maintainers do not collect keys.
-- **Your data.** SQLite lives at `data/finance.db` (gitignored). An optional lock writes `data/finance.db.enc` (`PFENC1` + salt + Fernet) and deletes the plaintext. The passphrase is **not** stored. Forgetting it means the file cannot be recovered by the author.
-- **Local-only toggle** blocks cloud `complete()` calls so leftovers and chat stay on Ollama.
+- The app runs locally: there is no official hosted instance. You clone the repo and run Streamlit on `localhost`.
+- Credentials (`OPENAI_API_KEY`, `OPENAI_BASE_URL`, `AGNES_API_KEY`, `GOOGLE_API_KEY`, `OLLAMA_HOST`) come from your own environment, or a local `.env` that must never be committed. Maintainers do not collect keys.
+- Data lives locally: SQLite at `data/finance.db` (gitignored). An optional lock writes `data/finance.db.enc` (`PFENC1` + salt + Fernet) and deletes the plaintext. The passphrase is not stored, so forgetting it means the file cannot be recovered by the author.
+- The **Local-only** toggle blocks cloud `complete()` calls so leftovers and chat stay on Ollama.
 
 You are responsible for the files you ingest, the models you call, and backups of `data/`.
 
@@ -15,7 +15,7 @@ You are responsible for the files you ingest, the models you call, and backups o
 
 Please report in private if you find:
 
-- A way to read or overwrite `finance.db` without going through the app’s intended UI (when used as documented)
+- A way to read or overwrite `finance.db` without going through the app's intended UI (when used as documented)
 - A bypass of **Local-only** that still calls OpenAI, Agnes, or Google
 - Path traversal or secret leakage in export/zip, ingest, or reports
 - Vault issues (`lock_db` / `unlock_db`) that expose plaintext or weaken `PFENC1`
@@ -23,10 +23,10 @@ Please report in private if you find:
 
 ## What not to report as a vulnerability
 
-- “I uploaded my bank CSV and the app stored it” — that is the product
-- Missing bank-grade multi-user auth — this is a single-machine tool with no accounts
-- Cloud providers logging prompts — that is the provider you chose and the keys you set
-- Lost vault passphrase — there is no back door
+- "I uploaded my bank CSV and the app stored it": that is the product
+- Missing bank-grade multi-user auth: this is a single-machine tool with no accounts
+- Cloud providers logging prompts: that is the provider you chose and the keys you set
+- Lost vault passphrase: there is no back door
 
 ## How to report
 
@@ -45,5 +45,5 @@ There are no numbered security-support windows. `main` is the current line. If y
 ## Please do not
 
 - Offer a bug bounty (none exists; money is not wanted)
-- Commit `.env` or database files in a “repro” PR
+- Commit `.env` or database files in a "repro" PR
 - Ask the maintainer to decrypt your vault or recover your keys

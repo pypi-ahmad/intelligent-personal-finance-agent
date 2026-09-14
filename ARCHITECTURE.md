@@ -1,12 +1,12 @@
-# Architecture — Personal finance agent
+# Architecture: personal finance agent
 
 Local-first snapshot of the checkout. Claims below are from files on disk.
 
-**Identity.** Remote `https://github.com/pypi-ahmad/intelligent-personal-finance-agent.git`. Branch `main`. HEAD `0109ff3`. Package `finance-agent` `0.1.0` (`pyproject.toml` L1–3). MIT license (`LICENSE`).
+**Identity.** Remote `https://github.com/pypi-ahmad/intelligent-personal-finance-agent.git`. Branch `main`. HEAD `0109ff3`. Package `finance-agent` `0.1.0` (`pyproject.toml` L1-3). MIT license (`LICENSE`).
 
 ---
 
-## Part 1 — Whole-repo technical deep-dive
+## Part 1: whole-repo technical deep dive
 
 Phase 8 Streamlit copilot: ingest statements, learn category fixes, dashboard, inbox, optional Fernet lock (`README.md`; `src/finance_agent/__init__.py` L1). Package lives in `src/finance_agent/` (14 modules). UI is one file: `streamlit_app.py`.
 
@@ -31,8 +31,8 @@ Phase 8 Streamlit copilot: ingest statements, learn category fixes, dashboard, i
 | Kind | Path |
 | --- | --- |
 | UI | `streamlit_app.py` |
-| Windows | `run.cmd` — `uv venv` + sync into `.venv` then Streamlit `--server.address localhost` |
-| Linux | `run.sh` — same flow; Streamlit via `.venv/bin/python` |
+| Windows | `run.cmd`: `uv venv` + sync into `.venv` then Streamlit `--server.address localhost` |
+| Linux | `run.sh`: same flow; Streamlit via `.venv/bin/python` |
 | Tests | `tests/test_phase1.py` … `test_phase6.py`, `test_phase8.py` |
 
 If `vault.is_locked()`, the script `st.stop()`s at an unlock form before other DB reads (`streamlit_app.py`).
@@ -43,7 +43,7 @@ If `vault.is_locked()`, the script `st.stop()`s at an unlock form before other D
 | --- | --- | --- |
 | `uv sync --all-groups --python <venv>` | Install into `.venv` | `run.cmd`; `run.sh` |
 | `<venv> -m streamlit run streamlit_app.py` | Serve on localhost | `README.md`; launchers |
-| `<venv> -m pytest` | Tests | `README.md` — **35 passed** last local run |
+| `<venv> -m pytest` | Tests | `README.md`: **35 passed** last local run |
 | `<venv> -m ruff check` | Lint | `pyproject.toml` |
 | CI | none | no `.github/workflows` |
 | CI enforced | `[UNVERIFIED]` | GitHub settings not read this pass |
@@ -74,20 +74,20 @@ Seven test modules. No coverage floor. No e2e against Streamlit.
 
 ---
 
-## Part 2 — Context
+## Part 2: context
 
 | Field | Value |
 | --- | --- |
 | Remote | `pypi-ahmad/intelligent-personal-finance-agent` |
 | Branch | `main` |
 | Docs | `README.md`, `docs/how-to-use.md`, `docs/technical.md` |
-| Agent rules | `.github/copilot-instructions.md` is caveman style only — not an architecture source |
+| Agent rules | `.github/copilot-instructions.md` is caveman style only, not an architecture source |
 
 **Gotchas.** OS env wins over `.env`. Empty `.env` from an old `run.cmd` copy is no longer created. Category edits write `corrections`. Locked DB has no plaintext `finance.db`.
 
 ---
 
-## Part 3 — Blueprint
+## Part 3: blueprint
 
 Single-process modular monolith.
 
@@ -121,10 +121,10 @@ Layering is import convention only. No import-linter.
 
 ## Subsystems
 
-1. **Ingest** — `parse_file` by suffix; merchant via `normalize_merchant`; `apply_learned` then optional `categorize_hybrid`.
-2. **Q&A** — JSON filters + travel window + last-8 history.
-3. **Dashboard** — Altair series + forecast + inflation (`dashboard.py`).
-4. **Vault** — `PFENC1` + 16-byte salt + Fernet, 200k PBKDF2 (`vault.py`).
+1. **Ingest**: `parse_file` by suffix; merchant via `normalize_merchant`; `apply_learned` then optional `categorize_hybrid`.
+2. **Q&A**: JSON filters + travel window + last-8 history.
+3. **Dashboard**: Altair series + forecast + inflation (`dashboard.py`).
+4. **Vault**: `PFENC1` + 16-byte salt + Fernet, 200k PBKDF2 (`vault.py`).
 
 ---
 

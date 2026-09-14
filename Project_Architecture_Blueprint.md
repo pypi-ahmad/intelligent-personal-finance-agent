@@ -7,13 +7,13 @@
 
 This document is a consistency reference for the architecture that is **in the tree today**. Claims below come from `pyproject.toml`, `streamlit_app.py`, `src/finance_agent/*`, `tests/`, `run.cmd`, and `.streamlit/config.toml`. It is not a product roadmap.
 
-**Stale label:** `pyproject.toml` description still says “Phase 1”. Runtime `__init__.py` and `README.md` describe Phase 8. Trust the modules, not that one-line description.
+**Stale label:** `pyproject.toml` description still says "Phase 1". Runtime `__init__.py` and `README.md` describe Phase 8. Trust the modules, not that one-line description.
 
 **Related artifacts (not this blueprint):**
-- `ARCHITECTURE.md` — local-first architecture snapshot
-- `docs/technical.md` / `docs/how-to-use.md` — Diátaxis reference and how-to
-- `docs/archify/finance-agent.html` — validated component diagram
-- `graphify-out/graph.html` — knowledge graph
+- `ARCHITECTURE.md`: local-first architecture snapshot
+- `docs/technical.md` / `docs/how-to-use.md`: Diátaxis reference and how-to
+- `docs/archify/finance-agent.html`: validated component diagram
+- `graphify-out/graph.html`: knowledge graph
 
 ---
 
@@ -43,11 +43,11 @@ This document is a consistency reference for the architecture that is **in the t
 Not Clean Architecture, not microservices, not hexagonal ports-and-adapters. There is no DI container, no interface package, no import linter.
 
 Signals:
-- One UI process (`streamlit_app.py`) imports a flat domain package (`src/finance_agent/` — 14 modules).
+- One UI process (`streamlit_app.py`) imports a flat domain package (`src/finance_agent/`, 14 modules).
 - Persistence is one SQLite file opened by `db.connect()`.
 - LLM providers are a thin facade (`llm.complete`), not plugins.
 - LangGraph is an **in-process** linear graph, not a worker or queue.
-- Notifications run in `notify.refresh_inbox` on each app open — no cron, no Windows service.
+- Notifications run in `notify.refresh_inbox` on each app open, with no cron and no Windows service.
 
 **Hybrid flavor:** pipeline style (ingest → categorize → store) plus a small LangGraph Q&A slice plus a Streamlit tab shell.
 
@@ -67,12 +67,12 @@ open app → refresh_inbox (Monday digest if due)
 
 ### 2.2 Guiding principles (evident in code)
 
-1. **Local-first.** Default bind is localhost. Keys from OS env / HKCU, not committed `.env`.
-2. **Rules before models.** User rules → corrections → builtins → local LLM → API leftovers.
-3. **CSV/Excel work without a model.** PDF/images and leftover fill need one.
-4. **No hosted product API.** No bank connection. Digests are on-open, not scheduled.
-5. **Passphrase is not stored.** Vault writes `PFENC1` + salt + Fernet and deletes plaintext.
-6. **Logic lives in the package.** `streamlit_app.py` is widgets + orchestration.
+1. Local-first: default bind is localhost. Keys from OS env / HKCU, not committed `.env`.
+2. Rules before models: user rules → corrections → builtins → local LLM → API leftovers.
+3. CSV/Excel work without a model. PDF/images and leftover fill need one.
+4. No hosted product API. No bank connection. Digests are on-open, not scheduled.
+5. Passphrase is not stored. Vault writes `PFENC1` + salt + Fernet and deletes plaintext.
+6. Logic lives in the package. `streamlit_app.py` is widgets + orchestration.
 
 ### 2.3 Boundaries and how they are enforced
 
@@ -91,7 +91,7 @@ Layering is **not** mechanically enforced. A new import from `db.py` into `strea
 
 ## 3. Architecture visualization (C4)
 
-### 3.1 Level 1 — System context
+### 3.1 Level 1: system context
 
 ```mermaid
 C4Context
@@ -110,7 +110,7 @@ C4Context
     Rel(app, google, "optional, blocked if Local-only")
 ```
 
-### 3.2 Level 2 — Containers
+### 3.2 Level 2: containers
 
 ```mermaid
 C4Container
@@ -127,9 +127,9 @@ C4Container
     Rel(pkg, enc, "lock_db / unlock_db")
 ```
 
-There is one process. “Containers” here are files and a package, not Docker.
+There is one process. "Containers" here are files and a package, not Docker.
 
-### 3.3 Level 3 — Components
+### 3.3 Level 3: components
 
 ```mermaid
 flowchart LR
@@ -233,7 +233,7 @@ flowchart LR
 
 ## 4. Core architectural components
 
-### 4.1 `streamlit_app.py` — composition root / UI
+### 4.1 `streamlit_app.py`: composition root / UI
 
 | | |
 | --- | --- |
@@ -246,7 +246,7 @@ flowchart LR
 
 Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Privacy.
 
-### 4.2 `config.py` — constants and env
+### 4.2 `config.py`: constants and env
 
 | | |
 | --- | --- |
@@ -254,7 +254,7 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **Scope** | No I/O except `load_dotenv(override=False)` and optional `winreg`. |
 | **Extend** | New provider constant + `llm.models_for` / `missing_key`. New category string in `CATEGORIES` (UI and LLM prompts share this tuple). |
 
-### 4.3 `llm.py` — provider facade
+### 4.3 `llm.py`: provider facade
 
 | | |
 | --- | --- |
@@ -263,7 +263,7 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **Patterns** | Facade. Local-only gate. One retry that drops `reasoning_effort` if OpenAI rejects it. Image MIME sniff (png/jpeg/webp). |
 | **Extend** | Add a branch in `complete` / `models_for`. Do not call SDKs from the UI. |
 
-### 4.4 `ingest.py` — statement parse
+### 4.4 `ingest.py`: statement parse
 
 | | |
 | --- | --- |
@@ -272,7 +272,7 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **Patterns** | Strategy by suffix. Column alias pick (`_pick`). Shared `parse_json_payload` for fenced JSON (also used by agent plan). |
 | **Limit** | No bank connectors. No password-PDF path. |
 
-### 4.5 `merchants.py` + `categorize.py` — identity and category pipeline
+### 4.5 `merchants.py` + `categorize.py`: identity and category pipeline
 
 | | |
 | --- | --- |
@@ -281,7 +281,7 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **Patterns** | Chain of responsibility. Failures in LLM fill are `suppress`ed. |
 | **Extend** | Add alias / builtin rule, or `upsert_user_rule` from Plan tab. |
 
-### 4.6 `db.py` — persistence facade
+### 4.6 `db.py`: persistence facade
 
 | | |
 | --- | --- |
@@ -291,7 +291,7 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **Hot node** | `connect()` is the graph hub (every persistence call opens a new connection). |
 | **Extend** | Add table to `SCHEMA` + `_migrate` ALTER if existing DBs must survive. Add functions next to existing ones. |
 
-### 4.7 `agent.py` — LangGraph Q&A
+### 4.7 `agent.py`: LangGraph Q&A
 
 | | |
 | --- | --- |
@@ -300,7 +300,7 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **History** | Last 8 messages only (`_history_text`). |
 | **Extend** | Add a node only if the linear plan-fetch-brief-reply path is insufficient. Prefer richer filters in `_plan` first. |
 
-### 4.8 `insights.py` / `copilot.py` / `dashboard.py` — pure-ish analytics
+### 4.8 `insights.py` / `copilot.py` / `dashboard.py`: pure-ish analytics
 
 | | |
 | --- | --- |
@@ -308,7 +308,7 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **Pattern** | Functions over `list[dict]`. `insights.snapshot()` is the exception: it reads the DB. |
 | **Extend** | New series function + Dashboard/Insights tab. Keep it free of Streamlit. |
 
-### 4.9 `notify.py` — on-open inbox
+### 4.9 `notify.py`: on-open inbox
 
 | | |
 | --- | --- |
@@ -316,11 +316,11 @@ Tabs: Dashboard, Notifications, Chat, Transactions, Insights, Plan, Reports, Pri
 | **Pattern** | Idempotent writes via `dedupe` keys (`digest-YYYY-MM-DD`, `anomaly-…`). |
 | **Limit** | Not a scheduler. Monday digest is inserted when the app is opened on/after that Monday. |
 
-### 4.10 `reports.py` — documents
+### 4.10 `reports.py`: documents
 
 Month / week / tax-year Markdown and PDF (`fpdf2`). ASCII wrapping for PDF width. No template engine.
 
-### 4.11 `vault.py` — at-rest lock
+### 4.11 `vault.py`: at-rest lock
 
 `PFENC1` + 16-byte salt + Fernet. PBKDF2-HMAC-SHA256, 200_000 rounds. `lock_db` writes `.enc` and unlinks plaintext. `unlock_db` reverses. Passphrase never stored.
 
@@ -357,7 +357,7 @@ None. Callables (`complete`, `local_complete`, `api_complete`, `llm_extract`) ar
 ### 5.4 Circular / layer notes
 
 - `ingest` → `categorize.apply_rules` (module level) and `categorize` → `ingest.parse_json_payload` (lazy): stable, do not invert.
-- `streamlit_app` is a wide client of `db`. Acceptable for a small monolith; do not add a second UI that copies those queries — add functions on `db.py` instead.
+- `streamlit_app` is a wide client of `db`. Acceptable for a small monolith; do not add a second UI that copies those queries, add functions on `db.py` instead.
 
 ---
 
@@ -395,7 +395,7 @@ Ingest and analytics use plain `dict`s, not ORM entities:
 
 ### 6.4 Access patterns
 
-- **No repository class.** `db.py` is the mapper.
+- No repository class: `db.py` is the mapper.
 - **Search:** `db.search(...)` optional filters (dates, category, text, account).
 - **Dedupe:** exact `(date, description, amount)`.
 - **Splits:** delete original conceptually via `split_transaction`; children carry `parent_id`; descriptions include `(split)`.
@@ -439,7 +439,7 @@ Not present: OAuth, RBAC, multi-tenant isolation.
 | --- | --- |
 | `ValueError` for user-fixable input | vault, ingest image-without-model, unknown provider |
 | `PermissionError` for policy | local-only cloud call |
-| `suppress` around leftover LLM | `categorize_hybrid` — leftover stays `OTHER` |
+| `suppress` around leftover LLM | `categorize_hybrid`: leftover stays `OTHER` |
 | OpenAI extra-arg fallback | retry without `reasoning_effort` |
 | Ollama tags fail soft | `list_ollama_models` → `[]` on `HTTPError` |
 | Agent plan JSON fail | empty dict → `infer_range` / `wants_travel` heuristics |
@@ -495,11 +495,11 @@ No API versioning, no service discovery, no message bus. Cloud calls are **optio
 
 ### 9.1 Python
 
-- **Modules, not classes.** Domain is functions + dicts. Exceptions: `AgentState` TypedDict, LangGraph compiled graph.
-- **`src/` layout** via `uv_build`.
-- **Lazy imports** instead of interfaces to cut cycles.
-- **Sync only.** No `asyncio` in the package.
-- **Typing:** `from __future__ import annotations`; Ruff `ANN` ignored.
+- Modules, not classes: domain is functions + dicts. Exceptions: `AgentState` TypedDict, LangGraph compiled graph.
+- `src/` layout via `uv_build`.
+- Lazy imports instead of interfaces to cut cycles.
+- Sync only: no `asyncio` in the package.
+- Typing: `from __future__ import annotations`; Ruff `ANN` ignored.
 
 ### 9.2 Streamlit
 
@@ -539,7 +539,7 @@ There are no ABCs. Seams are **callables**:
 
 Tests inject fakes / `monkeypatch`.
 
-### 10.2 “Services”
+### 10.2 "Services"
 
 Module-level functions. Lifetime = process. No singleton container. `build_graph()` is the only cached object.
 
@@ -549,7 +549,7 @@ Open, use, close per function (`with connect()`). No connection pool. Fine for s
 
 `insert_many` is row-at-a-time existence check + insert (not a bulk UPSERT).
 
-### 10.4 “Controllers”
+### 10.4 "Controllers"
 
 Streamlit callbacks and `if ingest:` / `if st.button` blocks. Responses are `st.dataframe`, `st.altair_chart`, `st.download_button`, `st.chat_message`.
 
@@ -593,7 +593,7 @@ Ruff test ignores: `S101` (assert), `PLR2004` (magic values).
 | Cloud services | Outbound LLM only; app does not deploy there |
 | Locked mode | If `.enc` exists and `.db` does not, UI is unlock-only |
 
-`.python-version` may be 3.14 while tools target 3.11 — run tests with the project env (`uv run`).
+`.python-version` may be 3.14 while tools target 3.11, so run tests with the project env (`uv run`).
 
 ---
 
@@ -632,7 +632,7 @@ Ruff test ignores: `S101` (assert), `PLR2004` (magic values).
 There is no anti-corruption layer package. If you add a bank/API:
 
 - New module `src/finance_agent/<vendor>.py` that **emits the same row dicts** as `parse_file`.
-- Call `apply_learned` + `insert_many` — do not write SQL in the vendor module.
+- Call `apply_learned` + `insert_many`; do not write SQL in the vendor module.
 - Keep it behind Local-only if it leaves the machine.
 - Do not put tokens in the repo.
 
@@ -715,54 +715,54 @@ UI builds those callables in `_hybrid_completes` (Ollama first, then selected cl
 
 These are **reconstructed** from the implementation. There is no `docs/adr/` folder.
 
-### ADR-1 — Single-process modular monolith
+### ADR-1: single-process modular monolith
 
 - **Context:** Personal ledger, one user, Windows-first.
 - **Decision:** Streamlit script + flat Python package + SQLite file.
 - **Not chosen:** FastAPI + SPA, multi-service, hosted SaaS.
 - **Consequence:** Fast to change; no horizontal scale; UI and domain share a process. Layering is social.
 
-### ADR-2 — LangGraph only for Q&A
+### ADR-2: LangGraph only for Q&A
 
 - **Context:** Need structured retrieve-then-answer, not a free-form agent loop.
 - **Decision:** Four-node linear graph; ingest/categorize stay imperative.
 - **Consequence:** Two model calls per question. Easy to test `_plan` JSON failure path. Not a general tool-calling agent.
 
-### ADR-3 — Hybrid categorize, rules first
+### ADR-3: hybrid categorize, rules first
 
 - **Context:** LLM leftover fill is expensive and flaky; users correct merchants.
 - **Decision:** user rules → corrections → builtins → local few-shot → API leftovers.
 - **Consequence:** CSV works offline. Leftovers can stay `OTHER`. Learning is merchant-scoped, not embedding-based.
 
-### ADR-4 — Env wins over `.env`
+### ADR-4: env wins over `.env`
 
 - **Context:** An older `run.cmd` could create an empty `.env` that hid OS keys if loaded with override.
 - **Decision:** `load_dotenv(override=False)`; `env()` reads process then HKCU; `run.cmd` does not copy `.env`.
 - **Consequence:** Same machine keys keep working. New machines still need `.env.example` → `.env`.
 
-### ADR-5 — On-open notifications, not cron
+### ADR-5: on-open notifications, not cron
 
 - **Context:** No desire to install a Windows service.
 - **Decision:** `refresh_inbox` at the top of the Streamlit script; UNIQUE `dedupe`.
 - **Consequence:** No digest if the app is never opened. Idempotent if opened often.
 
-### ADR-6 — Optional Fernet file lock
+### ADR-6: optional Fernet file lock
 
-- **Context:** Ledger is local and sensitive; full disk encryption is the user’s OS problem.
+- **Context:** Ledger is local and sensitive; full disk encryption is the user's OS problem.
 - **Decision:** Whole-file encrypt with `PFENC1` header; delete plaintext on lock.
 - **Consequence:** No row-level encryption. Forgot passphrase = data gone. App cannot read DB while locked.
 
-### ADR-7 — OpenAI-compat for three providers
+### ADR-7: OpenAI-compat for three providers
 
 - **Context:** Ollama, OpenAI, Agnes all speak chat completions.
 - **Decision:** One `_openai_compat` path; Google stays on `google.genai`.
 - **Consequence:** Agnes base URL is hardcoded. OpenAI `reasoning_effort=medium` may be stripped on retry.
 
-### ADR-8 — Dict rows over ORM
+### ADR-8: dict rows over ORM
 
 - **Context:** Small schema, pandas ingest, Streamlit `data_editor`.
 - **Decision:** `sqlite3` + dicts.
-- **Consequence:** No unit of work. Easy tests. Easy to drift column lists (`list_transactions` historically omitted `parent_id` in some SELECTs — check SQL when adding columns).
+- **Consequence:** No unit of work. Easy tests. Easy to drift column lists (`list_transactions` historically omitted `parent_id` in some SELECTs; check SQL when adding columns).
 
 ---
 
@@ -770,7 +770,7 @@ These are **reconstructed** from the implementation. There is no `docs/adr/` fol
 
 | Control | Status |
 | --- | --- |
-| Ruff `select = ALL` (with documented ignores) | Yes — style/safety, not layers |
+| Ruff `select = ALL` (with documented ignores) | Yes: style/safety, not layers |
 | ty (type checker) target 3.11 | Yes |
 | pytest | Yes, 7 files, no coverage gate |
 | Import linter / layer check | **No** |
@@ -835,8 +835,8 @@ Regenerate or edit this file when any of these change:
 - New process (API server, worker, cron)
 - Layer enforcement tooling (import-linter, CI)
 
-Suggested cadence: same commit as the structural change, not a separate “docs later” pass.
+Suggested cadence: same commit as the structural change, not a separate "docs later" pass.
 
 ---
 
-*End of blueprint. Implementation-ready for this repo’s current shape: a local Streamlit monolith, not a distributed system.*
+*End of blueprint. Implementation-ready for this repo's current shape: a local Streamlit monolith, not a distributed system.*
